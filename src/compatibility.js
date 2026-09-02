@@ -37,6 +37,25 @@ export function rewriteSkillInvocations(text, skillNames) {
   return { text: rewritten, rewrites };
 }
 
+export function normalizeSkillFrontmatter(text) {
+  if (!text.startsWith("---\n")) return { text, rewrites: [] };
+  const frontmatterEnd = text.indexOf("\n---", 4);
+  if (frontmatterEnd === -1) return { text, rewrites: [] };
+  const frontmatter = text.slice(0, frontmatterEnd);
+  const pattern = /^disable-model-invocation:\s*true\s*$/m;
+  const match = pattern.exec(frontmatter);
+  if (!match) return { text, rewrites: [] };
+  const replacement = "disable-model-invocation: false";
+  return {
+    text: `${frontmatter.replace(pattern, replacement)}${text.slice(frontmatterEnd)}`,
+    rewrites: [{
+      line: lineNumberAt(text, match.index),
+      before: match[0],
+      after: replacement,
+    }],
+  };
+}
+
 async function listTextFiles(root, current = root) {
   const files = [];
   for (const entry of (await readdir(current)).sort()) {
@@ -103,10 +122,14 @@ export async function applyCompatibility(pluginRoot, omittedPaths) {
     const relativePath = path.relative(pluginRoot, file);
     let text = await readFile(file, "utf8");
     if (path.extname(file) === ".md") {
-      const result = rewriteSkillInvocations(text, skillNames);
-      text = result.text;
-      rewrites.push(...result.rewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
-      if (result.rewrites.length > 0) await writeFile(file, text);
+      const frontmatter = path.basename(file) === "SKILL.md"
+        ? normalizeSkillFrontmatter(text)
+        : { text, rewrites: [] };
+      const invocations = rewriteSkillInvocations(frontmatter.text, skillNames);
+      text = invocations.text;
+      const fileRewrites = [...frontmatter.rewrites, ...invocations.rewrites];
+      rewrites.push(...fileRewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
+      if (fileRewrites.length > 0) await writeFile(file, text);
     }
     findings.push(...scanText(text, relativePath));
   }

@@ -35,9 +35,9 @@
 ## Task 4: CLI lifecycle and end-to-end behavior
 
 **Acceptance criteria:**
-- [ ] Human, JSON, and dry-run modes honor the documented exit codes.
-- [ ] `--force` replaces only tool-owned output.
-- [ ] README documents conversion, review, validation, and installation.
+- [x] Human, JSON, and dry-run modes honor the documented exit codes.
+- [x] `--force` replaces only tool-owned output and preserves it if regeneration fails.
+- [x] README documents conversion, review, validation, and installation.
 
 **Verification:** `npm test && npm run check`
 
@@ -45,6 +45,6 @@
 
 ## Final checkpoint
 
-- [ ] All tests pass.
-- [ ] Smoke-generated plugin passes Codex plugin validation.
-- [ ] Code review completed.
+- [x] All tests pass.
+- [x] Smoke-generated plugin passes Codex plugin validation.
+- [x] Code review completed.

@@ -7,7 +7,7 @@
     "pstack-to-codex": "./bin/pstack-to-codex.js"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/*.test.js",
     "check": "node --check bin/pstack-to-codex.js && node --check src/*.js"
   },
   "engines": {

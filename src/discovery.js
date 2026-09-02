@@ -13,9 +13,15 @@ async function isDirectory(candidate) {
 }
 
 async function readManifest(pluginRoot) {
+  const manifestDirectory = path.join(pluginRoot, ".cursor-plugin");
   const manifestPath = path.join(pluginRoot, CURSOR_MANIFEST);
   let contents;
   try {
+    const directoryMetadata = await lstat(manifestDirectory);
+    const manifestMetadata = await lstat(manifestPath);
+    if (directoryMetadata.isSymbolicLink() || manifestMetadata.isSymbolicLink()) {
+      throw new Error(`Cursor manifest must not use symlinks: ${manifestPath}`);
+    }
     contents = await readFile(manifestPath, "utf8");
   } catch (error) {
     if (error.code === "ENOENT") return null;
@@ -26,6 +32,22 @@ async function readManifest(pluginRoot) {
     return JSON.parse(contents);
   } catch (error) {
     throw new Error(`Invalid JSON in ${manifestPath}: ${error.message}`);
+  }
+}
+
+async function canonicalizeProspectivePath(targetPath) {
+  let existingAncestor = path.resolve(targetPath);
+  const missingSegments = [];
+  while (true) {
+    try {
+      return path.join(await realpath(existingAncestor), ...missingSegments);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      const parent = path.dirname(existingAncestor);
+      if (parent === existingAncestor) throw error;
+      missingSegments.unshift(path.basename(existingAncestor));
+      existingAncestor = parent;
+    }
   }
 }
 
@@ -60,7 +82,10 @@ export async function discoverSource(inputPath) {
 
 export async function assertSafeDestination(sourceRoot, destinationPath) {
   const source = await realpath(sourceRoot);
-  const destination = path.resolve(destinationPath);
+  const destination = await canonicalizeProspectivePath(destinationPath);
+  if (destination === path.parse(destination).root) {
+    throw new Error("Filesystem root cannot be used as a destination");
+  }
   const relative = path.relative(source, destination);
 
   if (relative === "" || (!relative.startsWith(`..${path.sep}`) && relative !== "..")) {

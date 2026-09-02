@@ -6,11 +6,17 @@ import { promisify } from "node:util";
 import { assertSafeDestination, discoverSource } from "./discovery.js";
 import { applyCompatibility } from "./compatibility.js";
 import { createMarketplace, createPluginManifest, normalizePluginName } from "./manifest.js";
+import { validateGeneratedPlugin } from "./validation.js";
 
 const execFileAsync = promisify(execFile);
 const COPY_DIRECTORIES = ["skills", "docs", "scripts", "assets"];
 const COPY_FILES = ["README.md", "LICENSE", "NOTICE"];
 const OMIT_DIRECTORIES = ["agents", "automations", "hooks"];
+const DEFAULT_LIMITS = {
+  maxFiles: 10_000,
+  maxFileBytes: 10 * 1024 * 1024,
+  maxTotalBytes: 100 * 1024 * 1024,
+};
 
 async function pathExists(candidate) {
   try {
@@ -22,7 +28,7 @@ async function pathExists(candidate) {
   }
 }
 
-async function copyTree(source, destination, sourceRoot, copiedFiles) {
+async function copyTree(source, destination, sourceRoot, copiedFiles, copyState) {
   const metadata = await lstat(source);
   if (metadata.isSymbolicLink()) {
     throw new Error(`Symlinks are not allowed in converted content: ${source}`);
@@ -36,12 +42,24 @@ async function copyTree(source, destination, sourceRoot, copiedFiles) {
         path.join(destination, entry),
         sourceRoot,
         copiedFiles,
+        copyState,
       );
     }
     return;
   }
   if (!metadata.isFile()) {
     throw new Error(`Unsupported filesystem entry in source: ${source}`);
+  }
+  if (metadata.size > copyState.limits.maxFileBytes) {
+    throw new Error(`Source file exceeds the file-size limit: ${source}`);
+  }
+  copyState.files += 1;
+  copyState.bytes += metadata.size;
+  if (copyState.files > copyState.limits.maxFiles) {
+    throw new Error(`Source content exceeds the file-count limit at: ${source}`);
+  }
+  if (copyState.bytes > copyState.limits.maxTotalBytes) {
+    throw new Error(`Source content exceeds the total-size limit at: ${source}`);
   }
   await mkdir(path.dirname(destination), { recursive: true });
   await copyFile(source, destination);
@@ -73,17 +91,22 @@ export async function convertPstack(options) {
   const pluginRoot = path.join(destination, "plugins", pluginName);
   const copiedFiles = [];
   const omittedPaths = [];
+  const copyState = {
+    files: 0,
+    bytes: 0,
+    limits: { ...DEFAULT_LIMITS, ...options.limits },
+  };
 
   for (const directory of COPY_DIRECTORIES) {
     const sourcePath = path.join(source.root, directory);
     if (await pathExists(sourcePath)) {
-      await copyTree(sourcePath, path.join(pluginRoot, directory), source.root, copiedFiles);
+      await copyTree(sourcePath, path.join(pluginRoot, directory), source.root, copiedFiles, copyState);
     }
   }
   for (const filename of COPY_FILES) {
     const sourcePath = path.join(source.root, filename);
     if (await pathExists(sourcePath)) {
-      await copyTree(sourcePath, path.join(pluginRoot, filename), source.root, copiedFiles);
+      await copyTree(sourcePath, path.join(pluginRoot, filename), source.root, copiedFiles, copyState);
     }
   }
   for (const directory of OMIT_DIRECTORIES) {
@@ -109,6 +132,7 @@ export async function convertPstack(options) {
       + "This generated conversion is not an official Cursor or OpenAI project.\n\n"
       + "Review `compatibility/report.md` before using the generated workflows.\n",
   );
+  const validation = await validateGeneratedPlugin(destination, pluginName);
 
   const receipt = {
     generator: "pstack-to-codex",
@@ -120,10 +144,12 @@ export async function convertPstack(options) {
       commit: sourceCommit,
     },
     copiedFiles: copiedFiles.sort(),
+    copiedBytes: copyState.bytes,
     omittedPaths: omittedPaths.sort(),
     compatibility: compatibility.report.summary,
+    validation,
   };
   await writeJson(path.join(destination, ".pstack-to-codex.json"), receipt);
 
-  return { destination, pluginName, pluginRoot, receipt, compatibility: compatibility.report };
+  return { destination, pluginName, pluginRoot, receipt, compatibility: compatibility.report, validation };
 }

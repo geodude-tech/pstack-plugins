@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -71,4 +71,17 @@ test("accepts a sibling destination", async () => {
   const destination = `${root}-codex`;
 
   await assert.doesNotReject(() => assertSafeDestination(root, destination));
+});
+
+test("rejects a destination that enters the source through a symlinked parent", async () => {
+  const parent = await mkdtemp(path.join(tmpdir(), "pstack-destination-"));
+  const source = path.join(parent, "source");
+  const alias = path.join(parent, "source-alias");
+  await mkdir(source);
+  await symlink(source, alias);
+
+  await assert.rejects(
+    () => assertSafeDestination(source, path.join(alias, "generated")),
+    /outside the source/,
+  );
 });

@@ -87,3 +87,17 @@ test("supports a custom normalized plugin name", async () => {
   assert.equal(result.pluginName, "our-pstack");
   assert.equal(result.pluginRoot, path.join(destination, "plugins", "our-pstack"));
 });
+
+test("rejects source files that exceed configured resource limits", async () => {
+  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-convert-source-"));
+  const source = await createCursorPstack(sourceParent);
+
+  await assert.rejects(
+    () => convertPstack({
+      sourcePath: source,
+      destination: `${sourceParent}-output`,
+      limits: { maxFiles: 100, maxFileBytes: 10, maxTotalBytes: 1000 },
+    }),
+    /file-size limit/,
+  );
+});

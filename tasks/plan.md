@@ -15,32 +15,32 @@ Build a dependency-free Node.js CLI in four vertical slices: establish the contr
 
 ### Phase 1: Contract and discovery
 
-- [ ] Task 1: Define CLI parsing, source discovery, and safe path rules.
-- [ ] Task 2: Add fixture builders and failing tests for supported layouts and invalid inputs.
+- [x] Task 1: Define CLI parsing, source discovery, and safe path rules.
+- [x] Task 2: Add fixture builders and failing tests for supported layouts and invalid inputs.
 
 ### Checkpoint: Foundation
 
-- [ ] Focused discovery tests pass.
+- [x] Focused discovery tests pass.
 
 ### Phase 2: Conversion
 
-- [ ] Task 3: Generate manifests, copy supported content, and record provenance.
-- [ ] Task 4: Add conservative text rewrites and compatibility findings.
+- [x] Task 3: Generate manifests, copy supported content, and record provenance.
+- [x] Task 4: Add conservative text rewrites and compatibility findings.
 
 ### Checkpoint: Core conversion
 
-- [ ] Filesystem integration tests pass and generated JSON validates.
+- [x] Filesystem integration tests pass and generated JSON validates.
 
 ### Phase 3: CLI and delivery
 
-- [ ] Task 5: Implement dry-run, JSON output, exit codes, and safe force behavior.
-- [ ] Task 6: Add README usage and run an end-to-end smoke conversion.
+- [x] Task 5: Implement dry-run, JSON output, exit codes, and safe force behavior.
+- [x] Task 6: Add README usage and run an end-to-end smoke conversion.
 
 ### Checkpoint: Complete
 
-- [ ] Full test and syntax-check suites pass.
-- [ ] Generated artifact passes the bundled Codex plugin validator.
-- [ ] Implementation is reviewed for correctness and scope.
+- [x] Full test and syntax-check suites pass.
+- [x] Generated artifact passes the bundled Codex plugin validator.
+- [x] Implementation is reviewed for correctness and scope.
 
 ## Risks and Mitigations
 

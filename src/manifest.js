@@ -10,15 +10,27 @@ export function normalizePluginName(value) {
   return normalized;
 }
 
+function safeHttpsUrl(value) {
+  if (typeof value !== "string") return undefined;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? url.href : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export function createPluginManifest(cursorManifest, pluginName) {
   const author = cursorManifest.author?.name || "pstack contributors";
+  const homepage = safeHttpsUrl(cursorManifest.homepage);
+  const repository = safeHttpsUrl(cursorManifest.repository);
   return {
     name: pluginName,
     version: cursorManifest.version,
     description: `Codex-compatible conversion of ${cursorManifest.displayName || cursorManifest.name}. Review compatibility/report.md before use.`,
     author: { ...cursorManifest.author, name: author },
-    homepage: cursorManifest.homepage,
-    repository: cursorManifest.repository,
+    homepage,
+    repository,
     license: cursorManifest.license || "MIT",
     keywords: [...new Set([...(cursorManifest.keywords || []), "codex"])],
     skills: "./skills/",
@@ -29,7 +41,7 @@ export function createPluginManifest(cursorManifest, pluginName) {
       developerName: author,
       category: "Developer Tools",
       capabilities: ["Engineering workflows", "Review and verification"],
-      websiteURL: cursorManifest.homepage || cursorManifest.repository,
+      websiteURL: homepage || repository,
       defaultPrompt: [
         "Use $poteto-mode for this engineering task.",
         "Use $architect to design this change.",

@@ -32,7 +32,7 @@ test("writes matching JSON and Markdown compatibility reports", async () => {
   );
   const markdown = await readFile(path.join(pluginRoot, "compatibility", "report.md"), "utf8");
 
-  assert.equal(report.summary.rewrites, 2);
+  assert.equal(report.summary.rewrites, 4);
   assert.ok(report.summary.findings >= 5);
   assert.match(markdown, new RegExp(`Rewrites: ${report.summary.rewrites}`));
   assert.match(markdown, new RegExp(`Manual-review findings: ${report.summary.findings}`));
@@ -43,7 +43,7 @@ test("writes matching JSON and Markdown compatibility reports", async () => {
 
   assert.match(
     await readFile(path.join(pluginRoot, "skills", "poteto-mode", "SKILL.md"), "utf8"),
-    /Use `\$poteto-mode`/,
+    /disable-model-invocation: false[\s\S]*Use `\$poteto-mode`/,
   );
   assert.match(
     await readFile(path.join(pluginRoot, "docs", "guide.md"), "utf8"),
