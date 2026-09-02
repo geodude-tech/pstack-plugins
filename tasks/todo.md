@@ -13,9 +13,9 @@
 ## Task 2: Manifest and content conversion
 
 **Acceptance criteria:**
-- [ ] Generated Codex manifest and marketplace entry use valid paths and identifiers.
-- [ ] Supported source content is copied without mutating the source.
-- [ ] Provenance receipt records source version and Git commit when available.
+- [x] Generated Codex manifest and marketplace entry use valid paths and identifiers.
+- [x] Supported source content is copied without mutating the source.
+- [x] Provenance receipt records source version and Git commit when available.
 
 **Verification:** `node --test test/conversion.test.js`
 

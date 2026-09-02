@@ -25,5 +25,15 @@ export async function createCursorPstack(root, options = {}) {
     path.join(pluginRoot, "skills", "poteto-mode", "SKILL.md"),
     "---\nname: poteto-mode\ndescription: rigorous work\n---\n\nUse `/poteto-mode`.\n",
   );
+  await mkdir(path.join(pluginRoot, "docs"), { recursive: true });
+  await mkdir(path.join(pluginRoot, "scripts"), { recursive: true });
+  await mkdir(path.join(pluginRoot, "agents"), { recursive: true });
+  await mkdir(path.join(pluginRoot, "automations", "benny"), { recursive: true });
+  await writeFile(path.join(pluginRoot, "README.md"), "# pstack\n");
+  await writeFile(path.join(pluginRoot, "LICENSE"), "MIT fixture\n");
+  await writeFile(path.join(pluginRoot, "docs", "guide.md"), "Use `/setup-pstack`.\n");
+  await writeFile(path.join(pluginRoot, "scripts", "verify.mjs"), "export const ok = true;\n");
+  await writeFile(path.join(pluginRoot, "agents", "reviewer.md"), "Cursor reviewer\n");
+  await writeFile(path.join(pluginRoot, "automations", "benny", "README.md"), "Cursor automation\n");
   return pluginRoot;
 }
