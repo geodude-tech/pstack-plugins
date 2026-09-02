@@ -4,6 +4,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 
 import { assertSafeDestination, discoverSource } from "./discovery.js";
+import { applyCompatibility } from "./compatibility.js";
 import { createMarketplace, createPluginManifest, normalizePluginName } from "./manifest.js";
 
 const execFileAsync = promisify(execFile);
@@ -96,6 +97,19 @@ export async function convertPstack(options) {
     createMarketplace(pluginName),
   );
 
+  const sourceCommit = await readGitCommit(source.root);
+  const compatibility = await applyCompatibility(pluginRoot, omittedPaths);
+  await writeJson(path.join(pluginRoot, "compatibility", "report.json"), compatibility.report);
+  await writeFile(path.join(pluginRoot, "compatibility", "report.md"), compatibility.markdown);
+  await writeFile(
+    path.join(pluginRoot, "NOTICE.generated.md"),
+    `# Generated attribution notice\n\nThis plugin was converted from pstack version ${source.manifest.version}`
+      + `${sourceCommit ? ` at commit ${sourceCommit}` : ""}.\n\n`
+      + "pstack originates in the Cursor plugins repository and is distributed under its declared license. "
+      + "This generated conversion is not an official Cursor or OpenAI project.\n\n"
+      + "Review `compatibility/report.md` before using the generated workflows.\n",
+  );
+
   const receipt = {
     generator: "pstack-to-codex",
     generatedAt: new Date().toISOString(),
@@ -103,12 +117,13 @@ export async function convertPstack(options) {
     source: {
       path: source.root,
       version: source.manifest.version,
-      commit: await readGitCommit(source.root),
+      commit: sourceCommit,
     },
     copiedFiles: copiedFiles.sort(),
     omittedPaths: omittedPaths.sort(),
+    compatibility: compatibility.report.summary,
   };
   await writeJson(path.join(destination, ".pstack-to-codex.json"), receipt);
 
-  return { destination, pluginName, pluginRoot, receipt };
+  return { destination, pluginName, pluginRoot, receipt, compatibility: compatibility.report };
 }

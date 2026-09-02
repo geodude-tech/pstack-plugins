@@ -23,7 +23,7 @@ export async function createCursorPstack(root, options = {}) {
   );
   await writeFile(
     path.join(pluginRoot, "skills", "poteto-mode", "SKILL.md"),
-    "---\nname: poteto-mode\ndescription: rigorous work\n---\n\nUse `/poteto-mode`.\n",
+    "---\nname: poteto-mode\ndescription: rigorous work\n---\n\nUse `/poteto-mode`. Ask the Agent tool to use claude-opus.\n",
   );
   await mkdir(path.join(pluginRoot, "docs"), { recursive: true });
   await mkdir(path.join(pluginRoot, "scripts"), { recursive: true });
@@ -31,6 +31,11 @@ export async function createCursorPstack(root, options = {}) {
   await mkdir(path.join(pluginRoot, "automations", "benny"), { recursive: true });
   await writeFile(path.join(pluginRoot, "README.md"), "# pstack\n");
   await writeFile(path.join(pluginRoot, "LICENSE"), "MIT fixture\n");
+  await mkdir(path.join(pluginRoot, "skills", "setup-pstack"), { recursive: true });
+  await writeFile(
+    path.join(pluginRoot, "skills", "setup-pstack", "SKILL.md"),
+    "---\nname: setup-pstack\ndescription: configure pstack\n---\n\nWrite ~/.cursor/rules/pstack.mdc.\n",
+  );
   await writeFile(path.join(pluginRoot, "docs", "guide.md"), "Use `/setup-pstack`.\n");
   await writeFile(path.join(pluginRoot, "scripts", "verify.mjs"), "export const ok = true;\n");
   await writeFile(path.join(pluginRoot, "agents", "reviewer.md"), "Cursor reviewer\n");

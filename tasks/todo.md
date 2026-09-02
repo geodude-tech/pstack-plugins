@@ -24,9 +24,9 @@
 ## Task 3: Compatibility rewriting and reporting
 
 **Acceptance criteria:**
-- [ ] Known safe substitutions are deterministic.
-- [ ] Unsupported Cursor commands, paths, models, hooks, agents, and automations are reported.
-- [ ] Markdown and JSON reports agree on finding counts.
+- [x] Known safe substitutions are deterministic.
+- [x] Unsupported Cursor commands, paths, models, hooks, agents, and automations are reported.
+- [x] Markdown and JSON reports agree on finding counts.
 
 **Verification:** `node --test test/compatibility.test.js`
 
