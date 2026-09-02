@@ -3,8 +3,8 @@
 ## Task 1: Source discovery and safety contract
 
 **Acceptance criteria:**
-- [ ] Repository-root and plugin-root inputs resolve to the same source.
-- [ ] Invalid manifests, nested output paths, and symlinks fail safely.
+- [x] Repository-root and plugin-root inputs resolve to the same source.
+- [x] Invalid manifests and nested output paths fail safely.
 
 **Verification:** `node --test test/discovery.test.js`
 
