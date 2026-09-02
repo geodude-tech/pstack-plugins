@@ -1,0 +1,17 @@
+{
+  "name": "pstack-to-codex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "pstack-to-codex": "./bin/pstack-to-codex.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/pstack-to-codex.js && node --check src/*.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
