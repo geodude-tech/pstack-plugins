@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a local, dependency-free CLI that converts a checked-out Cursor `pstack` plugin into a separate Codex plugin tree. The converter is for engineers who want a reproducible starting point without trusting a third-party prebuilt port. Success means the generated tree is installable as a local Codex marketplace plugin, preserves upstream attribution, and clearly reports every host-specific construct that was changed, omitted, or left for review.
+Build a local, dependency-free CLI that converts a checked-out Cursor `pstack` plugin into a separate plugin tree for another agent host. The converter is for engineers who want a reproducible starting point without trusting a third-party prebuilt port. It supports two targets, `codex` (default) and `claude`. Success means the generated tree is installable as a local marketplace plugin for the chosen target, preserves upstream attribution, and clearly reports every host-specific construct that was changed, omitted, or left for review — where "host-specific" is judged against the chosen target, not against Codex specifically.
 
 ## Tech Stack
 
@@ -38,6 +38,7 @@ Use small pure functions where practical, explicit result objects instead of hid
 
 ```text
 pstack-to-codex <source> --out <destination>
+  [--target <codex|claude>]
   [--name <plugin-name>]
   [--force]
   [--dry-run]
@@ -56,11 +57,11 @@ pstack-to-codex <source> --out <destination>
 
 1. Validate the Cursor manifest and required `skills/` tree.
 2. Copy skills, docs, scripts, assets, licenses, and notices without following symlinks.
-3. Exclude `.git`, Cursor manifests, Cursor-only agent definitions, and Cursor-only automations from executable Codex discovery.
-4. Generate `.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json` using valid Codex shapes.
-5. Apply a small, explicit set of text substitutions for known host names and invocation syntax. Never guess replacements for tools or model identifiers.
-6. Scan Markdown and scripts for known Cursor-only paths, commands, tools, models, hooks, and automation references.
-7. Write `compatibility/report.json`, `compatibility/report.md`, `NOTICE`, and `.pstack-to-codex.json` with source commit/version, copied files, rewrites, omissions, and unresolved findings.
+3. Exclude `.git`, Cursor manifests, Cursor-only agent definitions, and Cursor-only automations from executable discovery on the target host.
+4. Generate the target's plugin manifest (`.codex-plugin/plugin.json` or `.claude-plugin/plugin.json`) and marketplace file (`.agents/plugins/marketplace.json` or `.claude-plugin/marketplace.json`) using valid shapes for that target.
+5. Apply a small, explicit set of text substitutions for known host names and invocation syntax, using the sigil (or absence of one) that matches the target's own convention. Never guess replacements for tools or model identifiers.
+6. Scan Markdown and scripts for Cursor-only paths, commands, tools, models, hooks, and automation references that remain unmapped **for the chosen target** — a construct the target already supports natively (e.g. Claude Code's own `AskUserQuestion`, `Agent` tool, `/loop` skill, and `claude-*` model names) is not a finding.
+7. Write `compatibility/report.json`, `compatibility/report.md`, `NOTICE`, and `.pstack-to-codex.json` with source commit/version, target, copied files, rewrites, omissions, and unresolved findings.
 
 ## Testing Strategy
 

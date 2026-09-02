@@ -6,6 +6,7 @@ import { promisify } from "node:util";
 import { assertSafeDestination, discoverSource } from "./discovery.js";
 import { applyCompatibility } from "./compatibility.js";
 import { createMarketplace, createPluginManifest, normalizePluginName } from "./manifest.js";
+import { resolveTarget } from "./targets.js";
 import { validateGeneratedPlugin } from "./validation.js";
 
 const execFileAsync = promisify(execFile);
@@ -87,7 +88,8 @@ export async function convertPstack(options) {
     throw new Error(`Destination already exists: ${destination}`);
   }
 
-  const pluginName = normalizePluginName(options.name || "pstack-for-codex");
+  const target = resolveTarget(options.target);
+  const pluginName = normalizePluginName(options.name || target.defaultBaseName);
   const pluginRoot = path.join(destination, "plugins", pluginName);
   const copiedFiles = [];
   const omittedPaths = [];
@@ -113,15 +115,15 @@ export async function convertPstack(options) {
     if (await pathExists(path.join(source.root, directory))) omittedPaths.push(directory);
   }
 
-  const pluginManifest = createPluginManifest(source.manifest, pluginName);
-  await writeJson(path.join(pluginRoot, ".codex-plugin", "plugin.json"), pluginManifest);
+  const pluginManifest = createPluginManifest(source.manifest, pluginName, target.id);
+  await writeJson(path.join(pluginRoot, target.manifestDir, "plugin.json"), pluginManifest);
   await writeJson(
-    path.join(destination, ".agents", "plugins", "marketplace.json"),
-    createMarketplace(pluginName),
+    path.join(destination, ...target.marketplacePath),
+    createMarketplace(pluginName, target.id),
   );
 
   const sourceCommit = await readGitCommit(source.root);
-  const compatibility = await applyCompatibility(pluginRoot, omittedPaths);
+  const compatibility = await applyCompatibility(pluginRoot, omittedPaths, target.id);
   await writeJson(path.join(pluginRoot, "compatibility", "report.json"), compatibility.report);
   await writeFile(path.join(pluginRoot, "compatibility", "report.md"), compatibility.markdown);
   await writeFile(
@@ -129,14 +131,15 @@ export async function convertPstack(options) {
     `# Generated attribution notice\n\nThis plugin was converted from pstack version ${source.manifest.version}`
       + `${sourceCommit ? ` at commit ${sourceCommit}` : ""}.\n\n`
       + "pstack originates in the Cursor plugins repository and is distributed under its declared license. "
-      + "This generated conversion is not an official Cursor or OpenAI project.\n\n"
+      + `This generated conversion is ${target.vendorNote}.\n\n`
       + "Review `compatibility/report.md` before using the generated workflows.\n",
   );
-  const validation = await validateGeneratedPlugin(destination, pluginName);
+  const validation = await validateGeneratedPlugin(destination, pluginName, target.id);
 
   const receipt = {
     generator: "pstack-to-codex",
     generatedAt: new Date().toISOString(),
+    target: target.id,
     plugin: { name: pluginName, version: pluginManifest.version },
     source: {
       path: source.root,

@@ -4,20 +4,24 @@ import path from "node:path";
 
 import { convertPstack } from "./conversion.js";
 import { assertSafeDestination, discoverSource } from "./discovery.js";
+import { TARGET_IDS } from "./targets.js";
 
 export const USAGE = `Usage: pstack-to-codex <source> --out <destination> [options]
 
 Options:
-  --name <name>  Override the generated plugin name
-  --force        Replace an existing converter-owned destination
-  --dry-run      Analyze without creating the destination
-  --json         Print machine-readable output
-  --help         Show this help
+  --target <target>  Conversion target: ${TARGET_IDS.join(" or ")} (default: codex)
+  --name <name>       Override the generated plugin name
+  --force             Replace an existing converter-owned destination
+  --dry-run           Analyze without creating the destination
+  --json              Print machine-readable output
+  --help              Show this help
 `;
+
+const VALUE_OPTIONS = { "--out": "destination", "--name": "name", "--target": "target" };
 
 export function parseArgs(argv) {
   if (argv.includes("--help")) return { help: true };
-  const options = { force: false, dryRun: false, json: false };
+  const options = { force: false, dryRun: false, json: false, target: "codex" };
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (!argument.startsWith("-")) {
@@ -26,15 +30,18 @@ export function parseArgs(argv) {
     } else if (argument === "--force") options.force = true;
     else if (argument === "--dry-run") options.dryRun = true;
     else if (argument === "--json") options.json = true;
-    else if (argument === "--out" || argument === "--name") {
+    else if (argument in VALUE_OPTIONS) {
       const value = argv[index + 1];
       if (!value || value.startsWith("-")) throw new Error(`${argument} requires a value`);
-      options[argument === "--out" ? "destination" : "name"] = value;
+      options[VALUE_OPTIONS[argument]] = value;
       index += 1;
     } else throw new Error(`Unknown option: ${argument}`);
   }
   if (!options.sourcePath) throw new Error("A source path is required");
   if (!options.destination) throw new Error("--out is required");
+  if (!TARGET_IDS.includes(options.target)) {
+    throw new Error(`Unknown target: ${options.target}. Supported targets: ${TARGET_IDS.join(", ")}`);
+  }
   return options;
 }
 
@@ -103,6 +110,7 @@ export async function runCli(argv, io = process) {
       sourcePath: source.root,
       destination: conversionDestination,
       name: options.name,
+      target: options.target,
     });
     if (!options.dryRun) {
       const previousDestination = path.join(temporaryRoot, "previous");

@@ -42,6 +42,17 @@ Build a dependency-free Node.js CLI in four vertical slices: establish the contr
 - [x] Generated artifact passes the bundled Codex plugin validator.
 - [x] Implementation is reviewed for correctness and scope.
 
+### Phase 4: Claude Code target
+
+- [x] Task 7: Add a `targets.js` registry and a `--target <codex|claude>` CLI option, defaulting to `codex` for backward compatibility.
+- [x] Task 8: Generate `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` for the `claude` target, and validate them.
+- [x] Task 9: Make compatibility findings and skill-invocation rewrites target-aware — Claude Code already ships `AskUserQuestion`, an `Agent` tool, a `/loop` skill, and `claude-*` model names natively, so those are no longer findings for that target, and its skill invocations drop the sigil instead of gaining `$`.
+
+### Checkpoint: Multi-target
+
+- [x] Full test suite passes for both targets.
+- [x] Generated Claude Code artifact passes `validateGeneratedPlugin`.
+
 ## Risks and Mitigations
 
 | Risk | Impact | Mitigation |

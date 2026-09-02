@@ -1,0 +1,2040 @@
+{
+  "summary": {
+    "rewrites": 266,
+    "findings": 62
+  },
+  "rewrites": [
+    {
+      "line": 25,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "README.md"
+    },
+    {
+      "line": 26,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 30,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "README.md"
+    },
+    {
+      "line": 34,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 36,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 91,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 93,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 97,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 112,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 113,
+      "before": "`/how",
+      "after": "`how",
+      "file": "README.md"
+    },
+    {
+      "line": 114,
+      "before": "`/why",
+      "after": "`why",
+      "file": "README.md"
+    },
+    {
+      "line": 115,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "README.md"
+    },
+    {
+      "line": 116,
+      "before": "`/blast-radius",
+      "after": "`blast-radius",
+      "file": "README.md"
+    },
+    {
+      "line": 117,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "README.md"
+    },
+    {
+      "line": 118,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "README.md"
+    },
+    {
+      "line": 119,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "README.md"
+    },
+    {
+      "line": 120,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "README.md"
+    },
+    {
+      "line": 121,
+      "before": "`/automate-me",
+      "after": "`automate-me",
+      "file": "README.md"
+    },
+    {
+      "line": 122,
+      "before": "`/make-bot-ui",
+      "after": "`make-bot-ui",
+      "file": "README.md"
+    },
+    {
+      "line": 123,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "README.md"
+    },
+    {
+      "line": 124,
+      "before": "`/reflect",
+      "after": "`reflect",
+      "file": "README.md"
+    },
+    {
+      "line": 125,
+      "before": "`/teach",
+      "after": "`teach",
+      "file": "README.md"
+    },
+    {
+      "line": 126,
+      "before": "`/tdd",
+      "after": "`tdd",
+      "file": "README.md"
+    },
+    {
+      "line": 127,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "README.md"
+    },
+    {
+      "line": 128,
+      "before": "`/typescript-best-practices",
+      "after": "`typescript-best-practices",
+      "file": "README.md"
+    },
+    {
+      "line": 129,
+      "before": "`/figure-it-out",
+      "after": "`figure-it-out",
+      "file": "README.md"
+    },
+    {
+      "line": 130,
+      "before": "`/show-me-your-work",
+      "after": "`show-me-your-work",
+      "file": "README.md"
+    },
+    {
+      "line": 131,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "README.md"
+    },
+    {
+      "line": 132,
+      "before": "`/maintain-verification-skill",
+      "after": "`maintain-verification-skill",
+      "file": "README.md"
+    },
+    {
+      "line": 133,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "README.md"
+    },
+    {
+      "line": 134,
+      "before": "`/bro",
+      "after": "`bro",
+      "file": "README.md"
+    },
+    {
+      "line": 135,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "README.md"
+    },
+    {
+      "line": 143,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 190,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 192,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "README.md"
+    },
+    {
+      "line": 239,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 245,
+      "before": "`/automate-me",
+      "after": "`automate-me",
+      "file": "README.md"
+    },
+    {
+      "line": 247,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "README.md"
+    },
+    {
+      "line": 41,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 46,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 100,
+      "before": "/how",
+      "after": "how",
+      "file": "README.md"
+    },
+    {
+      "line": 104,
+      "before": "/interrogate",
+      "after": "interrogate",
+      "file": "README.md"
+    },
+    {
+      "line": 23,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 25,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 27,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 31,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 31,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 33,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 45,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 47,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 49,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 20,
+      "before": "/setup-pstack",
+      "after": "setup-pstack",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 42,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/01-setup.md"
+    },
+    {
+      "line": 1,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 3,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 64,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 92,
+      "before": "`/figure-it-out",
+      "after": "`figure-it-out",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 92,
+      "before": "`/show-me-your-work",
+      "after": "`show-me-your-work",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 35,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 43,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 61,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 71,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 79,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 89,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/02-poteto-mode.md"
+    },
+    {
+      "line": 3,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 3,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 3,
+      "before": "`/teach",
+      "after": "`teach",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 3,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 7,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 13,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 15,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 23,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 29,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 33,
+      "before": "`/teach",
+      "after": "`teach",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 39,
+      "before": "`/teach",
+      "after": "`teach",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 39,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 39,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 41,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 47,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 47,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 59,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 10,
+      "before": "/how",
+      "after": "how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 18,
+      "before": "/how",
+      "after": "how",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 26,
+      "before": "/why",
+      "after": "why",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 36,
+      "before": "/teach",
+      "after": "teach",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 44,
+      "before": "/recall",
+      "after": "recall",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 54,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/03-understand.md"
+    },
+    {
+      "line": 3,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 3,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 3,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 3,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 7,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 13,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 13,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 13,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 13,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 21,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 27,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 43,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 49,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 55,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 57,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 57,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 59,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 65,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 73,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 74,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 74,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 75,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 76,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 77,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 77,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 79,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 79,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 10,
+      "before": "/architect",
+      "after": "architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 18,
+      "before": "/architect",
+      "after": "architect",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 24,
+      "before": "/arena",
+      "after": "arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 46,
+      "before": "/arena",
+      "after": "arena",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 52,
+      "before": "/swarm",
+      "after": "swarm",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 62,
+      "before": "/interrogate",
+      "after": "interrogate",
+      "file": "docs/guide/04-design.md"
+    },
+    {
+      "line": 35,
+      "before": "`/tdd",
+      "after": "`tdd",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 43,
+      "before": "`/tdd",
+      "after": "`tdd",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 51,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 53,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 61,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 69,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 69,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 71,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 71,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 10,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 16,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 22,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 28,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 40,
+      "before": "/tdd",
+      "after": "tdd",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 56,
+      "before": "/unslop",
+      "after": "unslop",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 66,
+      "before": "/no-comments",
+      "after": "no-comments",
+      "file": "docs/guide/05-build-and-clean.md"
+    },
+    {
+      "line": 25,
+      "before": "`/blast-radius",
+      "after": "`blast-radius",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 35,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 41,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 51,
+      "before": "`/maintain-verification-skill",
+      "after": "`maintain-verification-skill",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 12,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 32,
+      "before": "/create-verification-skill",
+      "after": "create-verification-skill",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 48,
+      "before": "/maintain-verification-skill",
+      "after": "maintain-verification-skill",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 56,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 66,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 72,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 82,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/06-verify-and-ship.md"
+    },
+    {
+      "line": 27,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 27,
+      "before": "`/figure-it-out",
+      "after": "`figure-it-out",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 47,
+      "before": "`/show-me-your-work",
+      "after": "`show-me-your-work",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 12,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 52,
+      "before": "/show-me-your-work",
+      "after": "show-me-your-work",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 64,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 70,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 76,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/07-overnight.md"
+    },
+    {
+      "line": 3,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/08-principles.md"
+    },
+    {
+      "line": 5,
+      "before": "`/automate-me",
+      "after": "`automate-me",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 11,
+      "before": "`/automate-me",
+      "after": "`automate-me",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 11,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 21,
+      "before": "`/reflect",
+      "after": "`reflect",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 29,
+      "before": "`/reflect",
+      "after": "`reflect",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 41,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 41,
+      "before": "`/maintain-verification-skill",
+      "after": "`maintain-verification-skill",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 43,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 51,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 8,
+      "before": "/automate-me",
+      "after": "automate-me",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 16,
+      "before": "/automate-me",
+      "after": "automate-me",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 26,
+      "before": "/reflect",
+      "after": "reflect",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 36,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 48,
+      "before": "/technical-writing",
+      "after": "technical-writing",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 58,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/09-make-it-yours.md"
+    },
+    {
+      "line": 79,
+      "before": "`/bro",
+      "after": "`bro",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 86,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 86,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 86,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 87,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 26,
+      "before": "/swarm",
+      "after": "swarm",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 34,
+      "before": "/interrogate",
+      "after": "interrogate",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 42,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 68,
+      "before": "/unslop",
+      "after": "unslop",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 76,
+      "before": "/bro",
+      "after": "bro",
+      "file": "docs/guide/10-recipes-and-pitfalls.md"
+    },
+    {
+      "line": 3,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 8,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 9,
+      "before": "`/how",
+      "after": "`how",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 9,
+      "before": "`/why",
+      "after": "`why",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 9,
+      "before": "`/teach",
+      "after": "`teach",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 9,
+      "before": "`/recall",
+      "after": "`recall",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 10,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 10,
+      "before": "`/arena",
+      "after": "`arena",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 10,
+      "before": "`/swarm",
+      "after": "`swarm",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 10,
+      "before": "`/interrogate",
+      "after": "`interrogate",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 11,
+      "before": "`/tdd",
+      "after": "`tdd",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 11,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 11,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 28,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 25,
+      "before": "/poteto-mode",
+      "after": "poteto-mode",
+      "file": "docs/guide/README.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/automate-me/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/blast-radius/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/bro/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/create-verification-skill/SKILL.md"
+    },
+    {
+      "line": 44,
+      "before": "`/maintain-verification-skill",
+      "after": "`maintain-verification-skill",
+      "file": "skills/create-verification-skill/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/figure-it-out/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/maintain-verification-skill/SKILL.md"
+    },
+    {
+      "line": 9,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "skills/maintain-verification-skill/SKILL.md"
+    },
+    {
+      "line": 25,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "skills/maintain-verification-skill/SKILL.md"
+    },
+    {
+      "line": 7,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/make-bot-ui/SKILL.md"
+    },
+    {
+      "line": 2,
+      "before": "name: Make Bot UI",
+      "after": "name: make-bot-ui",
+      "file": "skills/make-bot-ui/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/no-comments/SKILL.md"
+    },
+    {
+      "line": 20,
+      "before": "`/how",
+      "after": "`how",
+      "file": "skills/no-comments/SKILL.md"
+    },
+    {
+      "line": 20,
+      "before": "`/why",
+      "after": "`why",
+      "file": "skills/no-comments/SKILL.md"
+    },
+    {
+      "line": 20,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/no-comments/SKILL.md"
+    },
+    {
+      "line": 21,
+      "before": "`/architect",
+      "after": "`architect",
+      "file": "skills/no-comments/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 2,
+      "before": "name: Poteto Mode",
+      "after": "name: poteto-mode",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 27,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 29,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 89,
+      "before": "`/poteto-mode",
+      "after": "`poteto-mode",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 91,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 91,
+      "before": "`/setup-pstack",
+      "after": "`setup-pstack",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 6,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/playbooks/autopilot-full.md"
+    },
+    {
+      "line": 5,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/playbooks/autopilot-stack.md"
+    },
+    {
+      "line": 9,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 9,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 60,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 9,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 9,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 9,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 11,
+      "before": "`/technical-writing",
+      "after": "`technical-writing",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 11,
+      "before": "`/unslop",
+      "after": "`unslop",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 31,
+      "before": "`/no-comments",
+      "after": "`no-comments",
+      "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-boundary-discipline/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-build-the-lever/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-encode-lessons-in-structure/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-exhaust-the-design-space/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-experience-first/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-fix-root-causes/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-foundational-thinking/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-guard-the-context-window/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-laziness-protocol/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-make-operations-idempotent/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-minimize-reader-load/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-model-the-domain/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-never-block-on-the-human/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-outcome-oriented-execution/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-prove-it-works/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-redesign-from-first-principles/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-separate-before-serializing-shared-state/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-sequence-verifiable-units/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-subtract-before-you-add/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/principle-type-system-discipline/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/recall/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 65,
+      "before": "`/create-verification-skill",
+      "after": "`create-verification-skill",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/show-me-your-work/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/swarm/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/tdd/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/teach/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/technical-writing/SKILL.md"
+    },
+    {
+      "line": 5,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/typescript-best-practices/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/unslop/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/why/SKILL.md"
+    }
+  ],
+  "findings": [
+    {
+      "code": "omitted-component",
+      "file": "agents",
+      "line": null,
+      "match": "agents",
+      "message": "This Cursor runtime component was not copied into Claude Code executable discovery."
+    },
+    {
+      "code": "omitted-component",
+      "file": "automations",
+      "line": null,
+      "match": "automations",
+      "message": "This Cursor runtime component was not copied into Claude Code executable discovery."
+    },
+    {
+      "code": "cursor-command",
+      "file": "README.md",
+      "line": 18,
+      "match": "/add-plugin",
+      "message": "This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead."
+    },
+    {
+      "code": "model-identifier",
+      "file": "README.md",
+      "line": 30,
+      "match": "fable 5.1",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "README.md",
+      "line": 122,
+      "match": "Grok",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "README.md",
+      "line": 253,
+      "match": ".cursor/automations/benny/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-command",
+      "file": "docs/guide/01-setup.md",
+      "line": 10,
+      "match": "/add-plugin",
+      "message": "This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead."
+    },
+    {
+      "code": "cursor-path",
+      "file": "docs/guide/01-setup.md",
+      "line": 23,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "docs/guide/01-setup.md",
+      "line": 33,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "docs/guide/06-verify-and-ship.md",
+      "line": 37,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "docs/guide/09-make-it-yours.md",
+      "line": 11,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/architect/SKILL.md",
+      "line": 33,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/arena/SKILL.md",
+      "line": 28,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/arena/SKILL.md",
+      "line": 28,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/arena/SKILL.md",
+      "line": 41,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/arena/SKILL.md",
+      "line": 41,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/automate-me/SKILL.md",
+      "line": 17,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/automate-me/SKILL.md",
+      "line": 29,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/automate-me/SKILL.md",
+      "line": 69,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/create-verification-skill/SKILL.md",
+      "line": 9,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/create-verification-skill/SKILL.md",
+      "line": 25,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/create-verification-skill/SKILL.md",
+      "line": 36,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/how/SKILL.md",
+      "line": 49,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/how/SKILL.md",
+      "line": 113,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/interrogate/SKILL.md",
+      "line": 36,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/interrogate/SKILL.md",
+      "line": 42,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/maintain-verification-skill/SKILL.md",
+      "line": 25,
+      "match": ".cursor/skills/verify-",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/make-bot-ui/SKILL.md",
+      "line": 5,
+      "match": "Grok",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/make-bot-ui/SKILL.md",
+      "line": 37,
+      "match": ".cursor",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/make-bot-ui/SKILL.md",
+      "line": 55,
+      "match": "Grok",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/SKILL.md",
+      "line": 91,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/poteto-mode/playbooks/eval.md",
+      "line": 24,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/playbooks/feature.md",
+      "line": 12,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "line": 13,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "line": 101,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/playbooks/refactoring.md",
+      "line": 11,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/poteto-mode/playbooks/session-pickup.md",
+      "line": 7,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/poteto-mode/playbooks/worktree-cleanup.md",
+      "line": 5,
+      "match": ".cursor/worktrees/myrepo/x",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/scripts/check-plan.mjs",
+      "line": 7,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/poteto-mode/scripts/worktree-audit.sh",
+      "line": 25,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/poteto-mode/scripts/worktree-audit.sh",
+      "line": 27,
+      "match": ".cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/recall/SKILL.md",
+      "line": 15,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/reflect/SKILL.md",
+      "line": 25,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/reflect/references/divergent-reviewer.md",
+      "line": 23,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/reflect/references/judgment-reviewer.md",
+      "line": 22,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/reflect/references/tooling-reviewer.md",
+      "line": 37,
+      "match": ".cursor/skills/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 8,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 18,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 30,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 39,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 45,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 47,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 48,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 52,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 53,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 54,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 55,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/setup-pstack/SKILL.md",
+      "line": 56,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/show-me-your-work/SKILL.md",
+      "line": 56,
+      "match": "~/.cursor/projects/",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "cursor-path",
+      "file": "skills/swarm/SKILL.md",
+      "line": 25,
+      "match": "~/.cursor/rules/pstack-models.mdc",
+      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/swarm/SKILL.md",
+      "line": 25,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/why/SKILL.md",
+      "line": 121,
+      "match": "grok-4.6-fast-xhigh",
+      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
+    }
+  ]
+}

@@ -37,6 +37,40 @@ test("generates a Codex marketplace with a translated plugin manifest", async ()
   assert.equal(marketplace.plugins[0].policy.installation, "AVAILABLE");
 });
 
+test("generates a Claude Code marketplace with a translated plugin manifest", async () => {
+  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-convert-source-"));
+  const source = await createCursorPstack(sourceParent);
+  const destination = `${sourceParent}-output`;
+
+  const result = await convertPstack({ sourcePath: source, destination, target: "claude" });
+
+  const pluginRoot = path.join(destination, "plugins", "pstack-for-claude");
+  const manifest = await readJson(path.join(pluginRoot, ".claude-plugin", "plugin.json"));
+  assert.equal(result.pluginRoot, pluginRoot);
+  assert.equal(manifest.name, "pstack-for-claude");
+  assert.equal(manifest.version, "0.14.6");
+  assert.equal(manifest.skills, "./skills/");
+  assert.equal(manifest.author.name, "Lauren Tan");
+  assert.equal(manifest.interface, undefined);
+
+  const marketplace = await readJson(path.join(destination, ".claude-plugin", "marketplace.json"));
+  assert.equal(marketplace.name, "pstack-for-claude-local");
+  assert.equal(marketplace.plugins[0].source, "./plugins/pstack-for-claude");
+
+  const receipt = await readJson(path.join(destination, ".pstack-to-codex.json"));
+  assert.equal(receipt.target, "claude");
+});
+
+test("rejects an unknown conversion target", async () => {
+  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-convert-source-"));
+  const source = await createCursorPstack(sourceParent);
+
+  await assert.rejects(
+    () => convertPstack({ sourcePath: source, destination: `${sourceParent}-output`, target: "cursor" }),
+    /Unknown target: cursor/,
+  );
+});
+
 test("copies supported content, omits Cursor runtime directories, and records provenance", async () => {
   const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-convert-source-"));
   const source = await createCursorPstack(sourceParent);

@@ -19,6 +19,32 @@ test("validates a complete generated plugin", async () => {
   assert.equal(validation.skillCount, 2);
 });
 
+test("validates a complete generated Claude Code plugin", async () => {
+  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-validation-source-"));
+  const source = await createCursorPstack(sourceParent);
+  const result = await convertPstack({ sourcePath: source, destination: `${sourceParent}-output`, target: "claude" });
+
+  const validation = await validateGeneratedPlugin(result.destination, result.pluginName, "claude");
+
+  assert.equal(validation.valid, true);
+  assert.equal(validation.skillCount, 2);
+});
+
+test("rejects an invalid marketplace source path for a generated Claude Code plugin", async () => {
+  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-validation-source-"));
+  const source = await createCursorPstack(sourceParent);
+  const result = await convertPstack({ sourcePath: source, destination: `${sourceParent}-output`, target: "claude" });
+  const marketplacePath = path.join(result.destination, ".claude-plugin", "marketplace.json");
+  const marketplace = JSON.parse(await readFile(marketplacePath, "utf8"));
+  marketplace.plugins[0].source = "../../outside";
+  await writeFile(marketplacePath, JSON.stringify(marketplace));
+
+  await assert.rejects(
+    () => validateGeneratedPlugin(result.destination, result.pluginName, "claude"),
+    /marketplace source path/,
+  );
+});
+
 test("rejects invalid manifest versions and marketplace paths", async () => {
   const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-validation-source-"));
   const source = await createCursorPstack(sourceParent);

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "pstack-for-claude-local",
+  "owner": {
+    "name": "pstack contributors"
+  },
+  "plugins": [
+    {
+      "name": "pstack-for-claude",
+      "source": "./plugins/pstack-for-claude"
+    }
+  ]
+}

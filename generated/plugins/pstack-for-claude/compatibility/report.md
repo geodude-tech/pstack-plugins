@@ -1,0 +1,340 @@
+# pstack compatibility report
+
+Rewrites: 266
+Manual-review findings: 62
+
+The converter applies only exact skill-invocation rewrites. Every finding below needs human review before semantic parity can be claimed.
+
+## Findings
+
+- **omitted-component** at `agents`: This Cursor runtime component was not copied into Claude Code executable discovery. (`agents`)
+- **omitted-component** at `automations`: This Cursor runtime component was not copied into Claude Code executable discovery. (`automations`)
+- **cursor-command** at `README.md:18`: This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead. (`/add-plugin`)
+- **model-identifier** at `README.md:30`: Choose an available Claude model instead of preserving this host-specific model identifier. (`fable 5.1`)
+- **model-identifier** at `README.md:122`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
+- **cursor-path** at `README.md:253`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/automations/benny/`)
+- **cursor-command** at `docs/guide/01-setup.md:10`: This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead. (`/add-plugin`)
+- **cursor-path** at `docs/guide/01-setup.md:23`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **cursor-path** at `docs/guide/01-setup.md:33`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **cursor-path** at `docs/guide/06-verify-and-ship.md:37`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **cursor-path** at `docs/guide/09-make-it-yours.md:11`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **model-identifier** at `skills/architect/SKILL.md:33`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/arena/SKILL.md:28`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **model-identifier** at `skills/arena/SKILL.md:28`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/arena/SKILL.md:41`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **model-identifier** at `skills/arena/SKILL.md:41`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/automate-me/SKILL.md:17`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **cursor-path** at `skills/automate-me/SKILL.md:29`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/automate-me/SKILL.md:69`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **cursor-path** at `skills/create-verification-skill/SKILL.md:9`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **cursor-path** at `skills/create-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **cursor-path** at `skills/create-verification-skill/SKILL.md:36`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **model-identifier** at `skills/how/SKILL.md:49`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/how/SKILL.md:113`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/interrogate/SKILL.md:36`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **model-identifier** at `skills/interrogate/SKILL.md:42`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/maintain-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
+- **model-identifier** at `skills/make-bot-ui/SKILL.md:5`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
+- **cursor-path** at `skills/make-bot-ui/SKILL.md:37`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor`)
+- **model-identifier** at `skills/make-bot-ui/SKILL.md:55`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
+- **model-identifier** at `skills/poteto-mode/SKILL.md:91`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/poteto-mode/playbooks/eval.md:24`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **model-identifier** at `skills/poteto-mode/playbooks/feature.md:12`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/poteto-mode/playbooks/multi-phase-plan.md:101`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/poteto-mode/playbooks/refactoring.md:11`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/poteto-mode/playbooks/session-pickup.md:7`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/poteto-mode/playbooks/worktree-cleanup.md:5`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/worktrees/myrepo/x`)
+- **model-identifier** at `skills/poteto-mode/scripts/check-plan.mjs:7`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:27`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/projects/`)
+- **cursor-path** at `skills/recall/SKILL.md:15`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/reflect/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/reflect/references/divergent-reviewer.md:23`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **cursor-path** at `skills/reflect/references/judgment-reviewer.md:22`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **cursor-path** at `skills/reflect/references/tooling-reviewer.md:37`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
+- **cursor-path** at `skills/setup-pstack/SKILL.md:8`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **cursor-path** at `skills/setup-pstack/SKILL.md:18`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **cursor-path** at `skills/setup-pstack/SKILL.md:30`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:39`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:45`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:47`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:48`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:52`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:53`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:54`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:55`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/setup-pstack/SKILL.md:56`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **cursor-path** at `skills/show-me-your-work/SKILL.md:56`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
+- **cursor-path** at `skills/swarm/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/rules/pstack-models.mdc`)
+- **model-identifier** at `skills/swarm/SKILL.md:25`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+- **model-identifier** at `skills/why/SKILL.md:121`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-fast-xhigh`)
+
+## Rewrites
+
+- `README.md:25`: ``/setup-pstack` → ``setup-pstack`
+- `README.md:26`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:30`: ``/setup-pstack` → ``setup-pstack`
+- `README.md:34`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:36`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:91`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:93`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:97`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:112`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:113`: ``/how` → ``how`
+- `README.md:114`: ``/why` → ``why`
+- `README.md:115`: ``/recall` → ``recall`
+- `README.md:116`: ``/blast-radius` → ``blast-radius`
+- `README.md:117`: ``/architect` → ``architect`
+- `README.md:118`: ``/arena` → ``arena`
+- `README.md:119`: ``/swarm` → ``swarm`
+- `README.md:120`: ``/interrogate` → ``interrogate`
+- `README.md:121`: ``/automate-me` → ``automate-me`
+- `README.md:122`: ``/make-bot-ui` → ``make-bot-ui`
+- `README.md:123`: ``/setup-pstack` → ``setup-pstack`
+- `README.md:124`: ``/reflect` → ``reflect`
+- `README.md:125`: ``/teach` → ``teach`
+- `README.md:126`: ``/tdd` → ``tdd`
+- `README.md:127`: ``/no-comments` → ``no-comments`
+- `README.md:128`: ``/typescript-best-practices` → ``typescript-best-practices`
+- `README.md:129`: ``/figure-it-out` → ``figure-it-out`
+- `README.md:130`: ``/show-me-your-work` → ``show-me-your-work`
+- `README.md:131`: ``/create-verification-skill` → ``create-verification-skill`
+- `README.md:132`: ``/maintain-verification-skill` → ``maintain-verification-skill`
+- `README.md:133`: ``/unslop` → ``unslop`
+- `README.md:134`: ``/bro` → ``bro`
+- `README.md:135`: ``/technical-writing` → ``technical-writing`
+- `README.md:143`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:190`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:192`: ``/no-comments` → ``no-comments`
+- `README.md:239`: ``/poteto-mode` → ``poteto-mode`
+- `README.md:245`: ``/automate-me` → ``automate-me`
+- `README.md:247`: ``/setup-pstack` → ``setup-pstack`
+- `README.md:41`: `/poteto-mode` → `poteto-mode`
+- `README.md:46`: `/poteto-mode` → `poteto-mode`
+- `README.md:100`: `/how` → `how`
+- `README.md:104`: `/interrogate` → `interrogate`
+- `docs/guide/01-setup.md:23`: ``/setup-pstack` → ``setup-pstack`
+- `docs/guide/01-setup.md:25`: ``/setup-pstack` → ``setup-pstack`
+- `docs/guide/01-setup.md:27`: ``/swarm` → ``swarm`
+- `docs/guide/01-setup.md:31`: ``/setup-pstack` → ``setup-pstack`
+- `docs/guide/01-setup.md:31`: ``/create-verification-skill` → ``create-verification-skill`
+- `docs/guide/01-setup.md:33`: ``/create-verification-skill` → ``create-verification-skill`
+- `docs/guide/01-setup.md:45`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/01-setup.md:47`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/01-setup.md:49`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/01-setup.md:20`: `/setup-pstack` → `setup-pstack`
+- `docs/guide/01-setup.md:42`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:1`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/02-poteto-mode.md:3`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/02-poteto-mode.md:64`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/02-poteto-mode.md:92`: ``/figure-it-out` → ``figure-it-out`
+- `docs/guide/02-poteto-mode.md:92`: ``/show-me-your-work` → ``show-me-your-work`
+- `docs/guide/02-poteto-mode.md:35`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:43`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:61`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:71`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:79`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/02-poteto-mode.md:89`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/03-understand.md:3`: ``/how` → ``how`
+- `docs/guide/03-understand.md:3`: ``/why` → ``why`
+- `docs/guide/03-understand.md:3`: ``/teach` → ``teach`
+- `docs/guide/03-understand.md:3`: ``/recall` → ``recall`
+- `docs/guide/03-understand.md:7`: ``/how` → ``how`
+- `docs/guide/03-understand.md:13`: ``/how` → ``how`
+- `docs/guide/03-understand.md:15`: ``/how` → ``how`
+- `docs/guide/03-understand.md:23`: ``/why` → ``why`
+- `docs/guide/03-understand.md:29`: ``/why` → ``why`
+- `docs/guide/03-understand.md:33`: ``/teach` → ``teach`
+- `docs/guide/03-understand.md:39`: ``/teach` → ``teach`
+- `docs/guide/03-understand.md:39`: ``/how` → ``how`
+- `docs/guide/03-understand.md:39`: ``/why` → ``why`
+- `docs/guide/03-understand.md:41`: ``/recall` → ``recall`
+- `docs/guide/03-understand.md:47`: ``/recall` → ``recall`
+- `docs/guide/03-understand.md:47`: ``/recall` → ``recall`
+- `docs/guide/03-understand.md:59`: ``/how` → ``how`
+- `docs/guide/03-understand.md:10`: `/how` → `how`
+- `docs/guide/03-understand.md:18`: `/how` → `how`
+- `docs/guide/03-understand.md:26`: `/why` → `why`
+- `docs/guide/03-understand.md:36`: `/teach` → `teach`
+- `docs/guide/03-understand.md:44`: `/recall` → `recall`
+- `docs/guide/03-understand.md:54`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/04-design.md:3`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:3`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:3`: ``/interrogate` → ``interrogate`
+- `docs/guide/04-design.md:3`: ``/swarm` → ``swarm`
+- `docs/guide/04-design.md:7`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:13`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:13`: ``/how` → ``how`
+- `docs/guide/04-design.md:13`: ``/why` → ``why`
+- `docs/guide/04-design.md:13`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:21`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:27`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:43`: ``/setup-pstack` → ``setup-pstack`
+- `docs/guide/04-design.md:49`: ``/swarm` → ``swarm`
+- `docs/guide/04-design.md:55`: ``/swarm` → ``swarm`
+- `docs/guide/04-design.md:57`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:57`: ``/swarm` → ``swarm`
+- `docs/guide/04-design.md:59`: ``/interrogate` → ``interrogate`
+- `docs/guide/04-design.md:65`: ``/interrogate` → ``interrogate`
+- `docs/guide/04-design.md:73`: ``/interrogate` → ``interrogate`
+- `docs/guide/04-design.md:74`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:74`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:75`: ``/arena` → ``arena`
+- `docs/guide/04-design.md:76`: ``/swarm` → ``swarm`
+- `docs/guide/04-design.md:77`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:77`: ``/interrogate` → ``interrogate`
+- `docs/guide/04-design.md:79`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/04-design.md:79`: ``/architect` → ``architect`
+- `docs/guide/04-design.md:10`: `/architect` → `architect`
+- `docs/guide/04-design.md:18`: `/architect` → `architect`
+- `docs/guide/04-design.md:24`: `/arena` → `arena`
+- `docs/guide/04-design.md:46`: `/arena` → `arena`
+- `docs/guide/04-design.md:52`: `/swarm` → `swarm`
+- `docs/guide/04-design.md:62`: `/interrogate` → `interrogate`
+- `docs/guide/05-build-and-clean.md:35`: ``/tdd` → ``tdd`
+- `docs/guide/05-build-and-clean.md:43`: ``/tdd` → ``tdd`
+- `docs/guide/05-build-and-clean.md:51`: ``/unslop` → ``unslop`
+- `docs/guide/05-build-and-clean.md:53`: ``/unslop` → ``unslop`
+- `docs/guide/05-build-and-clean.md:61`: ``/no-comments` → ``no-comments`
+- `docs/guide/05-build-and-clean.md:69`: ``/no-comments` → ``no-comments`
+- `docs/guide/05-build-and-clean.md:69`: ``/no-comments` → ``no-comments`
+- `docs/guide/05-build-and-clean.md:71`: ``/unslop` → ``unslop`
+- `docs/guide/05-build-and-clean.md:71`: ``/no-comments` → ``no-comments`
+- `docs/guide/05-build-and-clean.md:10`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/05-build-and-clean.md:16`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/05-build-and-clean.md:22`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/05-build-and-clean.md:28`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/05-build-and-clean.md:40`: `/tdd` → `tdd`
+- `docs/guide/05-build-and-clean.md:56`: `/unslop` → `unslop`
+- `docs/guide/05-build-and-clean.md:66`: `/no-comments` → `no-comments`
+- `docs/guide/06-verify-and-ship.md:25`: ``/blast-radius` → ``blast-radius`
+- `docs/guide/06-verify-and-ship.md:35`: ``/create-verification-skill` → ``create-verification-skill`
+- `docs/guide/06-verify-and-ship.md:41`: ``/swarm` → ``swarm`
+- `docs/guide/06-verify-and-ship.md:51`: ``/maintain-verification-skill` → ``maintain-verification-skill`
+- `docs/guide/06-verify-and-ship.md:12`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/06-verify-and-ship.md:32`: `/create-verification-skill` → `create-verification-skill`
+- `docs/guide/06-verify-and-ship.md:48`: `/maintain-verification-skill` → `maintain-verification-skill`
+- `docs/guide/06-verify-and-ship.md:56`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/06-verify-and-ship.md:66`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/06-verify-and-ship.md:72`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/06-verify-and-ship.md:82`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/07-overnight.md:27`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/07-overnight.md:27`: ``/figure-it-out` → ``figure-it-out`
+- `docs/guide/07-overnight.md:47`: ``/show-me-your-work` → ``show-me-your-work`
+- `docs/guide/07-overnight.md:12`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/07-overnight.md:52`: `/show-me-your-work` → `show-me-your-work`
+- `docs/guide/07-overnight.md:64`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/07-overnight.md:70`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/07-overnight.md:76`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/08-principles.md:3`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/09-make-it-yours.md:5`: ``/automate-me` → ``automate-me`
+- `docs/guide/09-make-it-yours.md:11`: ``/automate-me` → ``automate-me`
+- `docs/guide/09-make-it-yours.md:11`: ``/unslop` → ``unslop`
+- `docs/guide/09-make-it-yours.md:21`: ``/reflect` → ``reflect`
+- `docs/guide/09-make-it-yours.md:29`: ``/reflect` → ``reflect`
+- `docs/guide/09-make-it-yours.md:41`: ``/create-verification-skill` → ``create-verification-skill`
+- `docs/guide/09-make-it-yours.md:41`: ``/maintain-verification-skill` → ``maintain-verification-skill`
+- `docs/guide/09-make-it-yours.md:43`: ``/technical-writing` → ``technical-writing`
+- `docs/guide/09-make-it-yours.md:51`: ``/technical-writing` → ``technical-writing`
+- `docs/guide/09-make-it-yours.md:8`: `/automate-me` → `automate-me`
+- `docs/guide/09-make-it-yours.md:16`: `/automate-me` → `automate-me`
+- `docs/guide/09-make-it-yours.md:26`: `/reflect` → `reflect`
+- `docs/guide/09-make-it-yours.md:36`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/09-make-it-yours.md:48`: `/technical-writing` → `technical-writing`
+- `docs/guide/09-make-it-yours.md:58`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/10-recipes-and-pitfalls.md:79`: ``/bro` → ``bro`
+- `docs/guide/10-recipes-and-pitfalls.md:86`: ``/arena` → ``arena`
+- `docs/guide/10-recipes-and-pitfalls.md:86`: ``/arena` → ``arena`
+- `docs/guide/10-recipes-and-pitfalls.md:86`: ``/swarm` → ``swarm`
+- `docs/guide/10-recipes-and-pitfalls.md:87`: ``/interrogate` → ``interrogate`
+- `docs/guide/10-recipes-and-pitfalls.md:26`: `/swarm` → `swarm`
+- `docs/guide/10-recipes-and-pitfalls.md:34`: `/interrogate` → `interrogate`
+- `docs/guide/10-recipes-and-pitfalls.md:42`: `/poteto-mode` → `poteto-mode`
+- `docs/guide/10-recipes-and-pitfalls.md:68`: `/unslop` → `unslop`
+- `docs/guide/10-recipes-and-pitfalls.md:76`: `/bro` → `bro`
+- `docs/guide/README.md:3`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/README.md:8`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/README.md:9`: ``/how` → ``how`
+- `docs/guide/README.md:9`: ``/why` → ``why`
+- `docs/guide/README.md:9`: ``/teach` → ``teach`
+- `docs/guide/README.md:9`: ``/recall` → ``recall`
+- `docs/guide/README.md:10`: ``/architect` → ``architect`
+- `docs/guide/README.md:10`: ``/arena` → ``arena`
+- `docs/guide/README.md:10`: ``/swarm` → ``swarm`
+- `docs/guide/README.md:10`: ``/interrogate` → ``interrogate`
+- `docs/guide/README.md:11`: ``/tdd` → ``tdd`
+- `docs/guide/README.md:11`: ``/unslop` → ``unslop`
+- `docs/guide/README.md:11`: ``/no-comments` → ``no-comments`
+- `docs/guide/README.md:28`: ``/poteto-mode` → ``poteto-mode`
+- `docs/guide/README.md:25`: `/poteto-mode` → `poteto-mode`
+- `skills/architect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/arena/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/automate-me/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/blast-radius/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/bro/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/create-verification-skill/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/create-verification-skill/SKILL.md:44`: ``/maintain-verification-skill` → ``maintain-verification-skill`
+- `skills/figure-it-out/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/how/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/interrogate/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/maintain-verification-skill/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/maintain-verification-skill/SKILL.md:9`: ``/create-verification-skill` → ``create-verification-skill`
+- `skills/maintain-verification-skill/SKILL.md:25`: ``/create-verification-skill` → ``create-verification-skill`
+- `skills/make-bot-ui/SKILL.md:7`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/make-bot-ui/SKILL.md:2`: `name: Make Bot UI` → `name: make-bot-ui`
+- `skills/no-comments/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/no-comments/SKILL.md:20`: ``/how` → ``how`
+- `skills/no-comments/SKILL.md:20`: ``/why` → ``why`
+- `skills/no-comments/SKILL.md:20`: ``/no-comments` → ``no-comments`
+- `skills/no-comments/SKILL.md:21`: ``/architect` → ``architect`
+- `skills/poteto-mode/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/poteto-mode/SKILL.md:2`: `name: Poteto Mode` → `name: poteto-mode`
+- `skills/poteto-mode/SKILL.md:27`: ``/technical-writing` → ``technical-writing`
+- `skills/poteto-mode/SKILL.md:29`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/SKILL.md:89`: ``/poteto-mode` → ``poteto-mode`
+- `skills/poteto-mode/SKILL.md:91`: ``/setup-pstack` → ``setup-pstack`
+- `skills/poteto-mode/SKILL.md:91`: ``/setup-pstack` → ``setup-pstack`
+- `skills/poteto-mode/playbooks/autopilot-full.md:6`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/autopilot-stack.md:5`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/technical-writing` → ``technical-writing`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/unslop` → ``unslop`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:60`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/technical-writing` → ``technical-writing`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/unslop` → ``unslop`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:11`: ``/technical-writing` → ``technical-writing`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:11`: ``/unslop` → ``unslop`
+- `skills/poteto-mode/playbooks/opening-a-pr.md:31`: ``/no-comments` → ``no-comments`
+- `skills/principle-boundary-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-build-the-lever/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-encode-lessons-in-structure/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-exhaust-the-design-space/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-experience-first/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-fix-root-causes/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-foundational-thinking/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-guard-the-context-window/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-laziness-protocol/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-make-operations-idempotent/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-minimize-reader-load/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-model-the-domain/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-never-block-on-the-human/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-outcome-oriented-execution/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-prove-it-works/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-redesign-from-first-principles/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-separate-before-serializing-shared-state/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-sequence-verifiable-units/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-subtract-before-you-add/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/principle-type-system-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/recall/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/setup-pstack/SKILL.md:65`: ``/create-verification-skill` → ``create-verification-skill`
+- `skills/show-me-your-work/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/swarm/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/tdd/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/teach/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/technical-writing/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/typescript-best-practices/SKILL.md:5`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/unslop/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/why/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`

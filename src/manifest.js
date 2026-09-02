@@ -5,7 +5,7 @@ export function normalizePluginName(value) {
     .replace(/-+/g, "-")
     .replace(/^[-_.]+|[-_.]+$/g, "");
   if (!normalized || normalized.length > 64 || !/^[a-z0-9_-]+(?:\.[a-z0-9_-]+)*$/.test(normalized)) {
-    throw new Error(`Invalid Codex plugin name: ${value}`);
+    throw new Error(`Invalid plugin name: ${value}`);
   }
   return normalized;
 }
@@ -20,7 +20,7 @@ function safeHttpsUrl(value) {
   }
 }
 
-export function createPluginManifest(cursorManifest, pluginName) {
+function createCodexPluginManifest(cursorManifest, pluginName) {
   const author = cursorManifest.author?.name || "pstack contributors";
   const homepage = safeHttpsUrl(cursorManifest.homepage);
   const repository = safeHttpsUrl(cursorManifest.repository);
@@ -51,7 +51,29 @@ export function createPluginManifest(cursorManifest, pluginName) {
   };
 }
 
-export function createMarketplace(pluginName) {
+function createClaudePluginManifest(cursorManifest, pluginName) {
+  const author = cursorManifest.author?.name || "pstack contributors";
+  const homepage = safeHttpsUrl(cursorManifest.homepage);
+  const repository = safeHttpsUrl(cursorManifest.repository);
+  return {
+    name: pluginName,
+    version: cursorManifest.version,
+    description: `Claude Code-compatible conversion of ${cursorManifest.displayName || cursorManifest.name}. Review compatibility/report.md before use.`,
+    author: { ...cursorManifest.author, name: author },
+    homepage,
+    repository,
+    license: cursorManifest.license || "MIT",
+    keywords: [...new Set([...(cursorManifest.keywords || []), "claude-code"])],
+    skills: "./skills/",
+  };
+}
+
+export function createPluginManifest(cursorManifest, pluginName, target = "codex") {
+  if (target === "claude") return createClaudePluginManifest(cursorManifest, pluginName);
+  return createCodexPluginManifest(cursorManifest, pluginName);
+}
+
+function createCodexMarketplace(pluginName) {
   return {
     name: `${pluginName}-local`,
     interface: { displayName: `${pluginName} Local` },
@@ -64,4 +86,18 @@ export function createMarketplace(pluginName) {
       },
     ],
   };
+}
+
+function createClaudeMarketplace(pluginName) {
+  return {
+    $schema: "https://json.schemastore.org/claude-code-marketplace.json",
+    name: `${pluginName}-local`,
+    owner: { name: "pstack contributors" },
+    plugins: [{ name: pluginName, source: `./plugins/${pluginName}` }],
+  };
+}
+
+export function createMarketplace(pluginName, target = "codex") {
+  if (target === "claude") return createClaudeMarketplace(pluginName);
+  return createCodexMarketplace(pluginName);
 }

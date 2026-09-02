@@ -43,8 +43,20 @@
 
 **Dependencies:** Tasks 1–3
 
+## Task 5: Claude Code as a second conversion target
+
+**Acceptance criteria:**
+- [x] `--target claude` (and `convertPstack({ target: "claude" })`) generates `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` instead of the Codex shapes; `--target` defaults to `codex` and rejects unknown values.
+- [x] Compatibility findings and skill-invocation rewrites are target-aware: Claude Code's own `AskUserQuestion`, `Agent` tool, `/loop` skill, and `claude-*` model names are not reported as findings for that target, and its rewritten skill invocations carry no sigil.
+- [x] `validateGeneratedPlugin` validates the Claude Code shape as strictly as the Codex shape.
+
+**Verification:** `npm test`
+
+**Dependencies:** Tasks 1-4
+
 ## Final checkpoint
 
 - [x] All tests pass.
 - [x] Smoke-generated plugin passes Codex plugin validation.
+- [x] Smoke-generated Claude Code plugin passes Claude Code plugin validation.
 - [x] Code review completed.
