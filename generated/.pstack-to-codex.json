@@ -1,19 +1,20 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-09-02T16:07:22.201Z",
+  "generatedAt": "2026-09-09T13:44:07.164Z",
   "target": "codex",
   "plugin": {
     "name": "pstack-for-codex",
-    "version": "0.14.6"
+    "version": "0.15.0"
   },
   "source": {
-    "path": "/home/andrew-scholz/code/cursor-plugins/pstack",
-    "version": "0.14.6",
-    "commit": "82f1d4f49ba8f21e3315a89c97e82f7c02a48fba"
+    "path": "/tmp/pstack-upstream-20260909/pstack",
+    "version": "0.15.0",
+    "commit": "df3fb154fb982fb83f649de8646d4af6a0cb16b3"
   },
   "copiedFiles": [
     "LICENSE",
     "README.md",
+    "assets/logo.png",
     "docs/guide/01-setup.md",
     "docs/guide/02-poteto-mode.md",
     "docs/guide/03-understand.md",
@@ -45,8 +46,6 @@
     "skills/create-verification-skill/references/feature-map-example/search.md",
     "skills/figure-it-out/SKILL.md",
     "skills/how/SKILL.md",
-    "skills/how/references/critic-prompt.md",
-    "skills/how/references/critique-rubric.md",
     "skills/how/references/explainer-prompt.md",
     "skills/how/references/explorer-prompt.md",
     "skills/interrogate/SKILL.md",
@@ -102,6 +101,7 @@
     "skills/poteto-mode/scripts/watch-pr/types.ts",
     "skills/poteto-mode/scripts/watch-pr/watch-pr",
     "skills/poteto-mode/scripts/worktree-audit.sh",
+    "skills/principle-attack-the-premise/SKILL.md",
     "skills/principle-boundary-discipline/SKILL.md",
     "skills/principle-build-the-lever/SKILL.md",
     "skills/principle-encode-lessons-in-structure/SKILL.md",
@@ -122,6 +122,7 @@
     "skills/principle-separate-before-serializing-shared-state/SKILL.md",
     "skills/principle-sequence-verifiable-units/SKILL.md",
     "skills/principle-subtract-before-you-add/SKILL.md",
+    "skills/principle-test-behavior-not-implementation/SKILL.md",
     "skills/principle-type-system-discipline/SKILL.md",
     "skills/recall/SKILL.md",
     "skills/reflect/SKILL.md",
@@ -154,19 +155,19 @@
     "skills/why/references/sources/slack.md",
     "skills/why/references/synthesizer-prompt.md"
   ],
-  "copiedBytes": 3026553,
+  "copiedBytes": 3352541,
   "omittedPaths": [
     "agents",
     "automations"
   ],
   "compatibility": {
-    "rewrites": 266,
-    "findings": 98
+    "rewrites": 264,
+    "findings": 95
   },
   "validation": {
     "valid": true,
     "pluginName": "pstack-for-codex",
-    "version": "0.14.6",
-    "skillCount": 45
+    "version": "0.15.0",
+    "skillCount": 47
   }
 }
