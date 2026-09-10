@@ -36,5 +36,7 @@ for TARGET in codex claude; do
   echo "Refreshed $TARGET -> $DEST/plugins/$PLUGIN_NAME"
 done
 
+node "$ROOT/scripts/sync-marketplaces.js"
+
 echo
 echo "Review what changed with: git -C \"$ROOT\" status generated/ && git -C \"$ROOT\" diff generated/"
