@@ -1,0 +1,187 @@
+name: Update pstack
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-pstack
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch upstream pstack
+        id: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          upstream_root="$RUNNER_TEMP/cursor-plugins"
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/cursor/plugins.git "$upstream_root"
+          git -C "$upstream_root" sparse-checkout set pstack
+          upstream_pstack="$upstream_root/pstack"
+          test -f "$upstream_pstack/.cursor-plugin/plugin.json"
+          version="$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).version' "$upstream_pstack/.cursor-plugin/plugin.json")"
+          commit="$(git -C "$upstream_root" rev-parse HEAD)"
+          echo "path=$upstream_pstack" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+
+      - name: Regenerate Codex and Claude plugins
+        run: scripts/regenerate.sh "${{ steps.upstream.outputs.path }}"
+
+      - name: Summarize refresh changes
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          summary_file="$RUNNER_TEMP/pstack-refresh-summary.md"
+          changed_files="$(git diff --name-only -- generated)"
+          changed_count="$(printf '%s\n' "$changed_files" | sed '/^$/d' | wc -l | tr -d ' ')"
+          unmapped_models="$(
+            git diff --unified=0 -- \
+              generated/plugins/pstack-for-codex/compatibility/report.md \
+              generated/plugins/pstack-for-claude/compatibility/report.md \
+            | sed -n 's/^+.*model-identifier.*(.*\x60\([^\x60]*\)\x60).*/\1/p' \
+            | sort -u
+          )"
+          role_changes="$(
+            git diff --unified=0 -- \
+              generated/plugins/pstack-for-codex/skills/setup-pstack/SKILL.md \
+              generated/plugins/pstack-for-claude/skills/setup-pstack/SKILL.md \
+            | sed -n '/^[+-][[:lower:]][^:]*:/p' \
+            | grep -Ei 'grok|claude|gpt|opus|fable|auto|inherit-parent' || true
+          )"
+          {
+            echo "## What changed in this refresh"
+            echo
+            echo "- Upstream pstack version: ${{ steps.upstream.outputs.version || 'unknown' }}"
+            echo "- Generated files changed: $changed_count"
+            if [ -n "$unmapped_models" ]; then
+              echo "- NEW OR UNMAPPED MODEL IDENTIFIERS: $(printf '%s' "$unmapped_models" | paste -sd ', ' -)"
+              echo "  Update src/models.js so the corresponding pstack role maps to both Codex and Claude."
+            else
+              echo "- New or unmapped model identifiers detected: none in the generated compatibility reports."
+            fi
+            if [ -n "$role_changes" ]; then
+              echo
+              echo "### Pstack role mapping lines changed"
+              echo "Review these lines and update src/models.js when a new role or model needs a Codex and Claude mapping:"
+              printf '%s\n' "$role_changes" | sed 's/^/  /'
+            else
+              echo "- Pstack role mapping lines changed: none detected."
+            fi
+            role_files="$(printf '%s\n' "$changed_files" | sed -n '/generated\/plugins\/pstack-for-claude\/agents\/pstack-.*\.md$/p')"
+            if [ -n "$role_files" ]; then
+              echo
+              echo "### Claude role definitions changed"
+              printf '%s\n' "$role_files" | sed 's/^/- /'
+            fi
+            if [ "$changed_count" -gt 0 ]; then
+              echo
+              echo "### Generated paths"
+              printf '%s\n' "$changed_files" | sed '/^$/d; s/^/- /' | head -80
+              if [ "$changed_count" -gt 80 ]; then
+                echo "- Only the first 80 paths are shown."
+              fi
+            fi
+          } > "$summary_file"
+
+      - name: Validate generated output
+        run: |
+          npm test
+          npm run check
+          git diff --check
+
+      - name: Open or update the refresh PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/update-pstack
+          delete-branch: true
+          add-paths: |
+            .agents/
+            .claude-plugin/
+            generated/
+          commit-message: "chore: update generated pstack to ${{ steps.upstream.outputs.version }}"
+          title: "chore: update generated pstack to ${{ steps.upstream.outputs.version }}"
+          body: |
+            This automated refresh follows upstream Cursor pstack.
+
+            - Upstream version: `${{ steps.upstream.outputs.version }}`
+            - Upstream commit: `${{ steps.upstream.outputs.commit }}`
+            - Targets: Codex and Claude Code
+
+            The workflow regenerated both committed plugin trees and ran the repository test and syntax checks before opening this PR.
+
+      - name: Open or update refresh failure issue
+        if: ${{ failure() }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require("node:fs");
+            const title = "Nightly pstack refresh failed";
+            const summaryPath = process.env.RUNNER_TEMP + "/pstack-refresh-summary.md";
+            const summary = fs.existsSync(summaryPath)
+              ? fs.readFileSync(summaryPath, "utf8").trim()
+              : [
+                "## What changed in this refresh",
+                "",
+                "The refresh failed before a generated change summary could be produced.",
+              ].join("\n");
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = [
+              summary,
+              "",
+              "## Refresh failure",
+              "",
+              "The scheduled or manually dispatched pstack refresh failed.",
+              "",
+              `Workflow run: ${runUrl}`,
+              `Ref: \`${context.ref}\``,
+              `Commit: \`${context.sha}\``,
+              "",
+              "Check the failed step in the workflow run for details.",
+            ].join("\n");
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 100,
+            });
+            const issue = openIssues.find((candidate) => candidate.title === title);
+            if (issue) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body,
+              });
+              core.info(`Updated existing issue #${issue.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+              });
+              core.info(`Created issue #${created.data.number}`);
+            }
