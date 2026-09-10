@@ -34,7 +34,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-path** at `skills/make-bot-ui/SKILL.md:37`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor`)
 - **model-identifier** at `skills/make-bot-ui/SKILL.md:55`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
 - **cursor-command** at `skills/poteto-mode/SKILL.md:35`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-mode/SKILL.md:134`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-mode/SKILL.md:135`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autonomous-run.md:6`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autopilot-full.md:10`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autopilot-stack.md:6`: This Cursor command has no automatic Codex equivalent. (`/loop`)
@@ -302,7 +302,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/SKILL.md:93`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/SKILL.md:93`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/poteto-mode/SKILL.md:93`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/poteto-mode/SKILL.md:144`: `` → `Added Codex model routing instructions`
+- `skills/poteto-mode/SKILL.md:145`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/poteto-mode/SKILL.md:2`: `name: Poteto Mode` → `name: poteto-mode`
 - `skills/poteto-mode/SKILL.md:27`: ``/technical-writing` → ``$technical-writing`
