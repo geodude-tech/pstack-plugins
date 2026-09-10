@@ -38,7 +38,7 @@ Launch all reviewers in a single message using the Task tool. Use the `interroga
 | Subagent | Default model |
 |----------|---------------|
 | Reviewer A | `pstack-judgment` |
-| Reviewer B | `pstack-judgment` |
+| Reviewer B | `pstack-balanced` |
 | Reviewer C | `pstack-fast` |
 | Reviewer D | `pstack-judgment` |
 

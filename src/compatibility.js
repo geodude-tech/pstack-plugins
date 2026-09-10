@@ -1,7 +1,7 @@
 import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { rewriteModelReferences } from "./models.js";
+import { rewriteModelReferences, rewriteCodexModelReferences, codexSetupInstructions } from "./models.js";
 
 const TEXT_EXTENSIONS = new Set([".md", ".txt", ".json", ".toml", ".yaml", ".yml", ".js", ".mjs", ".ts", ".sh"]);
 
@@ -128,7 +128,7 @@ function markdownReport(report) {
     `Rewrites: ${report.summary.rewrites}`,
     `Manual-review findings: ${report.summary.findings}`,
     "",
-    "The converter applies only exact skill-invocation rewrites. Every finding below needs human review before semantic parity can be claimed.",
+    "The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.",
     "",
     "## Findings",
     "",
@@ -166,8 +166,16 @@ export async function applyCompatibility(pluginRoot, omittedPaths, target = "cod
   for (const file of await listTextFiles(pluginRoot)) {
     const relativePath = path.relative(pluginRoot, file);
     let text = await readFile(file, "utf8");
-    if (target === "claude") {
-      const models = rewriteModelReferences(text);
+    if (target === "codex" && relativePath === path.join("skills", "setup-pstack", "SKILL.md")
+        && text.includes("~/.cursor/rules/pstack-models.mdc")) {
+      text = codexSetupInstructions(text);
+      rewrites.push({ file: relativePath, line: 1, before: "Cursor model setup workflow", after: "Codex model and effort setup workflow" });
+      await writeFile(file, text);
+    }
+    if (target === "claude" || target === "codex") {
+      const models = target === "claude"
+        ? rewriteModelReferences(text)
+        : rewriteCodexModelReferences(text, path.extname(file) === ".md");
       text = models.text;
       rewrites.push(...models.rewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
       if (models.rewrites.length > 0) await writeFile(file, text);
