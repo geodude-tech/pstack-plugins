@@ -1,15 +1,15 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-09-10T04:30:26.264Z",
+  "generatedAt": "2026-09-10T04:43:14.013Z",
   "target": "codex",
   "plugin": {
     "name": "pstack-for-codex",
-    "version": "0.15.0"
+    "version": "0.15.1"
   },
   "source": {
-    "path": "/tmp/pstack-upstream-20260909/pstack",
-    "version": "0.15.0",
-    "commit": "df3fb154fb982fb83f649de8646d4af6a0cb16b3"
+    "path": "/tmp/pstack-plugins-latest/pstack",
+    "version": "0.15.1",
+    "commit": "7366ac128bdf95f45e6734f412b49a4031800169"
   },
   "copiedFiles": [
     "LICENSE",
@@ -155,7 +155,7 @@
     "skills/why/references/sources/slack.md",
     "skills/why/references/synthesizer-prompt.md"
   ],
-  "copiedBytes": 3352541,
+  "copiedBytes": 3352733,
   "omittedPaths": [
     "agents",
     "automations"
@@ -167,7 +167,7 @@
   "validation": {
     "valid": true,
     "pluginName": "pstack-for-codex",
-    "version": "0.15.0",
+    "version": "0.15.1",
     "skillCount": 47
   }
 }

@@ -1475,7 +1475,7 @@
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 144,
+      "line": 145,
       "before": "",
       "after": "Added Codex model routing instructions",
       "file": "skills/poteto-mode/SKILL.md"
@@ -2304,7 +2304,7 @@
     {
       "code": "cursor-command",
       "file": "skills/poteto-mode/SKILL.md",
-      "line": 134,
+      "line": 135,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
