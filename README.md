@@ -129,6 +129,24 @@ Automatic rewriting is intentionally narrow, and differs by target:
 
 The scanner reports Cursor-only paths, commands, tool references, and model identifiers left in the copied text, plus components omitted from executable discovery. What counts as a finding is target-specific: Claude Code already ships `AskUserQuestion`, an `Agent` tool, a `/loop` skill, and `claude-*` model names natively, so the Claude Code report does not flag those; the Codex report does, since Codex has no built-in equivalent. Review `compatibility/report.md` in the generated plugin before installation.
 
+## Install from this repository
+
+The repository root contains marketplace manifests for both hosts. Their plugin paths point into `generated/plugins/`. A `local` source in the Codex manifest means a path inside the fetched repository, not a requirement to clone it yourself.
+
+```bash
+codex plugin marketplace add geodude-tech/pstack-plugins
+codex plugin add pstack-for-codex@pstack-for-codex-local
+```
+
+For Claude Code:
+
+```text
+/plugin marketplace add geodude-tech/pstack-plugins
+/plugin install pstack-for-claude@pstack-for-claude-local
+```
+
+Start a new task after installation. The `-local` marketplace names are retained for compatibility with existing installations. `scripts/regenerate.sh` also refreshes the root manifests.
+
 ## Install the reviewed result
 
 After reviewing and editing the generated files as needed:
