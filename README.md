@@ -39,6 +39,10 @@ This regenerates both targets into their own temporary directories and copies ea
 
 Do not use the CLI's own `--force` flag to refresh `generated/` directly: `--force` replaces its entire `--out` destination, which would delete the sibling target's output if both targets share one destination.
 
+## Automated nightly refresh
+
+`.github/workflows/update-pstack.yml` checks upstream Cursor pstack every night at 03:17 UTC. It fetches only the `pstack/` directory, regenerates the Codex and Claude Code outputs, runs `npm test`, `npm run check`, and `git diff --check`, then opens or updates one PR when the generated files change. Run the workflow manually from the Actions tab when you want to refresh before the next scheduled run.
+
 ## Convert
 
 From this repository:

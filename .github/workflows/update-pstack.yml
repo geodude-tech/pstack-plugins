@@ -1,0 +1,74 @@
+name: Update pstack
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-pstack
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch upstream pstack
+        id: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          upstream_root="$RUNNER_TEMP/cursor-plugins"
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/cursor/plugins.git "$upstream_root"
+          git -C "$upstream_root" sparse-checkout set pstack
+          upstream_pstack="$upstream_root/pstack"
+          test -f "$upstream_pstack/.cursor-plugin/plugin.json"
+          version="$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).version' "$upstream_pstack/.cursor-plugin/plugin.json")"
+          commit="$(git -C "$upstream_root" rev-parse HEAD)"
+          echo "path=$upstream_pstack" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+
+      - name: Regenerate Codex and Claude plugins
+        run: scripts/regenerate.sh "${{ steps.upstream.outputs.path }}"
+
+      - name: Validate generated output
+        run: |
+          npm test
+          npm run check
+          git diff --check
+
+      - name: Open or update the refresh PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/update-pstack
+          delete-branch: true
+          add-paths: |
+            .agents/
+            .claude-plugin/
+            generated/
+          commit-message: "chore: update generated pstack to ${{ steps.upstream.outputs.version }}"
+          title: "chore: update generated pstack to ${{ steps.upstream.outputs.version }}"
+          body: |
+            This automated refresh follows upstream Cursor pstack.
+
+            - Upstream version: `${{ steps.upstream.outputs.version }}`
+            - Upstream commit: `${{ steps.upstream.outputs.commit }}`
+            - Targets: Codex and Claude Code
+
+            The workflow regenerated both committed plugin trees and ran the repository test and syntax checks before opening this PR.
