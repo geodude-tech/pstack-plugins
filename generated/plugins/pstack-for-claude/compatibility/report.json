@@ -1,7 +1,7 @@
 {
   "summary": {
-    "rewrites": 264,
-    "findings": 60
+    "rewrites": 338,
+    "findings": 31
   },
   "rewrites": [
     {
@@ -255,6 +255,12 @@
       "before": "/interrogate",
       "after": "interrogate",
       "file": "README.md"
+    },
+    {
+      "line": 23,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "docs/guide/01-setup.md"
     },
     {
       "line": 23,
@@ -1169,10 +1175,94 @@
       "file": "docs/guide/README.md"
     },
     {
+      "line": 33,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 33,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 33,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 33,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/arena/SKILL.md"
     },
     {
       "line": 4,
@@ -1217,10 +1307,58 @@
       "file": "skills/figure-it-out/SKILL.md"
     },
     {
+      "line": 25,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 35,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 45,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/how/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 40,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 42,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 43,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 36,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/interrogate/SKILL.md"
     },
     {
       "line": 4,
@@ -1289,6 +1427,24 @@
       "file": "skills/no-comments/SKILL.md"
     },
     {
+      "line": 93,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 93,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 93,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
@@ -1344,6 +1500,36 @@
     },
     {
       "line": 9,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/playbooks/bug-fix.md"
+    },
+    {
+      "line": 12,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/feature.md"
+    },
+    {
+      "line": 12,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/playbooks/hillclimb.md"
+    },
+    {
+      "line": 13,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 101,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 9,
       "before": "`/technical-writing",
       "after": "`technical-writing",
       "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
@@ -1383,6 +1569,24 @@
       "before": "`/no-comments",
       "after": "`no-comments",
       "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 16,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/playbooks/perf-issue.md"
+    },
+    {
+      "line": 11,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/refactoring.md"
+    },
+    {
+      "line": 7,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/scripts/check-plan.mjs"
     },
     {
       "line": 4,
@@ -1529,10 +1733,226 @@
       "file": "skills/recall/SKILL.md"
     },
     {
+      "line": 35,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 36,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 37,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 43,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 39,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 40,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 41,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 42,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 43,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 44,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 45,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 46,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 47,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 48,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 49,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 50,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 51,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 51,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 51,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 51,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 52,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 52,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 52,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 52,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 53,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 54,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 54,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 54,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 54,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 55,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 55,
+      "before": "gpt-5.6-sol-max",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 55,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 55,
+      "before": "claude-opus-5-thinking-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 8,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 18,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 30,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/setup-pstack/SKILL.md"
     },
     {
       "line": 64,
@@ -1545,6 +1965,18 @@
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/show-me-your-work/SKILL.md"
+    },
+    {
+      "line": 25,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/swarm/SKILL.md"
+    },
+    {
+      "line": 25,
+      "before": "~/.cursor/rules/pstack-models.mdc",
+      "after": "~/.claude/rules/pstack-models.md",
+      "file": "skills/swarm/SKILL.md"
     },
     {
       "line": 4,
@@ -1581,6 +2013,18 @@
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/unslop/SKILL.md"
+    },
+    {
+      "line": 82,
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
+      "file": "skills/why/SKILL.md"
+    },
+    {
+      "line": 126,
+      "before": "claude-fable-5-1-thinking-max",
+      "after": "pstack-judgment",
+      "file": "skills/why/SKILL.md"
     },
     {
       "line": 4,
@@ -1642,13 +2086,6 @@
     {
       "code": "cursor-path",
       "file": "docs/guide/01-setup.md",
-      "line": 23,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "cursor-path",
-      "file": "docs/guide/01-setup.md",
       "line": 33,
       "match": ".cursor/skills/verify-",
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
@@ -1666,41 +2103,6 @@
       "line": 11,
       "match": ".cursor/skills/",
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/architect/SKILL.md",
-      "line": 33,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/arena/SKILL.md",
-      "line": 28,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/arena/SKILL.md",
-      "line": 28,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/arena/SKILL.md",
-      "line": 41,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/arena/SKILL.md",
-      "line": 41,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
@@ -1745,27 +2147,6 @@
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/how/SKILL.md",
-      "line": 25,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/interrogate/SKILL.md",
-      "line": 36,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/interrogate/SKILL.md",
-      "line": 42,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-path",
       "file": "skills/maintain-verification-skill/SKILL.md",
       "line": 25,
@@ -1794,46 +2175,11 @@
       "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/SKILL.md",
-      "line": 93,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-path",
       "file": "skills/poteto-mode/playbooks/eval.md",
       "line": 22,
       "match": "~/.cursor/projects/",
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/feature.md",
-      "line": 12,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
-      "line": 13,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
-      "line": 101,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/refactoring.md",
-      "line": 11,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
@@ -1848,13 +2194,6 @@
       "line": 5,
       "match": ".cursor/worktrees/myrepo/x",
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/scripts/check-plan.mjs",
-      "line": 7,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
@@ -1907,108 +2246,10 @@
     },
     {
       "code": "cursor-path",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 8,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 18,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 30,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 39,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 45,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 47,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 51,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 52,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 53,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 54,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 55,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "cursor-path",
       "file": "skills/show-me-your-work/SKILL.md",
       "line": 56,
       "match": "~/.cursor/projects/",
       "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "cursor-path",
-      "file": "skills/swarm/SKILL.md",
-      "line": 25,
-      "match": "~/.cursor/rules/pstack-models.mdc",
-      "message": "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/swarm/SKILL.md",
-      "line": 25,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/why/SKILL.md",
-      "line": 82,
-      "match": "grok-4.6-fast-xhigh",
-      "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     }
   ]
 }

@@ -5,6 +5,7 @@ import { promisify } from "node:util";
 
 import { assertSafeDestination, discoverSource } from "./discovery.js";
 import { applyCompatibility } from "./compatibility.js";
+import { CLAUDE_AGENTS, agentDefinition } from "./models.js";
 import { createMarketplace, createPluginManifest, normalizePluginName } from "./manifest.js";
 import { resolveTarget } from "./targets.js";
 import { validateGeneratedPlugin } from "./validation.js";
@@ -81,6 +82,15 @@ async function writeJson(file, value) {
   await writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
 }
 
+function claudeModelNotice() {
+  const rows = CLAUDE_AGENTS.map((agent) =>
+    `- \`${agent.name}\` (${agent.model}, effort ${agent.effort}) replaces ${agent.slugs.map((slug) => `\`${slug}\``).join(", ")}`);
+  return "\n## Model routing\n\n"
+    + "Cursor model slugs were rewritten to plugin subagents in `agents/`, because Claude Code sets reasoning effort "
+    + "only in an agent definition. Where a skill says `model`, pass the name as `subagent_type` instead.\n\n"
+    + `${rows.join("\n")}\n`;
+}
+
 export async function convertPstack(options) {
   const source = await discoverSource(options.sourcePath);
   const destination = await assertSafeDestination(source.root, options.destination);
@@ -132,8 +142,15 @@ export async function convertPstack(options) {
       + `${sourceCommit ? ` at commit ${sourceCommit}` : ""}.\n\n`
       + "pstack originates in the Cursor plugins repository and is distributed under its declared license. "
       + `This generated conversion is ${target.vendorNote}.\n\n`
-      + "Review `compatibility/report.md` before using the generated workflows.\n",
+      + "Review `compatibility/report.md` before using the generated workflows.\n"
+      + (target.id === "claude" ? claudeModelNotice() : ""),
   );
+  if (target.id === "claude") {
+    await mkdir(path.join(pluginRoot, "agents"), { recursive: true });
+    for (const agent of CLAUDE_AGENTS) {
+      await writeFile(path.join(pluginRoot, "agents", `${agent.name}.md`), agentDefinition(agent));
+    }
+  }
   const validation = await validateGeneratedPlugin(destination, pluginName, target.id);
 
   const receipt = {

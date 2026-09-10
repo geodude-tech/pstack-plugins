@@ -1,6 +1,8 @@
 import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { rewriteModelReferences } from "./models.js";
+
 const TEXT_EXTENSIONS = new Set([".md", ".txt", ".json", ".toml", ".yaml", ".yml", ".js", ".mjs", ".ts", ".sh"]);
 
 // Codex has no native slash-command or tool equivalent for these Cursor primitives, and no
@@ -164,6 +166,12 @@ export async function applyCompatibility(pluginRoot, omittedPaths, target = "cod
   for (const file of await listTextFiles(pluginRoot)) {
     const relativePath = path.relative(pluginRoot, file);
     let text = await readFile(file, "utf8");
+    if (target === "claude") {
+      const models = rewriteModelReferences(text);
+      text = models.text;
+      rewrites.push(...models.rewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
+      if (models.rewrites.length > 0) await writeFile(file, text);
+    }
     if (path.extname(file) === ".md") {
       let frontmatterRewrites = [];
       if (path.basename(file) === "SKILL.md") {
