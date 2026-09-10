@@ -5,7 +5,7 @@ import { promisify } from "node:util";
 
 import { assertSafeDestination, discoverSource } from "./discovery.js";
 import { applyCompatibility } from "./compatibility.js";
-import { CLAUDE_AGENTS, agentDefinition } from "./models.js";
+import { CLAUDE_AGENTS, agentDefinition, codexModelRouting } from "./models.js";
 import { createMarketplace, createPluginManifest, normalizePluginName } from "./manifest.js";
 import { resolveTarget } from "./targets.js";
 import { validateGeneratedPlugin } from "./validation.js";
@@ -143,7 +143,7 @@ export async function convertPstack(options) {
       + "pstack originates in the Cursor plugins repository and is distributed under its declared license. "
       + `This generated conversion is ${target.vendorNote}.\n\n`
       + "Review `compatibility/report.md` before using the generated workflows.\n"
-      + (target.id === "claude" ? claudeModelNotice() : ""),
+      + (target.id === "claude" ? claudeModelNotice() : `\n${codexModelRouting()}`),
   );
   if (target.id === "claude") {
     await mkdir(path.join(pluginRoot, "agents"), { recursive: true });

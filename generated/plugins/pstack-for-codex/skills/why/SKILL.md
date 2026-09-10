@@ -79,7 +79,7 @@ Launch all matching investigators in a single message so they run concurrently. 
 
 Subagent config (each):
 - `subagent_type`: `generalPurpose`
-- `model`: your configured why-investigators model (default `grok-4.6-fast-xhigh`)
+- `model`: your configured why-investigators model (default `pstack-fast`)
 - `readonly`: `false` (agent mode). **Do not use readonly/Ask mode.** It strips MCP access, which disables MCP-backed investigators entirely. Investigators still shouldn't write anything.
 
 Each investigator gets:
@@ -123,7 +123,7 @@ If your scope assessment suggests a single-commit trivial target where the PR de
 Spawn one synthesizer subagent:
 
 - `subagent_type`: `generalPurpose`
-- `model`: your configured why-synthesizer model (default `claude-fable-5-1-thinking-max`)
+- `model`: your configured why-synthesizer model (default `pstack-judgment`)
 - `readonly`: `false` (agent mode). The synthesizer's quality check spot-verifies citations, which can require MCP access. Readonly/Ask mode strips MCPs and defeats that.
 
 The synthesizer gets:
@@ -154,3 +154,19 @@ After the Sources Consulted block, if the user's `why` question is a precursor t
 - `references/source-playbook.md`. Index pointing at the category playbooks below.
 - `references/sources/*.md`. One self-contained example playbook per category, plus cross-cutting `incident-postmortem.md`. Give an investigator the single file that matches its category and adapt it to the available MCP.
 - `references/synthesizer-prompt.md`. Prompt template for the synthesizer subagent, including the output format.
+
+## Codex model routing
+
+Before delegating, read `~/.codex/pstack-models.md` if it exists. Its per-role choices override these defaults.
+
+| Role alias | Model | Reasoning effort |
+| --- | --- | --- |
+| pstack-judgment | gpt-6-astra | low |
+| pstack-fast | gpt-5.6-luna | high |
+| pstack-balanced | gpt-5.6-sol | medium |
+
+These aliases are routing labels, not model IDs or registered agent types. Resolve an alias before spawning and pass the model and reasoning effort separately using the available subagent tool. With `collaboration.spawn_agent`, use `model` and `reasoning_effort`; explicit overrides require `fork_turns` to be `none` or a positive turn count, with sufficient task context in the prompt.
+
+Check the session's available models and effort levels before spawning. If a configured pair is unavailable, ask for a supported replacement. For `inherit-parent` or `auto`, omit both overrides. If the host cannot select a model or effort, report that limitation rather than claim the requested routing was applied.
+
+Keep every panel entry, including repeated aliases, as a separate agent. These defaults do not provide cross-provider diversity; do not claim that repeated roles are different model families.

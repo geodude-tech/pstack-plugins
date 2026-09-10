@@ -33,7 +33,7 @@ One message, three `Task` calls, `subagent_type: generalPurpose`, explicit `mode
 | Lens | `model` | Prompt template |
 |---|---|---|
 | Judgment | your configured reflect-judgment model (default `pstack-judgment`) | `references/judgment-reviewer.md` |
-| Tooling | your configured reflect-tooling model (default `pstack-judgment`) | `references/tooling-reviewer.md` |
+| Tooling | your configured reflect-tooling model (default `pstack-balanced`) | `references/tooling-reviewer.md` |
 | Divergent | your configured reflect-judgment model (default `pstack-judgment`) | `references/divergent-reviewer.md` |
 
 Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in the `Task` response body.

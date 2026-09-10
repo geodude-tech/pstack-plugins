@@ -1,64 +1,59 @@
 ---
 name: setup-pstack
-description: Configure which models pstack uses per role. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", or changing pstack's model choices.
+description: Configure which models pstack uses per role. Detects your available models and writes a Codex preference file that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", or changing pstack's model choices.
 ---
 
 # Setup pstack
 
-Write `~/.cursor/rules/pstack-models.mdc`, an always-applied rule that sets pstack's model per role.
+Configure pstack's per-role model and reasoning effort in `~/.codex/pstack-models.md`. This is a pstack preference file, read explicitly by the converted workflows, not an automatically loaded Codex rule.
 
 ## Steps
 
-### 1. Detect available models
+1. Inspect the current subagent tool for available models and supported reasoning efforts. Never assume an API model is available in this Codex session. If detection is unavailable, ask the user for their supported choices.
+2. Read `~/.codex/pstack-models.md` if it exists. Preserve current choices as the starting point; otherwise use the defaults below.
+3. Show every role and its model and effort. Ask the user to accept the mapping or change specific roles. Offer `inherit-parent` and `auto` as aliases that omit both model and effort overrides. Each panel list entry creates one agent, including repeated entries.
+4. Validate every selected model and effort against the session's supported values. If a pair is unavailable, ask for a supported replacement before writing.
+5. Write the complete preference file below, using the confirmed values. Keep both the alias definitions and the per-role mapping. For a custom choice, define another alias with its model and reasoning effort, then use that alias on the relevant role lines. This file belongs only to pstack; do not overwrite `AGENTS.md` or `config.toml`.
 
-Enumerate the model slugs you can pass to a `Task` subagent in this session. That is the dependable source. If Cursor also exposes a models API or CLI that lists the user's entitled models, prefer it for completeness. If you cannot detect any, ask the user to paste the slugs they have access to. Never write a real slug you have not confirmed is available. The aliases `inherit-parent` and `auto` are always valid even though they are not detected slugs.
+```text
+# pstack model preferences
+pstack-judgment: model=gpt-6-astra, reasoning_effort=low
+pstack-fast: model=gpt-5.6-luna, reasoning_effort=high
+pstack-balanced: model=gpt-5.6-sol, reasoning_effort=medium
 
-### 2. Load current state
-
-The default role-to-model mapping is the rule shape shown in step 5 below. If `~/.cursor/rules/pstack-models.mdc` already exists, read it and treat its values as the current choices. Otherwise start from those defaults.
-
-### 3. Map and confirm
-
-Show every role with its current model, marking any real slug not in the detected set as needing a choice. Ask whether to accept as-is or change specific roles, offering the detected models plus `inherit-parent` and `auto` (both mean: this role runs on the parent chat model, which is how Auto users stay on Auto) as the options. Prefer AskQuestion over free text. For panel roles (arena runners, architect runners, interrogate reviewers) the value is a list, and one subagent runs per entry, alias entries included, so the list length sets the count. `arena cross-judge pool` is also a list, but Arena selects one value from it whose model family differs from the parent's when possible. `swarm workers` is the default model for every worker unless a race or comparison assigns another model per arm.
-
-### 4. Validate
-
-Every real slug written must be in the detected set. `inherit-parent` and `auto` always pass. If a chosen real slug is not available, stop and ask again.
-
-### 5. Write the rule
-
-Write `~/.cursor/rules/pstack-models.mdc` with `alwaysApply: true` and one line per role, using the same labels poteto-mode uses. Overwrite the whole file so re-runs stay idempotent. Shape:
-
-```
----
-description: pstack per-role model choices (overrides skill defaults)
-alwaysApply: true
----
-# pstack model configuration. One line per role. Delete a line to fall back to the skill default.
-# `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.
-feature, refactoring: grok-4.6-fast-xhigh
-bug-fix: claude-fable-5-1-thinking-max
-perf-issue: claude-fable-5-1-thinking-max
-hillclimb: claude-fable-5-1-thinking-max
-judgment and prose: claude-fable-5-1-thinking-max
-hardest tasks: claude-fable-5-1-thinking-max
-how explorer: grok-4.6-fast-xhigh
-how explainer: claude-fable-5-1-thinking-max
-why investigators: grok-4.6-fast-xhigh
-why synthesizer: claude-fable-5-1-thinking-max
-reflect tooling: gpt-5.6-sol-max
-reflect judgment, divergent, synthesizer: claude-fable-5-1-thinking-max
-arena runners: claude-fable-5-1-thinking-max, gpt-5.6-sol-max, grok-4.6-fast-xhigh, claude-opus-5-thinking-xhigh
-arena cross-judge pool: claude-fable-5-1-thinking-max, gpt-5.6-sol-max, grok-4.6-fast-xhigh, claude-opus-5-thinking-xhigh
-swarm workers: grok-4.6-fast-xhigh
-architect runners: claude-fable-5-1-thinking-max, gpt-5.6-sol-max, grok-4.6-fast-xhigh, claude-opus-5-thinking-xhigh
-interrogate reviewers: claude-fable-5-1-thinking-max, gpt-5.6-sol-max, grok-4.6-fast-xhigh, claude-opus-5-thinking-xhigh
+feature, refactoring: pstack-fast
+bug-fix: pstack-judgment
+perf-issue: pstack-judgment
+hillclimb: pstack-judgment
+judgment and prose: pstack-judgment
+hardest tasks: pstack-judgment
+how explorer: pstack-fast
+how explainer: pstack-judgment
+why investigators: pstack-fast
+why synthesizer: pstack-judgment
+reflect tooling: pstack-balanced
+reflect judgment, divergent, synthesizer: pstack-judgment
+arena runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+arena cross-judge pool: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+swarm workers: pstack-fast
+architect runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+interrogate reviewers: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
 ```
 
-### 6. Confirm
+6. Report the saved choices. Converted workflows read this file before delegating; re-running setup updates the choices.
 
-Tell the user the rule was written and that it applies to new sessions. Re-running this skill updates it.
+## Codex model routing
 
-### 7. Offer a verification skill (optional)
+Before delegating, read `~/.codex/pstack-models.md` if it exists. Its per-role choices override these defaults.
 
-Check whether the project has a way to drive the real app for proof (a `verify-*` skill, or an existing harness). If not, offer once: "want a project-local verification skill, so agents can drive the app the way a user does and prove changes work? I can generate one with /create-verification-skill." On yes, invoke `$create-verification-skill` (resolves wherever pstack is installed: workspace, user, or plugin). On no, move on without pushing.
+| Role alias | Model | Reasoning effort |
+| --- | --- | --- |
+| pstack-judgment | gpt-6-astra | low |
+| pstack-fast | gpt-5.6-luna | high |
+| pstack-balanced | gpt-5.6-sol | medium |
+
+These aliases are routing labels, not model IDs or registered agent types. Resolve an alias before spawning and pass the model and reasoning effort separately using the available subagent tool. With `collaboration.spawn_agent`, use `model` and `reasoning_effort`; explicit overrides require `fork_turns` to be `none` or a positive turn count, with sufficient task context in the prompt.
+
+Check the session's available models and effort levels before spawning. If a configured pair is unavailable, ask for a supported replacement. For `inherit-parent` or `auto`, omit both overrides. If the host cannot select a model or effort, report that limitation rather than claim the requested routing was applied.
+
+Keep every panel entry, including repeated aliases, as a separate agent. These defaults do not provide cross-provider diversity; do not claim that repeated roles are different model families.

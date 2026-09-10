@@ -3,7 +3,7 @@
 Rewrites: 338
 Manual-review findings: 31
 
-The converter applies only exact skill-invocation rewrites. Every finding below needs human review before semantic parity can be claimed.
+The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.
 
 ## Findings
 
@@ -237,16 +237,16 @@ The converter applies only exact skill-invocation rewrites. Every finding below 
 - `docs/guide/README.md:28`: ``/poteto-mode` → ``poteto-mode`
 - `docs/guide/README.md:25`: `/poteto-mode` → `poteto-mode`
 - `skills/architect/SKILL.md:33`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/architect/SKILL.md:33`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/architect/SKILL.md:33`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/architect/SKILL.md:33`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/architect/SKILL.md:33`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/architect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/arena/SKILL.md:28`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/arena/SKILL.md:28`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/arena/SKILL.md:28`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/arena/SKILL.md:28`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/arena/SKILL.md:28`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/arena/SKILL.md:41`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/arena/SKILL.md:41`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/arena/SKILL.md:41`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/arena/SKILL.md:41`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/arena/SKILL.md:41`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/arena/SKILL.md:28`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
@@ -263,7 +263,7 @@ The converter applies only exact skill-invocation rewrites. Every finding below 
 - `skills/how/SKILL.md:45`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/how/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/interrogate/SKILL.md:40`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/interrogate/SKILL.md:41`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/interrogate/SKILL.md:41`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/interrogate/SKILL.md:42`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/interrogate/SKILL.md:43`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/interrogate/SKILL.md:36`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
@@ -330,7 +330,7 @@ The converter applies only exact skill-invocation rewrites. Every finding below 
 - `skills/principle-type-system-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/recall/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/reflect/SKILL.md:35`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/reflect/SKILL.md:36`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/reflect/SKILL.md:36`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/reflect/SKILL.md:37`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/reflect/SKILL.md:43`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -344,23 +344,23 @@ The converter applies only exact skill-invocation rewrites. Every finding below 
 - `skills/setup-pstack/SKILL.md:46`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:47`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:48`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:49`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:49`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/setup-pstack/SKILL.md:50`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:51`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:51`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:51`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/setup-pstack/SKILL.md:51`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:51`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:52`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:52`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:52`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/setup-pstack/SKILL.md:52`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:52`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:53`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:54`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:54`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:54`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/setup-pstack/SKILL.md:54`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:54`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:55`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:55`: `gpt-5.6-sol-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:55`: `gpt-5.6-sol-max` → `pstack-balanced`
 - `skills/setup-pstack/SKILL.md:55`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:55`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:8`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`

@@ -46,13 +46,13 @@ how explorer: pstack-fast
 how explainer: pstack-judgment
 why investigators: pstack-fast
 why synthesizer: pstack-judgment
-reflect tooling: pstack-judgment
+reflect tooling: pstack-balanced
 reflect judgment, divergent, synthesizer: pstack-judgment
-arena runners: pstack-judgment, pstack-judgment, pstack-fast, pstack-judgment
-arena cross-judge pool: pstack-judgment, pstack-judgment, pstack-fast, pstack-judgment
+arena runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+arena cross-judge pool: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
 swarm workers: pstack-fast
-architect runners: pstack-judgment, pstack-judgment, pstack-fast, pstack-judgment
-interrogate reviewers: pstack-judgment, pstack-judgment, pstack-fast, pstack-judgment
+architect runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+interrogate reviewers: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
 ```
 
 ### 6. Confirm

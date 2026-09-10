@@ -1183,7 +1183,7 @@
     {
       "line": 33,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/architect/SKILL.md"
     },
     {
@@ -1213,7 +1213,7 @@
     {
       "line": 28,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/arena/SKILL.md"
     },
     {
@@ -1237,7 +1237,7 @@
     {
       "line": 41,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/arena/SKILL.md"
     },
     {
@@ -1339,7 +1339,7 @@
     {
       "line": 41,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/interrogate/SKILL.md"
     },
     {
@@ -1741,7 +1741,7 @@
     {
       "line": 36,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/reflect/SKILL.md"
     },
     {
@@ -1825,7 +1825,7 @@
     {
       "line": 49,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
@@ -1843,7 +1843,7 @@
     {
       "line": 51,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
@@ -1867,7 +1867,7 @@
     {
       "line": 52,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
@@ -1897,7 +1897,7 @@
     {
       "line": 54,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
@@ -1921,7 +1921,7 @@
     {
       "line": 55,
       "before": "gpt-5.6-sol-max",
-      "after": "pstack-judgment",
+      "after": "pstack-balanced",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
