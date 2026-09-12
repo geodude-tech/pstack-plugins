@@ -1500,8 +1500,8 @@
     },
     {
       "line": 9,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/poteto-mode/playbooks/bug-fix.md"
     },
     {
@@ -1512,8 +1512,8 @@
     },
     {
       "line": 12,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/poteto-mode/playbooks/hillclimb.md"
     },
     {
@@ -1572,8 +1572,8 @@
     },
     {
       "line": 16,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/poteto-mode/playbooks/perf-issue.md"
     },
     {
@@ -1770,20 +1770,20 @@
     },
     {
       "line": 40,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
       "line": 41,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
       "line": 42,
-      "before": "claude-fable-5-1-thinking-max",
-      "after": "pstack-judgment",
+      "before": "grok-4.6-fast-xhigh",
+      "after": "pstack-fast",
       "file": "skills/setup-pstack/SKILL.md"
     },
     {
@@ -2059,7 +2059,7 @@
       "code": "model-identifier",
       "file": "README.md",
       "line": 30,
-      "match": "fable 5.1",
+      "match": "grok",
       "message": "Choose an available Claude model instead of preserving this host-specific model identifier."
     },
     {

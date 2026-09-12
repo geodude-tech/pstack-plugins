@@ -37,9 +37,9 @@ alwaysApply: true
 # pstack model configuration. One line per role. Delete a line to fall back to the skill default.
 # `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.
 feature, refactoring: pstack-fast
-bug-fix: pstack-judgment
-perf-issue: pstack-judgment
-hillclimb: pstack-judgment
+bug-fix: pstack-fast
+perf-issue: pstack-fast
+hillclimb: pstack-fast
 judgment and prose: pstack-judgment
 hardest tasks: pstack-judgment
 how explorer: pstack-fast

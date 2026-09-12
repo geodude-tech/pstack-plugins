@@ -1,6 +1,6 @@
 # Generated attribution notice
 
-This plugin was converted from pstack version 0.15.1 at commit 7366ac128bdf95f45e6734f412b49a4031800169.
+This plugin was converted from pstack version 0.15.2 at commit 889ec4b68fa5aab0e867dad71ec3fdf386ae48f3.
 
 pstack originates in the Cursor plugins repository and is distributed under its declared license. This generated conversion is not an official Cursor or OpenAI project.
 

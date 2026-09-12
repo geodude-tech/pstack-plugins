@@ -22,9 +22,9 @@ pstack-fast: model=gpt-5.6-luna, reasoning_effort=high
 pstack-balanced: model=gpt-5.6-sol, reasoning_effort=medium
 
 feature, refactoring: pstack-fast
-bug-fix: pstack-judgment
-perf-issue: pstack-judgment
-hillclimb: pstack-judgment
+bug-fix: pstack-fast
+perf-issue: pstack-fast
+hillclimb: pstack-fast
 judgment and prose: pstack-judgment
 hardest tasks: pstack-judgment
 how explorer: pstack-fast
