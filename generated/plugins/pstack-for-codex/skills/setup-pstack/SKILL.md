@@ -1,6 +1,6 @@
 ---
 name: setup-pstack
-description: Configure which models pstack uses per role. Detects your available models and writes a Codex preference file that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", or changing pstack's model choices.
+description: Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes a Codex preference file that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", "pstack budget", or changing pstack's model choices.
 ---
 
 # Setup pstack
@@ -22,9 +22,9 @@ pstack-fast: model=gpt-5.6-luna, reasoning_effort=high
 pstack-balanced: model=gpt-5.6-sol, reasoning_effort=medium
 
 feature, refactoring: pstack-fast
-bug-fix: pstack-judgment
-perf-issue: pstack-judgment
-hillclimb: pstack-judgment
+bug-fix: pstack-fast
+perf-issue: pstack-fast
+hillclimb: pstack-fast
 judgment and prose: pstack-judgment
 hardest tasks: pstack-judgment
 how explorer: pstack-fast

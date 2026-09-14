@@ -1,6 +1,6 @@
 {
   "name": "pstack-for-claude",
-  "version": "0.15.1",
+  "version": "0.15.2",
   "description": "Claude Code-compatible conversion of pstack. Review compatibility/report.md before use.",
   "author": {
     "name": "Lauren Tan"
