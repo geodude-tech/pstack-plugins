@@ -1,7 +1,7 @@
 import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { rewriteModelReferences, rewriteCodexModelReferences, codexSetupInstructions } from "./models.js";
+import { rewriteModelReferences, rewriteCodexModelReferences, codexSetupInstructions, claudeSetupInstructions } from "./models.js";
 
 const TEXT_EXTENSIONS = new Set([".md", ".txt", ".json", ".toml", ".yaml", ".yml", ".js", ".mjs", ".ts", ".sh"]);
 
@@ -166,10 +166,16 @@ export async function applyCompatibility(pluginRoot, omittedPaths, target = "cod
   for (const file of await listTextFiles(pluginRoot)) {
     const relativePath = path.relative(pluginRoot, file);
     let text = await readFile(file, "utf8");
-    if (target === "codex" && relativePath === path.join("skills", "setup-pstack", "SKILL.md")
-        && text.includes("~/.cursor/rules/pstack-models.mdc")) {
+    const isSetupSkill = relativePath === path.join("skills", "setup-pstack", "SKILL.md")
+      && text.includes("~/.cursor/rules/pstack-models.mdc");
+    if (target === "codex" && isSetupSkill) {
       text = codexSetupInstructions(text);
       rewrites.push({ file: relativePath, line: 1, before: "Cursor model setup workflow", after: "Codex model and effort setup workflow" });
+      await writeFile(file, text);
+    }
+    if (target === "claude" && isSetupSkill) {
+      text = claudeSetupInstructions(text);
+      rewrites.push({ file: relativePath, line: 1, before: "Cursor model setup workflow", after: "Claude Code panel seat setup workflow" });
       await writeFile(file, text);
     }
     if (target === "claude" || target === "codex") {

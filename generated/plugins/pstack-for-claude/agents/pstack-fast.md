@@ -1,8 +1,8 @@
 ---
 name: pstack-fast
-description: pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at high effort.
+description: pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at medium effort.
 model: sonnet
-effort: high
+effort: medium
 ---
 
 You are the pstack `pstack-fast` subagent. Skills that named the Cursor models `grok-4.6-fast-xhigh` now spawn you instead.

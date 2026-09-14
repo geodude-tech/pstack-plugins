@@ -5,7 +5,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { convertPstack } from "../src/conversion.js";
-import { CODEX_ROLES, codexSetupInstructions, rewriteModelReferences, rewriteCodexModelReferences } from "../src/models.js";
+import { CODEX_ROLES, claudeSetupInstructions, codexSetupInstructions, rewriteModelReferences, rewriteCodexModelReferences } from "../src/models.js";
 import { createCursorPstack } from "./helpers.js";
 
 test("rewrites Cursor model slugs and the rule path to Claude Code subagents", () => {
@@ -33,7 +33,7 @@ test("Claude Code target emits agent definitions carrying model and effort", asy
 
   const fast = await readFile(path.join(result.pluginRoot, "agents", "pstack-fast.md"), "utf8");
   assert.match(fast, /^model: sonnet$/m);
-  assert.match(fast, /^effort: high$/m);
+  assert.match(fast, /^effort: medium$/m);
   const judgment = await readFile(path.join(result.pluginRoot, "agents", "pstack-judgment.md"), "utf8");
   assert.match(judgment, /^model: fable$/m);
   assert.match(judgment, /^effort: low$/m);
@@ -86,4 +86,14 @@ test("Codex setup keeps role defaults without Cursor rule metadata or trailing s
   assert.match(result, /reasoning_effort=high/);
   assert.doesNotMatch(result, /alwaysApply|Unrelated trailing steps|\.cursor/);
   assert.throws(() => codexSetupInstructions("changed upstream format"), /Unrecognized/);
+});
+
+test("rewrites the setup skill for Claude Code to panel seats on fixed-effort subagents", () => {
+  const source = "---\nname: setup-pstack\ndescription: setup at what reasoning budget\n---\n# Setup\n```\nalwaysApply: true\nfeature, refactoring: grok-4.6-fast-xhigh\narena runners: claude-fable-5-1-thinking-max, grok-4.6-fast-xhigh\narena cross-judge pool: gpt-5.6-sol-max\nswarm workers: grok-4.6-fast-xhigh\ninterrogate reviewers: gpt-5.6-sol-max, grok-4.6-fast-xhigh\n```\nUnrelated trailing steps\n";
+  const result = claudeSetupInstructions(source);
+  assert.match(result, /arena runners: pstack-judgment, pstack-fast/);
+  assert.match(result, /\| `pstack-fast` \| medium \| scoped implementation/);
+  assert.match(result, /~\/\.claude\/rules\/pstack-models\.md/);
+  assert.doesNotMatch(result, /feature, refactoring|reasoning budget|Unrelated trailing steps|\.cursor|grok/);
+  assert.throws(() => claudeSetupInstructions("changed upstream format"), /Unrecognized/);
 });

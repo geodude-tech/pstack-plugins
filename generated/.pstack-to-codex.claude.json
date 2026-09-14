@@ -1,6 +1,6 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-09-14T14:04:20.975Z",
+  "generatedAt": "2026-09-14T16:45:10.782Z",
   "target": "claude",
   "plugin": {
     "name": "pstack-for-claude",
@@ -161,8 +161,8 @@
     "automations"
   ],
   "compatibility": {
-    "rewrites": 340,
-    "findings": 32
+    "rewrites": 306,
+    "findings": 31
   },
   "validation": {
     "valid": true,

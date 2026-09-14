@@ -1,7 +1,7 @@
 # pstack compatibility report
 
-Rewrites: 340
-Manual-review findings: 32
+Rewrites: 306
+Manual-review findings: 31
 
 The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.
 
@@ -37,7 +37,6 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-path** at `skills/reflect/references/divergent-reviewer.md:23`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/judgment-reviewer.md:22`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/tooling-reviewer.md:35`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:29`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.6-medium-fast`)
 - **cursor-path** at `skills/show-me-your-work/SKILL.md:56`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
 
 ## Rewrites
@@ -335,41 +334,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/reflect/SKILL.md:37`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/reflect/SKILL.md:43`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
-- `skills/setup-pstack/SKILL.md:29`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:29`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:49`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:50`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:51`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:52`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:53`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:54`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:55`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:56`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:57`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:58`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:59`: `gpt-5.6-sol-max` → `pstack-balanced`
-- `skills/setup-pstack/SKILL.md:60`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:61`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:61`: `gpt-5.6-sol-max` → `pstack-balanced`
-- `skills/setup-pstack/SKILL.md:61`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:61`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:62`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:62`: `gpt-5.6-sol-max` → `pstack-balanced`
-- `skills/setup-pstack/SKILL.md:62`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:62`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:63`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:64`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:64`: `gpt-5.6-sol-max` → `pstack-balanced`
-- `skills/setup-pstack/SKILL.md:64`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:64`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:65`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:65`: `gpt-5.6-sol-max` → `pstack-balanced`
-- `skills/setup-pstack/SKILL.md:65`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:65`: `claude-opus-5-thinking-xhigh` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:8`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
-- `skills/setup-pstack/SKILL.md:18`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
-- `skills/setup-pstack/SKILL.md:39`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
-- `skills/setup-pstack/SKILL.md:74`: ``/create-verification-skill` → ``create-verification-skill`
+- `skills/setup-pstack/SKILL.md:1`: `Cursor model setup workflow` → `Claude Code panel seat setup workflow`
 - `skills/show-me-your-work/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/swarm/SKILL.md:25`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/swarm/SKILL.md:25`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`

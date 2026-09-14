@@ -13,9 +13,9 @@ export const CLAUDE_AGENTS = [
   {
     name: "pstack-fast",
     model: "sonnet",
-    effort: "high",
+    effort: "medium",
     slugs: ["grok-4.6-fast-xhigh"],
-    description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at high effort.",
+    description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at medium effort.",
   },
   {
     name: "pstack-balanced",
@@ -69,6 +69,65 @@ export function agentDefinition(agent) {
   ].join("\n");
 }
 
+// Only these rule lines are read by a converted Claude skill (arena, interrogate, swarm). The
+// other upstream roles are hard-coded to a subagent name, so a rule line for them is dead.
+const CLAUDE_RULE_ROLES = ["arena runners", "arena cross-judge pool", "interrogate reviewers", "swarm workers"];
+
+function setupDefaults(text) {
+  const frontmatterEnd = text.indexOf("\n---", 4);
+  const defaults = text.match(/^feature, refactoring:[^\n]*[\s\S]*?^interrogate reviewers:[^\n]*$/m)?.[0];
+  if (frontmatterEnd === -1 || !defaults) {
+    throw new Error("Unrecognized setup-pstack structure; review the upstream setup workflow before converting it.");
+  }
+  return { frontmatter: text.slice(0, frontmatterEnd + 4), defaults };
+}
+
+export function claudeSetupInstructions(text) {
+  const { frontmatter, defaults } = setupDefaults(rewriteModelReferences(text).text);
+  const roleLines = defaults.split("\n").filter((line) => CLAUDE_RULE_ROLES.some((role) => line.startsWith(`${role}:`)));
+  if (roleLines.length !== CLAUDE_RULE_ROLES.length) {
+    throw new Error("Unrecognized setup-pstack role list; review the upstream setup workflow before converting it.");
+  }
+  const description = "Configure which pstack subagent fills each panel seat and how many seats each panel has. Writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, \"configure pstack models\", \"pstack budget\", or changing pstack's model choices.";
+  return `${frontmatter.replace(/^description:.*$/m, `description: ${description}`)}
+
+# Setup pstack
+
+Write \`${CLAUDE_RULE_PATH}\`, an always-applied rule that sets which pstack subagent fills each panel seat and how many seats each panel has.
+
+## What the rule can and cannot change
+
+Model and reasoning effort are fixed per subagent in this plugin's \`agents/<name>.md\` files. The rule picks among these subagents; it cannot change their model or effort.
+
+| Subagent | Effort | Role |
+| --- | --- | --- |
+${CLAUDE_AGENTS.map((agent) => `| \`${agent.name}\` | ${agent.effort} | ${agent.description.match(/^[^:]*: (.*?)\. /)[1]} |`).join("\n")}
+
+Only the roles below read the rule. Every other pstack skill names its subagent directly, so a rule line for another role has no effect. The list length sets the seat count: one subagent runs per entry, alias entries included. Panel seats are the main cost lever; fewer seats cost less than any single model change.
+
+## Steps
+
+1. Read \`${CLAUDE_RULE_PATH}\` if it exists and treat its role values as the current choices. Otherwise start from the defaults below.
+2. Show every role with its value. Ask whether to accept as-is or change specific roles. Prefer AskUserQuestion over free text. Offer the three subagents plus \`inherit-parent\` and \`auto\`, which both mean the seat runs on the parent chat model (omit \`subagent_type\`). For \`arena cross-judge pool\` Arena selects one entry whose model differs from the parent's when possible. \`swarm workers\` is the default for every worker unless a race or comparison assigns another per arm.
+3. Validate: every entry must be one of the subagent names above, \`inherit-parent\`, or \`auto\`. If not, ask again.
+4. Write the whole file so re-runs stay idempotent:
+
+\`\`\`
+---
+description: pstack per-role model choices (overrides skill defaults)
+alwaysApply: true
+---
+# pstack panel configuration. One line per role. Delete a line to fall back to the skill default.
+# Values are this plugin's subagent names. Model and effort live in the plugin's agents/ files.
+# \`inherit-parent\` or \`auto\` as a value: the seat runs on the parent chat model (omit subagent_type). Alias entries still count toward the fan-out.
+${roleLines.join("\n")}
+\`\`\`
+
+5. Tell the user the rule was written and that it applies to new sessions. Re-running this skill updates it.
+6. Check whether the project has a way to drive the real app for proof (a \`verify-*\` skill, or an existing harness). If not, offer once to generate one with /create-verification-skill. On no, move on without pushing.
+`;
+}
+
 export const CODEX_ROLES = [
   { name: "pstack-judgment", model: "gpt-6-astra", effort: "low", slugs: CLAUDE_AGENTS[0].slugs },
   { name: "pstack-fast", model: "gpt-5.6-luna", effort: "high", slugs: CLAUDE_AGENTS[1].slugs },
@@ -115,12 +174,8 @@ export function rewriteCodexModelReferences(text, includeRouting = false) {
 }
 
 export function codexSetupInstructions(text) {
-  const frontmatterEnd = text.indexOf("\n---", 4);
-  const defaults = text.match(/^feature, refactoring:[^\n]*[\s\S]*?^interrogate reviewers:[^\n]*$/m)?.[0];
-  if (frontmatterEnd === -1 || !defaults) {
-    throw new Error("Unrecognized setup-pstack structure; review the upstream setup workflow before converting it.");
-  }
-  return `${text.slice(0, frontmatterEnd + 4).replace("writes an always-applied rule", "writes a Codex preference file")}
+  const { frontmatter, defaults } = setupDefaults(text);
+  return `${frontmatter.replace("writes an always-applied rule", "writes a Codex preference file")}
 
 # Setup pstack
 
