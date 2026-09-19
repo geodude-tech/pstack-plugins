@@ -10,7 +10,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **omitted-component** at `agents`: This Cursor runtime component was not copied into Codex executable discovery. (`agents`)
 - **omitted-component** at `automations`: This Cursor runtime component was not copied into Codex executable discovery. (`automations`)
 - **cursor-command** at `README.md:18`: This Cursor command has no automatic Codex equivalent. (`/add-plugin`)
-- **model-identifier** at `README.md:30`: Choose an available Codex model instead of preserving this host-specific model identifier. (`fable 5.1`)
+- **model-identifier** at `README.md:30`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok`)
 - **cursor-command** at `README.md:93`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **model-identifier** at `README.md:122`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
 - **cursor-path** at `README.md:255`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/automations/benny/`)
@@ -312,11 +312,11 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/SKILL.md:93`: ``/setup-pstack` → ``$setup-pstack`
 - `skills/poteto-mode/playbooks/autopilot-full.md:6`: ``/no-comments` → ``$no-comments`
 - `skills/poteto-mode/playbooks/autopilot-stack.md:5`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-mode/playbooks/bug-fix.md:9`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
+- `skills/poteto-mode/playbooks/bug-fix.md:9`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/bug-fix.md:19`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/playbooks/feature.md:12`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/feature.md:23`: `` → `Added Codex model routing instructions`
-- `skills/poteto-mode/playbooks/hillclimb.md:12`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
+- `skills/poteto-mode/playbooks/hillclimb.md:12`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/hillclimb.md:23`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:101`: `grok-4.6-fast-xhigh` → `pstack-fast`
@@ -328,7 +328,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/technical-writing` → ``$technical-writing`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/unslop` → ``$unslop`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:33`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-mode/playbooks/perf-issue.md:16`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
+- `skills/poteto-mode/playbooks/perf-issue.md:16`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/perf-issue.md:26`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/playbooks/refactoring.md:11`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/poteto-mode/playbooks/refactoring.md:18`: `` → `Added Codex model routing instructions`
@@ -365,9 +365,9 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/setup-pstack/SKILL.md:1`: `Cursor model setup workflow` → `Codex model and effort setup workflow`
 - `skills/setup-pstack/SKILL.md:24`: `grok-4.6-fast-xhigh` → `pstack-fast`
-- `skills/setup-pstack/SKILL.md:25`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:26`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
-- `skills/setup-pstack/SKILL.md:27`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:25`: `grok-4.6-fast-xhigh` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:26`: `grok-4.6-fast-xhigh` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:27`: `grok-4.6-fast-xhigh` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:28`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:29`: `claude-fable-5-1-thinking-max` → `pstack-judgment`
 - `skills/setup-pstack/SKILL.md:30`: `grok-4.6-fast-xhigh` → `pstack-fast`
