@@ -1,6 +1,6 @@
 ---
 name: setup-pstack
-description: Configure which models pstack uses per role. Detects your available models and writes a Codex preference file that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", or changing pstack's model choices.
+description: Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes a Codex preference file that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", "pstack budget", or changing pstack's model choices.
 ---
 
 # Setup pstack
@@ -21,23 +21,23 @@ pstack-judgment: model=gpt-6-astra, reasoning_effort=low
 pstack-fast: model=gpt-5.6-luna, reasoning_effort=high
 pstack-balanced: model=gpt-5.6-sol, reasoning_effort=medium
 
-feature, refactoring: pstack-fast
-bug-fix: pstack-judgment
-perf-issue: pstack-judgment
-hillclimb: pstack-judgment
-judgment and prose: pstack-judgment
-hardest tasks: pstack-judgment
-how explorer: pstack-fast
-how explainer: pstack-judgment
-why investigators: pstack-fast
-why synthesizer: pstack-judgment
+feature, refactoring: grok-4.7-xhigh-fast
+bug-fix: grok-4.7-xhigh-fast
+perf-issue: grok-4.7-xhigh-fast
+hillclimb: grok-4.7-xhigh-fast
+judgment and prose: claude-opus-5-5-max
+hardest tasks: claude-opus-5-5-max
+how explorer: grok-4.7-xhigh-fast
+how explainer: claude-opus-5-5-max
+why investigators: grok-4.7-xhigh-fast
+why synthesizer: claude-opus-5-5-max
 reflect tooling: pstack-balanced
-reflect judgment, divergent, synthesizer: pstack-judgment
-arena runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
-arena cross-judge pool: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
-swarm workers: pstack-fast
-architect runners: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
-interrogate reviewers: pstack-judgment, pstack-balanced, pstack-fast, pstack-judgment
+reflect judgment, divergent, synthesizer: claude-opus-5-5-max
+arena runners: claude-opus-5-5-max, pstack-balanced, grok-4.7-xhigh-fast
+arena cross-judge pool: claude-opus-5-5-max, pstack-balanced, grok-4.7-xhigh-fast
+swarm workers: grok-4.7-xhigh-fast
+architect runners: claude-opus-5-5-max, pstack-balanced, grok-4.7-xhigh-fast
+interrogate reviewers: claude-opus-5-5-max, pstack-balanced, grok-4.7-xhigh-fast
 ```
 
 6. Report the saved choices. Converted workflows read this file before delegating; re-running setup updates the choices.
