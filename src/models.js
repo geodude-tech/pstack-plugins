@@ -5,10 +5,10 @@
 export const CLAUDE_AGENTS = [
   {
     name: "pstack-judgment",
-    model: "fable",
-    effort: "low",
+    model: "claude-opus-5-5",
+    effort: "extra",
     slugs: ["claude-fable-5-1-thinking-max", "claude-opus-5-thinking-xhigh"],
-    description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Fable 5.1 at low effort.",
+    description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Opus 5.5 at extra effort.",
   },
   {
     name: "pstack-fast",

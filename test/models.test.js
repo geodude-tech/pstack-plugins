@@ -35,8 +35,8 @@ test("Claude Code target emits agent definitions carrying model and effort", asy
   assert.match(fast, /^model: claude-sonnet-5-5$/m);
   assert.match(fast, /^effort: high$/m);
   const judgment = await readFile(path.join(result.pluginRoot, "agents", "pstack-judgment.md"), "utf8");
-  assert.match(judgment, /^model: fable$/m);
-  assert.match(judgment, /^effort: low$/m);
+  assert.match(judgment, /^model: claude-opus-5-5$/m);
+  assert.match(judgment, /^effort: extra$/m);
   const balanced = await readFile(path.join(result.pluginRoot, "agents", "pstack-balanced.md"), "utf8");
   assert.match(balanced, /^model: claude-opus-5-5$/m);
   assert.match(balanced, /^effort: medium$/m);

@@ -1,6 +1,6 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-10-05T14:38:54.415Z",
+  "generatedAt": "2026-10-05T23:26:27.458Z",
   "target": "claude",
   "plugin": {
     "name": "pstack-for-claude",
