@@ -32,13 +32,13 @@ test("Claude Code target emits agent definitions carrying model and effort", asy
   const result = await convertPstack({ sourcePath: source, destination: `${sourceParent}-output`, target: "claude" });
 
   const fast = await readFile(path.join(result.pluginRoot, "agents", "pstack-fast.md"), "utf8");
-  assert.match(fast, /^model: sonnet$/m);
+  assert.match(fast, /^model: claude-sonnet-5-5$/m);
   assert.match(fast, /^effort: high$/m);
   const judgment = await readFile(path.join(result.pluginRoot, "agents", "pstack-judgment.md"), "utf8");
   assert.match(judgment, /^model: fable$/m);
   assert.match(judgment, /^effort: low$/m);
   const balanced = await readFile(path.join(result.pluginRoot, "agents", "pstack-balanced.md"), "utf8");
-  assert.match(balanced, /^model: opus$/m);
+  assert.match(balanced, /^model: claude-opus-5-5$/m);
   assert.match(balanced, /^effort: medium$/m);
   assert.match(
     await readFile(path.join(result.pluginRoot, "skills", "poteto-mode", "SKILL.md"), "utf8"),
