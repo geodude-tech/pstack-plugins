@@ -1,7 +1,7 @@
 ---
 name: pstack-fast
-description: pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at high effort.
-model: sonnet
+description: pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5.5 at high effort.
+model: claude-sonnet-5-5
 effort: high
 ---
 

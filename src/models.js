@@ -5,24 +5,24 @@
 export const CLAUDE_AGENTS = [
   {
     name: "pstack-judgment",
-    model: "fable",
-    effort: "low",
+    model: "claude-opus-5-5",
+    effort: "extra",
     slugs: ["claude-fable-5-1-thinking-max", "claude-opus-5-thinking-xhigh"],
-    description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Fable 5.1 at low effort.",
+    description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Opus 5.5 at extra effort.",
   },
   {
     name: "pstack-fast",
-    model: "sonnet",
+    model: "claude-sonnet-5-5",
     effort: "high",
     slugs: ["grok-4.6-fast-xhigh"],
-    description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5 at high effort.",
+    description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5.5 at high effort.",
   },
   {
     name: "pstack-balanced",
-    model: "opus",
+    model: "claude-opus-5-5",
     effort: "medium",
     slugs: ["gpt-5.6-sol-max"],
-    description: "pstack balanced role: reflect tooling and one seat in each panel. Opus at medium effort.",
+    description: "pstack balanced role: reflect tooling and one seat in each panel. Opus 5.5 at medium effort.",
   },
 ];
 

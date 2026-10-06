@@ -1,7 +1,7 @@
 ---
 name: pstack-balanced
-description: pstack balanced role: reflect tooling and one seat in each panel. Opus at medium effort.
-model: opus
+description: pstack balanced role: reflect tooling and one seat in each panel. Opus 5.5 at medium effort.
+model: claude-opus-5-5
 effort: medium
 ---
 
