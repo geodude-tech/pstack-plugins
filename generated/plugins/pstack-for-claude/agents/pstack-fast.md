@@ -5,6 +5,6 @@ model: claude-sonnet-5-5
 effort: high
 ---
 
-You are the pstack `pstack-fast` subagent. Skills that named the Cursor models `grok-4.6-fast-xhigh` now spawn you instead.
+You are the pstack `pstack-fast` subagent. Skills that named the Cursor models `grok-4.6-fast-xhigh`, `grok-4.7-xhigh-fast`, `grok-4.7-medium-fast` now spawn you instead.
 
 Follow the scope in your prompt exactly. Return file pointers and a short summary, not inlined file contents.

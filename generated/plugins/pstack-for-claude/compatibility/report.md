@@ -1,7 +1,7 @@
 # pstack compatibility report
 
-Rewrites: 463
-Manual-review findings: 66
+Rewrites: 518
+Manual-review findings: 39
 
 The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.
 
@@ -19,17 +19,13 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-path** at `docs/guide/06-verify-and-ship.md:61`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
 - **cursor-path** at `docs/guide/09-make-it-yours.md:13`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **model-identifier** at `docs/guide/09-make-it-yours.md:96`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
-- **model-identifier** at `skills/architect/SKILL.md:31`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/arena/SKILL.md:17`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/arena/SKILL.md:28`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
+- **model-identifier** at `skills/arena/SKILL.md:17`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok`)
 - **cursor-path** at `skills/automate-me/SKILL.md:17`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/automate-me/SKILL.md:29`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
 - **cursor-path** at `skills/automate-me/SKILL.md:69`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:9`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:36`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
-- **model-identifier** at `skills/how/SKILL.md:11`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/interrogate/SKILL.md:32`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **model-identifier** at `skills/interrogate/SKILL.md:36`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok`)
 - **cursor-path** at `skills/maintain-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/verify-`)
 - **model-identifier** at `skills/make-bot-ui/SKILL.md:5`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
@@ -37,15 +33,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **model-identifier** at `skills/make-bot-ui/SKILL.md:55`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
 - **cursor-command** at `skills/poteto-help/SKILL.md:37`: This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead. (`/add-plugin`)
 - **model-identifier** at `skills/poteto-help/SKILL.md:93`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
-- **model-identifier** at `skills/poteto-mode/SKILL.md:95`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/SKILL.md:97`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/bug-fix.md:9`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/poteto-mode/playbooks/eval.md:22`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
-- **model-identifier** at `skills/poteto-mode/playbooks/feature.md:12`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/hillclimb.md:12`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/perf-issue.md:17`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/refactoring.md:11`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/poteto-mode/playbooks/session-pickup.md:5`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
 - **cursor-path** at `skills/poteto-mode/playbooks/worktree-cleanup.md:3`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/worktrees/myrepo/x`)
 - **model-identifier** at `skills/poteto-mode/scripts/orch/orch.test.ts:371`: Choose an available Claude model instead of preserving this host-specific model identifier. (`opus`)
@@ -53,26 +41,11 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:66`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/projects/`)
 - **cursor-path** at `skills/recall/SKILL.md:15`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
 - **cursor-path** at `skills/reflect/SKILL.md:15`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
-- **model-identifier** at `skills/reflect/SKILL.md:32`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/reflect/references/divergent-reviewer.md:21`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/judgment-reviewer.md:20`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/tooling-reviewer.md:31`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`.cursor/skills/`)
 - **model-identifier** at `skills/setup-pstack/SKILL.md:29`: Choose an available Claude model instead of preserving this host-specific model identifier. (`Grok`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:49`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:50`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:51`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:52`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:55`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:57`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:59`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:61`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:62`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:63`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:64`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:65`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/show-me-your-work/SKILL.md:57`: Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree). (`~/.cursor/projects/`)
-- **model-identifier** at `skills/swarm/SKILL.md:25`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/why/SKILL.md:49`: Choose an available Claude model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 
 ## Rewrites
 
@@ -341,7 +314,15 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `docs/guide/README.md:36`: ``/poteto-mode` → ``poteto-mode`
 - `docs/guide/README.md:23`: `/poteto-help` → `poteto-help`
 - `docs/guide/README.md:33`: `/poteto-mode` → `poteto-mode`
+- `skills/architect/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/architect/SKILL.md:31`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/architect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/arena/SKILL.md:17`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/arena/SKILL.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/arena/SKILL.md:17`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:28`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:28`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/arena/SKILL.md:17`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/arena/SKILL.md:28`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/arena/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -353,8 +334,12 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/create-verification-skill/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/create-verification-skill/SKILL.md:44`: ``/maintain-verification-skill` → ``maintain-verification-skill`
 - `skills/figure-it-out/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/how/SKILL.md:11`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/how/SKILL.md:11`: `claude-opus-5-5-xhigh` → `pstack-judgment`
 - `skills/how/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/in-your-own-words/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/interrogate/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/interrogate/SKILL.md:32`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/interrogate/SKILL.md:27`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/interrogate/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/ketchup/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -483,6 +468,10 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-help/references/recipes.md:47`: ``/poteto-mode` → ``poteto-mode`
 - `skills/poteto-help/references/recipes.md:48`: ``/reflect` → ``reflect`
 - `skills/poteto-help/references/recipes.md:49`: ``/bro` → ``bro`
+- `skills/poteto-mode/SKILL.md:95`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/SKILL.md:95`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/poteto-mode/SKILL.md:95`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/poteto-mode/SKILL.md:97`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/poteto-mode/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/poteto-mode/SKILL.md:2`: `name: Poteto Mode` → `name: poteto-mode`
 - `skills/poteto-mode/SKILL.md:27`: ``/technical-writing` → ``technical-writing`
@@ -492,6 +481,10 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/SKILL.md:95`: ``/setup-pstack` → ``setup-pstack`
 - `skills/poteto-mode/SKILL.md:97`: ``/setup-pstack` → ``setup-pstack`
 - `skills/poteto-mode/playbooks/autopilot-full.md:10`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/bug-fix.md:9`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/feature.md:12`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/hillclimb.md:12`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/technical-writing` → ``technical-writing`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/unslop` → ``unslop`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:59`: ``/no-comments` → ``no-comments`
@@ -499,6 +492,8 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/technical-writing` → ``technical-writing`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/unslop` → ``unslop`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:34`: ``/no-comments` → ``no-comments`
+- `skills/poteto-mode/playbooks/perf-issue.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/refactoring.md:11`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/principle-attack-the-premise/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-boundary-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-build-the-lever/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -524,13 +519,44 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/principle-test-behavior-not-implementation/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-type-system-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/recall/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/reflect/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/reflect/SKILL.md:32`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/reflect/SKILL.md:33`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/reflect/SKILL.md:39`: `claude-opus-5-5-xhigh` → `pstack-judgment`
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/setup-pstack/SKILL.md:29`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:29`: `claude-opus-5-5-max` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:29`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:29`: `claude-opus-5-5-medium` → `pstack-balanced`
+- `skills/setup-pstack/SKILL.md:29`: `grok-4.7-medium-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:49`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:50`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:51`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:52`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:53`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:54`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:55`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:56`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:57`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:58`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:59`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:60`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:61`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:61`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:62`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:62`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:63`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:64`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:64`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:65`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:65`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/setup-pstack/SKILL.md:8`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/setup-pstack/SKILL.md:18`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/setup-pstack/SKILL.md:39`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/setup-pstack/SKILL.md:74`: ``/create-verification-skill` → ``create-verification-skill`
 - `skills/sharpen/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/show-me-your-work/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/swarm/SKILL.md:25`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/swarm/SKILL.md:25`: `~/.cursor/rules/pstack-models.mdc` → `~/.claude/rules/pstack-models.md`
 - `skills/swarm/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/tdd/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -538,4 +564,6 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/technical-writing/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/typescript-best-practices/SKILL.md:5`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/unslop/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/why/SKILL.md:49`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/why/SKILL.md:79`: `claude-opus-5-5-xhigh` → `pstack-judgment`
 - `skills/why/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`

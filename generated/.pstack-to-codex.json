@@ -1,6 +1,6 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-10-15T16:00:08.640Z",
+  "generatedAt": "2026-10-15T16:02:11.951Z",
   "target": "codex",
   "plugin": {
     "name": "pstack-for-codex",
@@ -171,8 +171,8 @@
     "automations"
   ],
   "compatibility": {
-    "rewrites": 465,
-    "findings": 97
+    "rewrites": 527,
+    "findings": 60
   },
   "validation": {
     "valid": true,
