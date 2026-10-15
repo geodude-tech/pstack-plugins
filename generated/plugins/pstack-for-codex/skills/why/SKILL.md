@@ -46,7 +46,7 @@ Map each available MCP to one evidence category:
 
 Source control is always available through git and `gh`. For the other six, classify using the MCP name, server instructions, tool names, and resource descriptors. If an MCP could fit more than one category, choose the one matching its primary evidence. Record ambiguous cases in the coverage map.
 
-Spawn one investigator per category that has a matching MCP, all in a single message so they run concurrently, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. `model`: the `why investigators` line, default `grok-4.7-xhigh-fast`.
+Spawn one investigator per category that has a matching MCP, all in a single message so they run concurrently, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. `model`: the `why investigators` line, default `pstack-fast`.
 
 Each investigator's prompt is `references/investigator-prompt.md` filled in, plus:
 - the category playbook `references/sources/<source>.md` for the selected MCP, adapted from the examples in `references/source-playbook.md`
@@ -76,7 +76,7 @@ If your scope assessment suggests a single-commit trivial target where the PR de
 
 ## Step 4. Synthesize
 
-Spawn one synthesizer. `model`: the `why synthesizer` line, default `claude-opus-5-5-xhigh`. It gets:
+Spawn one synthesizer. `model`: the `why synthesizer` line, default `pstack-judgment`. It gets:
 1. The investigator findings, including any null results and any categories skipped with justification
 2. The code anchor
 3. The user's original question
@@ -96,3 +96,19 @@ After Sources Consulted, if the user's `why` question is a precursor to changing
 ## Common Failure Modes to Avoid
 
 - **Recency bias**. Assuming the most recent commit is authoritative. The current shape is often the accretion of many earlier decisions. Trace back.
+
+## Codex model routing
+
+Before delegating, read `~/.codex/pstack-models.md` if it exists. Its per-role choices override these defaults.
+
+| Role alias | Model | Reasoning effort |
+| --- | --- | --- |
+| pstack-judgment | gpt-6-astra | low |
+| pstack-fast | gpt-5.6-luna | high |
+| pstack-balanced | gpt-5.6-sol | medium |
+
+These aliases are routing labels, not model IDs or registered agent types. Resolve an alias before spawning and pass the model and reasoning effort separately using the available subagent tool. With `collaboration.spawn_agent`, use `model` and `reasoning_effort`; explicit overrides require `fork_turns` to be `none` or a positive turn count, with sufficient task context in the prompt.
+
+Check the session's available models and effort levels before spawning. If a configured pair is unavailable, ask for a supported replacement. For `inherit-parent` or `auto`, omit both overrides. If the host cannot select a model or effort, report that limitation rather than claim the requested routing was applied.
+
+Keep every panel entry, including repeated aliases, as a separate agent. These defaults do not provide cross-provider diversity; do not claim that repeated roles are different model families.

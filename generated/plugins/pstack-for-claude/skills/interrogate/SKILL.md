@@ -28,8 +28,8 @@ Launch all reviewers in a single message with the Task tool, one per entry on th
 
 | Subagent | Default model |
 |----------|---------------|
-| Reviewer A | `claude-opus-5-5-xhigh` |
-| Reviewer B | `grok-4.7-xhigh-fast` |
+| Reviewer A | `pstack-judgment` |
+| Reviewer B | `pstack-fast` |
 
 Each reviewer gets `subagent_type: generalPurpose`, `readonly: true`, and `model` set to its configured entry, or its table default when there is no configured line. Omit `model` for an `auto` or `inherit-parent` entry, so that reviewer runs on the parent model.
 

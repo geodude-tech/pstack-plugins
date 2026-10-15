@@ -7,21 +7,21 @@ export const CLAUDE_AGENTS = [
     name: "pstack-judgment",
     model: "claude-opus-5-5",
     effort: "extra",
-    slugs: ["claude-fable-5-1-thinking-max", "claude-opus-5-thinking-xhigh"],
+    slugs: ["claude-fable-5-1-thinking-max", "claude-opus-5-thinking-xhigh", "claude-opus-5-5-xhigh", "claude-opus-5-5-max"],
     description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Opus 5.5 at extra effort.",
   },
   {
     name: "pstack-fast",
     model: "claude-sonnet-5-5",
     effort: "high",
-    slugs: ["grok-4.6-fast-xhigh"],
+    slugs: ["grok-4.6-fast-xhigh", "grok-4.7-xhigh-fast", "grok-4.7-medium-fast"],
     description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5.5 at high effort.",
   },
   {
     name: "pstack-balanced",
     model: "claude-opus-5-5",
     effort: "medium",
-    slugs: ["gpt-5.6-sol-max"],
+    slugs: ["gpt-5.6-sol-max", "claude-opus-5-5-medium"],
     description: "pstack balanced role: reflect tooling and one seat in each panel. Opus 5.5 at medium effort.",
   },
 ];
@@ -31,7 +31,7 @@ const CLAUDE_RULE_PATH = "~/.claude/rules/pstack-models.md";
 
 const SLUG_TO_AGENT = new Map(CLAUDE_AGENTS.flatMap((agent) => agent.slugs.map((slug) => [slug, agent.name])));
 const SLUG_PATTERN = new RegExp(
-  [...SLUG_TO_AGENT.keys()].map((slug) => slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"),
+  [...SLUG_TO_AGENT.keys()].sort((a, b) => b.length - a.length).map((slug) => slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"),
   "g",
 );
 

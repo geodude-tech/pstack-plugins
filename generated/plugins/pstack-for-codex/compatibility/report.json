@@ -1,7 +1,7 @@
 {
   "summary": {
-    "rewrites": 465,
-    "findings": 97
+    "rewrites": 527,
+    "findings": 60
   },
   "rewrites": [
     {
@@ -1601,10 +1601,64 @@
       "file": "docs/guide/README.md"
     },
     {
+      "line": 31,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 31,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 81,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/architect/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/architect/SKILL.md"
+    },
+    {
+      "line": 17,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 17,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 17,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 17,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/arena/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/arena/SKILL.md"
     },
     {
       "line": 17,
@@ -1679,6 +1733,24 @@
       "file": "skills/figure-it-out/SKILL.md"
     },
     {
+      "line": 11,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 11,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/how/SKILL.md"
+    },
+    {
+      "line": 38,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/how/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
@@ -1689,6 +1761,18 @@
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/in-your-own-words/SKILL.md"
+    },
+    {
+      "line": 31,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/interrogate/SKILL.md"
+    },
+    {
+      "line": 32,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/interrogate/SKILL.md"
     },
     {
       "line": 27,
@@ -2471,6 +2555,36 @@
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
+      "line": 95,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 95,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 95,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 97,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
+      "line": 151,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
@@ -2526,6 +2640,54 @@
     },
     {
       "line": 9,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/bug-fix.md"
+    },
+    {
+      "line": 17,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/bug-fix.md"
+    },
+    {
+      "line": 12,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/feature.md"
+    },
+    {
+      "line": 23,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/feature.md"
+    },
+    {
+      "line": 12,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/hillclimb.md"
+    },
+    {
+      "line": 23,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/hillclimb.md"
+    },
+    {
+      "line": 13,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 157,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
+    },
+    {
+      "line": 9,
       "before": "`/technical-writing",
       "after": "`$technical-writing",
       "file": "skills/poteto-mode/playbooks/multi-phase-plan.md"
@@ -2565,6 +2727,30 @@
       "before": "`/no-comments",
       "after": "`$no-comments",
       "file": "skills/poteto-mode/playbooks/opening-a-pr.md"
+    },
+    {
+      "line": 17,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/perf-issue.md"
+    },
+    {
+      "line": 27,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/perf-issue.md"
+    },
+    {
+      "line": 11,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/poteto-mode/playbooks/refactoring.md"
+    },
+    {
+      "line": 18,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/poteto-mode/playbooks/refactoring.md"
     },
     {
       "line": 4,
@@ -2717,6 +2903,36 @@
       "file": "skills/recall/SKILL.md"
     },
     {
+      "line": 31,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 32,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 33,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 39,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
+      "line": 69,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/reflect/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
@@ -2729,6 +2945,138 @@
       "after": "Codex model and effort setup workflow"
     },
     {
+      "line": 24,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 25,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 26,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 27,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 28,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 29,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 30,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 31,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 32,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 33,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 34,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 35,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 36,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 36,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 37,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 37,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 38,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 39,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 39,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 40,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 40,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
+      "line": 45,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/setup-pstack/SKILL.md"
+    },
+    {
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
@@ -2739,6 +3087,12 @@
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/show-me-your-work/SKILL.md"
+    },
+    {
+      "line": 25,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/swarm/SKILL.md"
     },
     {
       "line": 25,
@@ -2787,6 +3141,24 @@
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
       "file": "skills/unslop/SKILL.md"
+    },
+    {
+      "line": 49,
+      "before": "grok-4.7-xhigh-fast",
+      "after": "pstack-fast",
+      "file": "skills/why/SKILL.md"
+    },
+    {
+      "line": 79,
+      "before": "claude-opus-5-5-xhigh",
+      "after": "pstack-judgment",
+      "file": "skills/why/SKILL.md"
+    },
+    {
+      "line": 100,
+      "before": "",
+      "after": "Added Codex model routing instructions",
+      "file": "skills/why/SKILL.md"
     },
     {
       "line": 4,
@@ -2924,23 +3296,9 @@
     },
     {
       "code": "model-identifier",
-      "file": "skills/architect/SKILL.md",
-      "line": 31,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
       "file": "skills/arena/SKILL.md",
       "line": 17,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/arena/SKILL.md",
-      "line": 28,
-      "match": "claude-opus-5-5-xhigh",
+      "match": "grok",
       "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
@@ -2984,27 +3342,6 @@
       "line": 36,
       "match": ".cursor/skills/verify-",
       "message": "Replace this Cursor-specific path with an explicit Codex location."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/how/SKILL.md",
-      "line": 11,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/interrogate/SKILL.md",
-      "line": 31,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/interrogate/SKILL.md",
-      "line": 32,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "model-identifier",
@@ -3098,20 +3435,6 @@
       "message": "This Cursor command has no automatic Codex equivalent."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/SKILL.md",
-      "line": 95,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/SKILL.md",
-      "line": 97,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-command",
       "file": "skills/poteto-mode/SKILL.md",
       "line": 141,
@@ -3147,13 +3470,6 @@
       "message": "This Cursor command has no automatic Codex equivalent."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/bug-fix.md",
-      "line": 9,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-path",
       "file": "skills/poteto-mode/playbooks/eval.md",
       "line": 22,
@@ -3161,46 +3477,11 @@
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/feature.md",
-      "line": 12,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/hillclimb.md",
-      "line": 12,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
-      "line": 13,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-command",
       "file": "skills/poteto-mode/playbooks/multi-phase-plan.md",
       "line": 41,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/perf-issue.md",
-      "line": 17,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/poteto-mode/playbooks/refactoring.md",
-      "line": 11,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
@@ -3280,34 +3561,6 @@
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/reflect/SKILL.md",
-      "line": 31,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/reflect/SKILL.md",
-      "line": 32,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/reflect/SKILL.md",
-      "line": 33,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/reflect/SKILL.md",
-      "line": 39,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-path",
       "file": "skills/reflect/references/divergent-reviewer.md",
       "line": 21,
@@ -3329,151 +3582,11 @@
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },
     {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 24,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 25,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 26,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 27,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 28,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 29,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 30,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 31,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 32,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 33,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 34,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 35,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 36,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 37,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 38,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 39,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/setup-pstack/SKILL.md",
-      "line": 40,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
       "code": "cursor-path",
       "file": "skills/show-me-your-work/SKILL.md",
       "line": 57,
       "match": "~/.cursor/projects/",
       "message": "Replace this Cursor-specific path with an explicit Codex location."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/swarm/SKILL.md",
-      "line": 25,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/why/SKILL.md",
-      "line": 49,
-      "match": "grok-4.7-xhigh-fast",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
-    },
-    {
-      "code": "model-identifier",
-      "file": "skills/why/SKILL.md",
-      "line": 79,
-      "match": "claude-opus-5-5-xhigh",
-      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     }
   ]
 }

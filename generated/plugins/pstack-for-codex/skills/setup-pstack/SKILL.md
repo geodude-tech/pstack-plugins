@@ -21,23 +21,39 @@ pstack-judgment: model=gpt-6-astra, reasoning_effort=low
 pstack-fast: model=gpt-5.6-luna, reasoning_effort=high
 pstack-balanced: model=gpt-5.6-sol, reasoning_effort=medium
 
-feature, refactoring: grok-4.7-xhigh-fast
-bug-fix: grok-4.7-xhigh-fast
-perf-issue: grok-4.7-xhigh-fast
-hillclimb: grok-4.7-xhigh-fast
-judgment and prose: claude-opus-5-5-xhigh
-hardest tasks: claude-opus-5-5-xhigh
-how explorer: grok-4.7-xhigh-fast
-how explainer: claude-opus-5-5-xhigh
-why investigators: grok-4.7-xhigh-fast
-why synthesizer: claude-opus-5-5-xhigh
-reflect tooling: grok-4.7-xhigh-fast
-reflect judgment, divergent, synthesizer: claude-opus-5-5-xhigh
-arena runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-arena cross-judge pool: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-swarm workers: grok-4.7-xhigh-fast
-architect runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-interrogate reviewers: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+feature, refactoring: pstack-fast
+bug-fix: pstack-fast
+perf-issue: pstack-fast
+hillclimb: pstack-fast
+judgment and prose: pstack-judgment
+hardest tasks: pstack-judgment
+how explorer: pstack-fast
+how explainer: pstack-judgment
+why investigators: pstack-fast
+why synthesizer: pstack-judgment
+reflect tooling: pstack-fast
+reflect judgment, divergent, synthesizer: pstack-judgment
+arena runners: pstack-judgment, pstack-fast
+arena cross-judge pool: pstack-judgment, pstack-fast
+swarm workers: pstack-fast
+architect runners: pstack-judgment, pstack-fast
+interrogate reviewers: pstack-judgment, pstack-fast
 ```
 
 6. Report the saved choices. Converted workflows read this file before delegating; re-running setup updates the choices.
+
+## Codex model routing
+
+Before delegating, read `~/.codex/pstack-models.md` if it exists. Its per-role choices override these defaults.
+
+| Role alias | Model | Reasoning effort |
+| --- | --- | --- |
+| pstack-judgment | gpt-6-astra | low |
+| pstack-fast | gpt-5.6-luna | high |
+| pstack-balanced | gpt-5.6-sol | medium |
+
+These aliases are routing labels, not model IDs or registered agent types. Resolve an alias before spawning and pass the model and reasoning effort separately using the available subagent tool. With `collaboration.spawn_agent`, use `model` and `reasoning_effort`; explicit overrides require `fork_turns` to be `none` or a positive turn count, with sufficient task context in the prompt.
+
+Check the session's available models and effort levels before spawning. If a configured pair is unavailable, ask for a supported replacement. For `inherit-parent` or `auto`, omit both overrides. If the host cannot select a model or effort, report that limitation rather than claim the requested routing was applied.
+
+Keep every panel entry, including repeated aliases, as a separate agent. These defaults do not provide cross-provider diversity; do not claim that repeated roles are different model families.

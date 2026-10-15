@@ -68,7 +68,7 @@ test("Codex target resolves model roles and includes spawn instructions", async 
 test("Codex maps every known slug, preserves panel count, and is idempotent", () => {
   const slugs = CODEX_ROLES.flatMap((role) => role.slugs);
   const result = rewriteCodexModelReferences(slugs.join(", ") + "\n~/.cursor/rules/pstack-models.mdc", true);
-  assert.equal(result.text.split("\n")[0], "pstack-judgment, pstack-judgment, pstack-fast, pstack-balanced");
+  assert.equal(result.text.split("\n")[0], CODEX_ROLES.flatMap((role) => role.slugs.map(() => role.name)).join(", "));
   assert.match(result.text, /gpt-6-astra \| low/);
   assert.match(result.text, /gpt-5.6-luna \| high/);
   assert.match(result.text, /gpt-5.6-sol \| medium/);
@@ -86,4 +86,16 @@ test("Codex setup keeps role defaults without Cursor rule metadata or trailing s
   assert.match(result, /reasoning_effort=high/);
   assert.doesNotMatch(result, /alwaysApply|Unrelated trailing steps|\.cursor/);
   assert.throws(() => codexSetupInstructions("changed upstream format"), /Unrecognized/);
+});
+
+test("rewrites current upstream pstack 0.15.25 model slugs to role agents", () => {
+  const source = "`claude-opus-5-5-xhigh` `claude-opus-5-5-max` `claude-opus-5-5-medium` `grok-4.7-xhigh-fast` `grok-4.7-medium-fast`\n";
+
+  const claude = rewriteModelReferences(source);
+  assert.equal(claude.text, "`pstack-judgment` `pstack-judgment` `pstack-balanced` `pstack-fast` `pstack-fast`\n");
+  assert.equal(claude.rewrites.length, 5);
+  assert.deepEqual(rewriteModelReferences(claude.text).rewrites, []);
+
+  const codex = rewriteCodexModelReferences(source);
+  assert.equal(codex.text, claude.text);
 });

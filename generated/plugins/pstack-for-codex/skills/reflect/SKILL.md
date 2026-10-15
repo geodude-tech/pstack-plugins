@@ -28,15 +28,15 @@ Each reviewer and the synthesizer name a role line in the `pstack-models.mdc` ru
 
 | Lens | Role line | Default `model` | Prompt template |
 |---|---|---|---|
-| Judgment | `reflect judgment, divergent, synthesizer` | `claude-opus-5-5-xhigh` | `references/judgment-reviewer.md` |
-| Tooling | `reflect tooling` | `grok-4.7-xhigh-fast` | `references/tooling-reviewer.md` |
-| Divergent | `reflect judgment, divergent, synthesizer` | `claude-opus-5-5-xhigh` | `references/divergent-reviewer.md` |
+| Judgment | `reflect judgment, divergent, synthesizer` | `pstack-judgment` | `references/judgment-reviewer.md` |
+| Tooling | `reflect tooling` | `pstack-fast` | `references/tooling-reviewer.md` |
+| Divergent | `reflect judgment, divergent, synthesizer` | `pstack-judgment` | `references/divergent-reviewer.md` |
 
 Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in the `Task` response body.
 
 ## 3. Synthesize
 
-One `Task` call, `subagent_type: generalPurpose`, `model` from the `reflect judgment, divergent, synthesizer` line (default `claude-opus-5-5-xhigh`), agent mode (`readonly: false`). It spot-verifies citations through MCP, and readonly strips MCPs. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
+One `Task` call, `subagent_type: generalPurpose`, `model` from the `reflect judgment, divergent, synthesizer` line (default `pstack-judgment`), agent mode (`readonly: false`). It spot-verifies citations through MCP, and readonly strips MCPs. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
 
 ## 4. Structural enforcement check
 
@@ -65,3 +65,19 @@ Short list, no preamble:
 - New skills created: `<skill path>`. One line each (rare).
 - Backlog filed to the devex tracker: `<issue title>` (`<tags>`). One line each.
 - Dropped: one line per rejected finding + reason from the synthesizer.
+
+## Codex model routing
+
+Before delegating, read `~/.codex/pstack-models.md` if it exists. Its per-role choices override these defaults.
+
+| Role alias | Model | Reasoning effort |
+| --- | --- | --- |
+| pstack-judgment | gpt-6-astra | low |
+| pstack-fast | gpt-5.6-luna | high |
+| pstack-balanced | gpt-5.6-sol | medium |
+
+These aliases are routing labels, not model IDs or registered agent types. Resolve an alias before spawning and pass the model and reasoning effort separately using the available subagent tool. With `collaboration.spawn_agent`, use `model` and `reasoning_effort`; explicit overrides require `fork_turns` to be `none` or a positive turn count, with sufficient task context in the prompt.
+
+Check the session's available models and effort levels before spawning. If a configured pair is unavailable, ask for a supported replacement. For `inherit-parent` or `auto`, omit both overrides. If the host cannot select a model or effort, report that limitation rather than claim the requested routing was applied.
+
+Keep every panel entry, including repeated aliases, as a separate agent. These defaults do not provide cross-provider diversity; do not claim that repeated roles are different model families.

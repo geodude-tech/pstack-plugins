@@ -1,7 +1,7 @@
 # pstack compatibility report
 
-Rewrites: 465
-Manual-review findings: 97
+Rewrites: 527
+Manual-review findings: 60
 
 The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.
 
@@ -25,18 +25,13 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **model-identifier** at `docs/guide/09-make-it-yours.md:96`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
 - **cursor-command** at `docs/guide/10-recipes-and-pitfalls.md:5`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `docs/guide/10-recipes-and-pitfalls.md:140`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/architect/SKILL.md:31`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/arena/SKILL.md:17`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/arena/SKILL.md:28`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
+- **model-identifier** at `skills/arena/SKILL.md:17`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok`)
 - **cursor-path** at `skills/automate-me/SKILL.md:17`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/`)
 - **cursor-path** at `skills/automate-me/SKILL.md:29`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
 - **cursor-path** at `skills/automate-me/SKILL.md:69`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:9`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/verify-`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/verify-`)
 - **cursor-path** at `skills/create-verification-skill/SKILL.md:36`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/verify-`)
-- **model-identifier** at `skills/how/SKILL.md:11`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/interrogate/SKILL.md:31`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/interrogate/SKILL.md:32`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **model-identifier** at `skills/interrogate/SKILL.md:36`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok`)
 - **cursor-path** at `skills/maintain-verification-skill/SKILL.md:25`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/verify-`)
 - **model-identifier** at `skills/make-bot-ui/SKILL.md:5`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
@@ -50,21 +45,13 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-command** at `skills/poteto-help/references/prompting.md:41`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-help/references/recipes.md:44`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/SKILL.md:36`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/poteto-mode/SKILL.md:95`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/SKILL.md:97`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-command** at `skills/poteto-mode/SKILL.md:141`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autonomous-run.md:6`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autopilot-full.md:22`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/babysit.md:12`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/bug-fix.md:8`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/poteto-mode/playbooks/bug-fix.md:9`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/poteto-mode/playbooks/eval.md:22`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
-- **model-identifier** at `skills/poteto-mode/playbooks/feature.md:12`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/hillclimb.md:12`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-command** at `skills/poteto-mode/playbooks/multi-phase-plan.md:41`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/poteto-mode/playbooks/perf-issue.md:17`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/poteto-mode/playbooks/refactoring.md:11`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/poteto-mode/playbooks/session-pickup.md:5`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
 - **cursor-command** at `skills/poteto-mode/playbooks/shipping.md:9`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/visual-parity.md:8`: This Cursor command has no automatic Codex equivalent. (`/loop`)
@@ -76,34 +63,10 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:66`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/projects/`)
 - **cursor-path** at `skills/recall/SKILL.md:15`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
 - **cursor-path** at `skills/reflect/SKILL.md:15`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
-- **model-identifier** at `skills/reflect/SKILL.md:31`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/reflect/SKILL.md:32`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/reflect/SKILL.md:33`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/reflect/SKILL.md:39`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
 - **cursor-path** at `skills/reflect/references/divergent-reviewer.md:21`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/judgment-reviewer.md:20`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/`)
 - **cursor-path** at `skills/reflect/references/tooling-reviewer.md:31`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:24`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:25`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:26`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:27`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:28`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:29`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:30`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:31`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:32`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:33`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:34`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:35`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:36`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:37`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:38`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:39`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
-- **model-identifier** at `skills/setup-pstack/SKILL.md:40`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
 - **cursor-path** at `skills/show-me-your-work/SKILL.md:57`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
-- **model-identifier** at `skills/swarm/SKILL.md:25`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/why/SKILL.md:49`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
-- **model-identifier** at `skills/why/SKILL.md:79`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
 
 ## Rewrites
 
@@ -373,7 +336,16 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `docs/guide/README.md:36`: ``/poteto-mode` → ``$poteto-mode`
 - `docs/guide/README.md:23`: `/poteto-help` → `$poteto-help`
 - `docs/guide/README.md:33`: `/poteto-mode` → `$poteto-mode`
+- `skills/architect/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/architect/SKILL.md:31`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/architect/SKILL.md:81`: `` → `Added Codex model routing instructions`
 - `skills/architect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/arena/SKILL.md:17`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/arena/SKILL.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/arena/SKILL.md:17`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:28`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/arena/SKILL.md:28`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/arena/SKILL.md:17`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/arena/SKILL.md:28`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/arena/SKILL.md:50`: `` → `Added Codex model routing instructions`
@@ -386,8 +358,13 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/create-verification-skill/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/create-verification-skill/SKILL.md:44`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
 - `skills/figure-it-out/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/how/SKILL.md:11`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/how/SKILL.md:11`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/how/SKILL.md:38`: `` → `Added Codex model routing instructions`
 - `skills/how/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/in-your-own-words/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/interrogate/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/interrogate/SKILL.md:32`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/interrogate/SKILL.md:27`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/interrogate/SKILL.md:76`: `` → `Added Codex model routing instructions`
 - `skills/interrogate/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -518,6 +495,11 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-help/references/recipes.md:47`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:48`: ``/reflect` → ``$reflect`
 - `skills/poteto-help/references/recipes.md:49`: ``/bro` → ``$bro`
+- `skills/poteto-mode/SKILL.md:95`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/SKILL.md:95`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/poteto-mode/SKILL.md:95`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/poteto-mode/SKILL.md:97`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/SKILL.md:151`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/poteto-mode/SKILL.md:2`: `name: Poteto Mode` → `name: poteto-mode`
 - `skills/poteto-mode/SKILL.md:27`: ``/technical-writing` → ``$technical-writing`
@@ -527,6 +509,14 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/SKILL.md:95`: ``/setup-pstack` → ``$setup-pstack`
 - `skills/poteto-mode/SKILL.md:97`: ``/setup-pstack` → ``$setup-pstack`
 - `skills/poteto-mode/playbooks/autopilot-full.md:10`: ``/no-comments` → ``$no-comments`
+- `skills/poteto-mode/playbooks/bug-fix.md:9`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/bug-fix.md:17`: `` → `Added Codex model routing instructions`
+- `skills/poteto-mode/playbooks/feature.md:12`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/feature.md:23`: `` → `Added Codex model routing instructions`
+- `skills/poteto-mode/playbooks/hillclimb.md:12`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/hillclimb.md:23`: `` → `Added Codex model routing instructions`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:13`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md:157`: `` → `Added Codex model routing instructions`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/technical-writing` → ``$technical-writing`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/unslop` → ``$unslop`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:59`: ``/no-comments` → ``$no-comments`
@@ -534,6 +524,10 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/technical-writing` → ``$technical-writing`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:9`: ``/unslop` → ``$unslop`
 - `skills/poteto-mode/playbooks/opening-a-pr.md:34`: ``/no-comments` → ``$no-comments`
+- `skills/poteto-mode/playbooks/perf-issue.md:17`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/perf-issue.md:27`: `` → `Added Codex model routing instructions`
+- `skills/poteto-mode/playbooks/refactoring.md:11`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/poteto-mode/playbooks/refactoring.md:18`: `` → `Added Codex model routing instructions`
 - `skills/principle-attack-the-premise/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-boundary-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-build-the-lever/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -559,10 +553,38 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/principle-test-behavior-not-implementation/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/principle-type-system-discipline/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/recall/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/reflect/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/reflect/SKILL.md:32`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/reflect/SKILL.md:33`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/reflect/SKILL.md:39`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/reflect/SKILL.md:69`: `` → `Added Codex model routing instructions`
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/setup-pstack/SKILL.md:1`: `Cursor model setup workflow` → `Codex model and effort setup workflow`
+- `skills/setup-pstack/SKILL.md:24`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:25`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:26`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:27`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:28`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:29`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:30`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:31`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:32`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:33`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:34`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:35`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:36`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:36`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:37`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:37`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:38`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:39`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:39`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:40`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/setup-pstack/SKILL.md:40`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/setup-pstack/SKILL.md:45`: `` → `Added Codex model routing instructions`
 - `skills/sharpen/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/show-me-your-work/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/swarm/SKILL.md:25`: `grok-4.7-xhigh-fast` → `pstack-fast`
 - `skills/swarm/SKILL.md:25`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/swarm/SKILL.md:48`: `` → `Added Codex model routing instructions`
 - `skills/swarm/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
@@ -571,4 +593,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/technical-writing/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/typescript-best-practices/SKILL.md:5`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/unslop/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/why/SKILL.md:49`: `grok-4.7-xhigh-fast` → `pstack-fast`
+- `skills/why/SKILL.md:79`: `claude-opus-5-5-xhigh` → `pstack-judgment`
+- `skills/why/SKILL.md:100`: `` → `Added Codex model routing instructions`
 - `skills/why/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`

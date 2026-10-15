@@ -10,6 +10,6 @@ Review `compatibility/report.md` before using the generated workflows.
 
 Cursor model slugs were rewritten to plugin subagents in `agents/`, because Claude Code sets reasoning effort only in an agent definition. Where a skill says `model`, pass the name as `subagent_type` instead.
 
-- `pstack-judgment` (claude-opus-5-5, effort extra) replaces `claude-fable-5-1-thinking-max`, `claude-opus-5-thinking-xhigh`
-- `pstack-fast` (claude-sonnet-5-5, effort high) replaces `grok-4.6-fast-xhigh`
-- `pstack-balanced` (claude-opus-5-5, effort medium) replaces `gpt-5.6-sol-max`
+- `pstack-judgment` (claude-opus-5-5, effort extra) replaces `claude-fable-5-1-thinking-max`, `claude-opus-5-thinking-xhigh`, `claude-opus-5-5-xhigh`, `claude-opus-5-5-max`
+- `pstack-fast` (claude-sonnet-5-5, effort high) replaces `grok-4.6-fast-xhigh`, `grok-4.7-xhigh-fast`, `grok-4.7-medium-fast`
+- `pstack-balanced` (claude-opus-5-5, effort medium) replaces `gpt-5.6-sol-max`, `claude-opus-5-5-medium`
