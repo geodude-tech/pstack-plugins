@@ -1,6 +1,6 @@
 # pstack compatibility report
 
-Rewrites: 457
+Rewrites: 465
 Manual-review findings: 97
 
 The converter normalizes skill metadata and rewrites known skill invocations and model references. Every finding below needs human review before semantic parity can be claimed.
@@ -11,9 +11,9 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **omitted-component** at `automations`: This Cursor runtime component was not copied into Codex executable discovery. (`automations`)
 - **cursor-command** at `README.md:18`: This Cursor command has no automatic Codex equivalent. (`/add-plugin`)
 - **model-identifier** at `README.md:30`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok`)
-- **cursor-command** at `README.md:93`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `README.md:124`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
-- **cursor-path** at `README.md:266`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/automations/benny/`)
+- **cursor-command** at `README.md:95`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **model-identifier** at `README.md:128`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
+- **cursor-path** at `README.md:270`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/automations/benny/`)
 - **cursor-command** at `docs/guide/01-setup.md:10`: This Cursor command has no automatic Codex equivalent. (`/add-plugin`)
 - **model-identifier** at `docs/guide/01-setup.md:25`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Opus`)
 - **cursor-path** at `docs/guide/01-setup.md:35`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/skills/verify-`)
@@ -44,17 +44,17 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **model-identifier** at `skills/make-bot-ui/SKILL.md:55`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
 - **cursor-command** at `skills/poteto-help/SKILL.md:37`: This Cursor command has no automatic Codex equivalent. (`/add-plugin`)
 - **cursor-command** at `skills/poteto-help/SKILL.md:45`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/poteto-help/SKILL.md:91`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
-- **cursor-command** at `skills/poteto-help/SKILL.md:108`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-help/SKILL.md:138`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **model-identifier** at `skills/poteto-help/SKILL.md:93`: Choose an available Codex model instead of preserving this host-specific model identifier. (`Grok`)
+- **cursor-command** at `skills/poteto-help/SKILL.md:110`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-help/SKILL.md:140`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-help/references/prompting.md:41`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-help/references/recipes.md:42`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-mode/SKILL.md:38`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-help/references/recipes.md:44`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-mode/SKILL.md:36`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **model-identifier** at `skills/poteto-mode/SKILL.md:95`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **model-identifier** at `skills/poteto-mode/SKILL.md:97`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-command** at `skills/poteto-mode/SKILL.md:141`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/autonomous-run.md:6`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-mode/playbooks/autopilot-full.md:10`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **cursor-command** at `skills/poteto-mode/playbooks/autopilot-stack.md:6`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-mode/playbooks/autopilot-full.md:22`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/babysit.md:12`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/bug-fix.md:8`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **model-identifier** at `skills/poteto-mode/playbooks/bug-fix.md:9`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
@@ -66,14 +66,14 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - **model-identifier** at `skills/poteto-mode/playbooks/perf-issue.md:17`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **model-identifier** at `skills/poteto-mode/playbooks/refactoring.md:11`: Choose an available Codex model instead of preserving this host-specific model identifier. (`grok-4.7-xhigh-fast`)
 - **cursor-path** at `skills/poteto-mode/playbooks/session-pickup.md:5`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
-- **cursor-command** at `skills/poteto-mode/playbooks/shipping.md:14`: This Cursor command has no automatic Codex equivalent. (`/loop`)
+- **cursor-command** at `skills/poteto-mode/playbooks/shipping.md:9`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/playbooks/visual-parity.md:8`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-path** at `skills/poteto-mode/playbooks/worktree-cleanup.md:3`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/worktrees/myrepo/x`)
 - **cursor-command** at `skills/poteto-mode/scripts/check-plan.mjs:20`: This Cursor command has no automatic Codex equivalent. (`/loop`)
 - **cursor-command** at `skills/poteto-mode/scripts/check-plan.test.ts:23`: This Cursor command has no automatic Codex equivalent. (`/loop`)
-- **model-identifier** at `skills/poteto-mode/scripts/orch/orch.test.ts:285`: Choose an available Codex model instead of preserving this host-specific model identifier. (`opus`)
-- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:55`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
-- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:57`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/projects/`)
+- **model-identifier** at `skills/poteto-mode/scripts/orch/orch.test.ts:371`: Choose an available Codex model instead of preserving this host-specific model identifier. (`opus`)
+- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:64`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
+- **cursor-path** at `skills/poteto-mode/scripts/worktree-audit.sh:66`: Replace this Cursor-specific path with an explicit Codex location. (`.cursor/projects/`)
 - **cursor-path** at `skills/recall/SKILL.md:15`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
 - **cursor-path** at `skills/reflect/SKILL.md:15`: Replace this Cursor-specific path with an explicit Codex location. (`~/.cursor/projects/`)
 - **model-identifier** at `skills/reflect/SKILL.md:31`: Choose an available Codex model instead of preserving this host-specific model identifier. (`claude-opus-5-5-xhigh`)
@@ -113,50 +113,54 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `README.md:30`: ``/setup-pstack` → ``$setup-pstack`
 - `README.md:34`: ``/poteto-mode` → ``$poteto-mode`
 - `README.md:36`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:91`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:38`: ``/poteto-mode` → ``$poteto-mode`
 - `README.md:93`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:97`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:112`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:113`: ``/poteto-help` → ``$poteto-help`
-- `README.md:113`: ``/poteto-help` → ``$poteto-help`
-- `README.md:114`: ``/how` → ``$how`
-- `README.md:115`: ``/why` → ``$why`
-- `README.md:116`: ``/recall` → ``$recall`
-- `README.md:117`: ``/ketchup` → ``$ketchup`
-- `README.md:118`: ``/blast-radius` → ``$blast-radius`
-- `README.md:119`: ``/architect` → ``$architect`
-- `README.md:120`: ``/arena` → ``$arena`
-- `README.md:121`: ``/swarm` → ``$swarm`
-- `README.md:122`: ``/interrogate` → ``$interrogate`
-- `README.md:123`: ``/automate-me` → ``$automate-me`
-- `README.md:124`: ``/make-bot-ui` → ``$make-bot-ui`
-- `README.md:125`: ``/setup-pstack` → ``$setup-pstack`
-- `README.md:126`: ``/reflect` → ``$reflect`
-- `README.md:127`: ``/correct` → ``$correct`
-- `README.md:128`: ``/teach` → ``$teach`
-- `README.md:129`: ``/tdd` → ``$tdd`
-- `README.md:130`: ``/benchmark-checklist` → ``$benchmark-checklist`
-- `README.md:131`: ``/no-comments` → ``$no-comments`
-- `README.md:132`: ``/typescript-best-practices` → ``$typescript-best-practices`
-- `README.md:133`: ``/figure-it-out` → ``$figure-it-out`
-- `README.md:134`: ``/show-me-your-work` → ``$show-me-your-work`
-- `README.md:135`: ``/create-verification-skill` → ``$create-verification-skill`
-- `README.md:136`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
-- `README.md:137`: ``/unslop` → ``$unslop`
-- `README.md:138`: ``/bro` → ``$bro`
-- `README.md:139`: ``/technical-writing` → ``$technical-writing`
-- `README.md:147`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:194`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:95`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:99`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:114`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:115`: ``/poteto-help` → ``$poteto-help`
+- `README.md:115`: ``/poteto-help` → ``$poteto-help`
+- `README.md:116`: ``/in-your-own-words` → ``$in-your-own-words`
+- `README.md:116`: ``/in-your-own-words` → ``$in-your-own-words`
+- `README.md:117`: ``/sharpen` → ``$sharpen`
+- `README.md:118`: ``/how` → ``$how`
+- `README.md:119`: ``/why` → ``$why`
+- `README.md:120`: ``/recall` → ``$recall`
+- `README.md:121`: ``/ketchup` → ``$ketchup`
+- `README.md:122`: ``/blast-radius` → ``$blast-radius`
+- `README.md:123`: ``/architect` → ``$architect`
+- `README.md:124`: ``/arena` → ``$arena`
+- `README.md:125`: ``/swarm` → ``$swarm`
+- `README.md:126`: ``/interrogate` → ``$interrogate`
+- `README.md:127`: ``/automate-me` → ``$automate-me`
+- `README.md:128`: ``/make-bot-ui` → ``$make-bot-ui`
+- `README.md:129`: ``/setup-pstack` → ``$setup-pstack`
+- `README.md:130`: ``/reflect` → ``$reflect`
+- `README.md:131`: ``/correct` → ``$correct`
+- `README.md:132`: ``/teach` → ``$teach`
+- `README.md:133`: ``/tdd` → ``$tdd`
+- `README.md:134`: ``/benchmark-checklist` → ``$benchmark-checklist`
+- `README.md:135`: ``/no-comments` → ``$no-comments`
+- `README.md:136`: ``/typescript-best-practices` → ``$typescript-best-practices`
+- `README.md:137`: ``/figure-it-out` → ``$figure-it-out`
+- `README.md:138`: ``/show-me-your-work` → ``$show-me-your-work`
+- `README.md:139`: ``/create-verification-skill` → ``$create-verification-skill`
+- `README.md:140`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
+- `README.md:141`: ``/unslop` → ``$unslop`
+- `README.md:142`: ``/bro` → ``$bro`
+- `README.md:143`: ``/technical-writing` → ``$technical-writing`
+- `README.md:151`: ``/poteto-mode` → ``$poteto-mode`
 - `README.md:198`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:200`: ``/no-comments` → ``$no-comments`
-- `README.md:250`: ``/poteto-mode` → ``$poteto-mode`
-- `README.md:256`: ``/automate-me` → ``$automate-me`
-- `README.md:258`: ``/setup-pstack` → ``$setup-pstack`
-- `README.md:260`: ``/setup-pstack` → ``$setup-pstack`
-- `README.md:41`: `/poteto-mode` → `$poteto-mode`
-- `README.md:46`: `/poteto-mode` → `$poteto-mode`
-- `README.md:100`: `/how` → `$how`
-- `README.md:104`: `/interrogate` → `$interrogate`
+- `README.md:202`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:204`: ``/no-comments` → ``$no-comments`
+- `README.md:254`: ``/poteto-mode` → ``$poteto-mode`
+- `README.md:260`: ``/automate-me` → ``$automate-me`
+- `README.md:262`: ``/setup-pstack` → ``$setup-pstack`
+- `README.md:264`: ``/setup-pstack` → ``$setup-pstack`
+- `README.md:43`: `/poteto-mode` → `$poteto-mode`
+- `README.md:48`: `/poteto-mode` → `$poteto-mode`
+- `README.md:102`: `/how` → `$how`
+- `README.md:106`: `/interrogate` → `$interrogate`
 - `docs/guide/01-setup.md:23`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `docs/guide/01-setup.md:64`: `` → `Added Codex model routing instructions`
 - `docs/guide/01-setup.md:23`: ``/setup-pstack` → ``$setup-pstack`
@@ -383,12 +387,13 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/create-verification-skill/SKILL.md:44`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
 - `skills/figure-it-out/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/how/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
+- `skills/in-your-own-words/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/interrogate/SKILL.md:27`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/interrogate/SKILL.md:76`: `` → `Added Codex model routing instructions`
 - `skills/interrogate/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/ketchup/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/ketchup/SKILL.md:9`: ``/ketchup` → ``$ketchup`
-- `skills/ketchup/SKILL.md:9`: ``/bro` → ``$bro`
+- `skills/ketchup/SKILL.md:11`: ``/bro` → ``$bro`
 - `skills/maintain-verification-skill/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/maintain-verification-skill/SKILL.md:9`: ``/create-verification-skill` → ``$create-verification-skill`
 - `skills/maintain-verification-skill/SKILL.md:25`: ``/create-verification-skill` → ``$create-verification-skill`
@@ -400,7 +405,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/no-comments/SKILL.md:20`: ``/no-comments` → ``$no-comments`
 - `skills/no-comments/SKILL.md:21`: ``/architect` → ``$architect`
 - `skills/poteto-help/SKILL.md:27`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
-- `skills/poteto-help/SKILL.md:156`: `` → `Added Codex model routing instructions`
+- `skills/poteto-help/SKILL.md:158`: `` → `Added Codex model routing instructions`
 - `skills/poteto-help/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/poteto-help/SKILL.md:20`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/SKILL.md:27`: ``/setup-pstack` → ``$setup-pstack`
@@ -424,102 +429,104 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/poteto-help/SKILL.md:57`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/SKILL.md:61`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/SKILL.md:65`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:66`: ``/how` → ``$how`
-- `skills/poteto-help/SKILL.md:67`: ``/why` → ``$why`
-- `skills/poteto-help/SKILL.md:68`: ``/teach` → ``$teach`
-- `skills/poteto-help/SKILL.md:69`: ``/recall` → ``$recall`
-- `skills/poteto-help/SKILL.md:70`: ``/ketchup` → ``$ketchup`
-- `skills/poteto-help/SKILL.md:71`: ``/blast-radius` → ``$blast-radius`
-- `skills/poteto-help/SKILL.md:72`: ``/architect` → ``$architect`
-- `skills/poteto-help/SKILL.md:73`: ``/arena` → ``$arena`
-- `skills/poteto-help/SKILL.md:74`: ``/swarm` → ``$swarm`
-- `skills/poteto-help/SKILL.md:75`: ``/interrogate` → ``$interrogate`
-- `skills/poteto-help/SKILL.md:76`: ``/tdd` → ``$tdd`
-- `skills/poteto-help/SKILL.md:77`: ``/typescript-best-practices` → ``$typescript-best-practices`
-- `skills/poteto-help/SKILL.md:78`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-help/SKILL.md:79`: ``/unslop` → ``$unslop`
-- `skills/poteto-help/SKILL.md:80`: ``/technical-writing` → ``$technical-writing`
-- `skills/poteto-help/SKILL.md:81`: ``/bro` → ``$bro`
-- `skills/poteto-help/SKILL.md:82`: ``/create-verification-skill` → ``$create-verification-skill`
-- `skills/poteto-help/SKILL.md:83`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
-- `skills/poteto-help/SKILL.md:84`: ``/benchmark-checklist` → ``$benchmark-checklist`
-- `skills/poteto-help/SKILL.md:85`: ``/figure-it-out` → ``$figure-it-out`
-- `skills/poteto-help/SKILL.md:86`: ``/show-me-your-work` → ``$show-me-your-work`
-- `skills/poteto-help/SKILL.md:87`: ``/setup-pstack` → ``$setup-pstack`
-- `skills/poteto-help/SKILL.md:88`: ``/automate-me` → ``$automate-me`
-- `skills/poteto-help/SKILL.md:89`: ``/reflect` → ``$reflect`
-- `skills/poteto-help/SKILL.md:90`: ``/correct` → ``$correct`
-- `skills/poteto-help/SKILL.md:91`: ``/make-bot-ui` → ``$make-bot-ui`
-- `skills/poteto-help/SKILL.md:92`: ``/poteto-help` → ``$poteto-help`
-- `skills/poteto-help/SKILL.md:98`: ``/how` → ``$how`
-- `skills/poteto-help/SKILL.md:98`: ``/why` → ``$why`
-- `skills/poteto-help/SKILL.md:98`: ``/teach` → ``$teach`
-- `skills/poteto-help/SKILL.md:99`: ``/arena` → ``$arena`
-- `skills/poteto-help/SKILL.md:99`: ``/swarm` → ``$swarm`
-- `skills/poteto-help/SKILL.md:100`: ``/architect` → ``$architect`
-- `skills/poteto-help/SKILL.md:101`: ``/interrogate` → ``$interrogate`
-- `skills/poteto-help/SKILL.md:101`: ``/blast-radius` → ``$blast-radius`
-- `skills/poteto-help/SKILL.md:102`: ``/recall` → ``$recall`
-- `skills/poteto-help/SKILL.md:102`: ``/ketchup` → ``$ketchup`
-- `skills/poteto-help/SKILL.md:103`: ``/figure-it-out` → ``$figure-it-out`
-- `skills/poteto-help/SKILL.md:109`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:113`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:113`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:122`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:66`: ``/in-your-own-words` → ``$in-your-own-words`
+- `skills/poteto-help/SKILL.md:67`: ``/sharpen` → ``$sharpen`
+- `skills/poteto-help/SKILL.md:68`: ``/how` → ``$how`
+- `skills/poteto-help/SKILL.md:69`: ``/why` → ``$why`
+- `skills/poteto-help/SKILL.md:70`: ``/teach` → ``$teach`
+- `skills/poteto-help/SKILL.md:71`: ``/recall` → ``$recall`
+- `skills/poteto-help/SKILL.md:72`: ``/ketchup` → ``$ketchup`
+- `skills/poteto-help/SKILL.md:73`: ``/blast-radius` → ``$blast-radius`
+- `skills/poteto-help/SKILL.md:74`: ``/architect` → ``$architect`
+- `skills/poteto-help/SKILL.md:75`: ``/arena` → ``$arena`
+- `skills/poteto-help/SKILL.md:76`: ``/swarm` → ``$swarm`
+- `skills/poteto-help/SKILL.md:77`: ``/interrogate` → ``$interrogate`
+- `skills/poteto-help/SKILL.md:78`: ``/tdd` → ``$tdd`
+- `skills/poteto-help/SKILL.md:79`: ``/typescript-best-practices` → ``$typescript-best-practices`
+- `skills/poteto-help/SKILL.md:80`: ``/no-comments` → ``$no-comments`
+- `skills/poteto-help/SKILL.md:81`: ``/unslop` → ``$unslop`
+- `skills/poteto-help/SKILL.md:82`: ``/technical-writing` → ``$technical-writing`
+- `skills/poteto-help/SKILL.md:83`: ``/bro` → ``$bro`
+- `skills/poteto-help/SKILL.md:84`: ``/create-verification-skill` → ``$create-verification-skill`
+- `skills/poteto-help/SKILL.md:85`: ``/maintain-verification-skill` → ``$maintain-verification-skill`
+- `skills/poteto-help/SKILL.md:86`: ``/benchmark-checklist` → ``$benchmark-checklist`
+- `skills/poteto-help/SKILL.md:87`: ``/figure-it-out` → ``$figure-it-out`
+- `skills/poteto-help/SKILL.md:88`: ``/show-me-your-work` → ``$show-me-your-work`
+- `skills/poteto-help/SKILL.md:89`: ``/setup-pstack` → ``$setup-pstack`
+- `skills/poteto-help/SKILL.md:90`: ``/automate-me` → ``$automate-me`
+- `skills/poteto-help/SKILL.md:91`: ``/reflect` → ``$reflect`
+- `skills/poteto-help/SKILL.md:92`: ``/correct` → ``$correct`
+- `skills/poteto-help/SKILL.md:93`: ``/make-bot-ui` → ``$make-bot-ui`
+- `skills/poteto-help/SKILL.md:94`: ``/poteto-help` → ``$poteto-help`
+- `skills/poteto-help/SKILL.md:100`: ``/how` → ``$how`
+- `skills/poteto-help/SKILL.md:100`: ``/why` → ``$why`
+- `skills/poteto-help/SKILL.md:100`: ``/teach` → ``$teach`
+- `skills/poteto-help/SKILL.md:101`: ``/arena` → ``$arena`
+- `skills/poteto-help/SKILL.md:101`: ``/swarm` → ``$swarm`
+- `skills/poteto-help/SKILL.md:102`: ``/architect` → ``$architect`
+- `skills/poteto-help/SKILL.md:103`: ``/interrogate` → ``$interrogate`
+- `skills/poteto-help/SKILL.md:103`: ``/blast-radius` → ``$blast-radius`
+- `skills/poteto-help/SKILL.md:104`: ``/recall` → ``$recall`
+- `skills/poteto-help/SKILL.md:104`: ``/ketchup` → ``$ketchup`
+- `skills/poteto-help/SKILL.md:105`: ``/figure-it-out` → ``$figure-it-out`
+- `skills/poteto-help/SKILL.md:111`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:115`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:115`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/SKILL.md:124`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:124`: ``/architect` → ``$architect`
 - `skills/poteto-help/SKILL.md:126`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:132`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:134`: ``/setup-pstack` → ``$setup-pstack`
+- `skills/poteto-help/SKILL.md:126`: ``/architect` → ``$architect`
+- `skills/poteto-help/SKILL.md:128`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:134`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/SKILL.md:136`: ``/setup-pstack` → ``$setup-pstack`
-- `skills/poteto-help/SKILL.md:136`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:145`: ``/automate-me` → ``$automate-me`
-- `skills/poteto-help/SKILL.md:145`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/SKILL.md:146`: ``/reflect` → ``$reflect`
+- `skills/poteto-help/SKILL.md:138`: ``/setup-pstack` → ``$setup-pstack`
+- `skills/poteto-help/SKILL.md:138`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:147`: ``/automate-me` → ``$automate-me`
 - `skills/poteto-help/SKILL.md:147`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/SKILL.md:148`: ``/reflect` → ``$reflect`
+- `skills/poteto-help/SKILL.md:149`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/prompting.md:22`: ``/recall` → ``$recall`
 - `skills/poteto-help/references/prompting.md:23`: ``/how` → ``$how`
 - `skills/poteto-help/references/prompting.md:23`: ``/why` → ``$why`
 - `skills/poteto-help/references/prompting.md:24`: ``/teach` → ``$teach`
 - `skills/poteto-help/references/recipes.md:7`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:8`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:10`: ``/recall` → ``$recall`
-- `skills/poteto-help/references/recipes.md:11`: ``/teach` → ``$teach`
-- `skills/poteto-help/references/recipes.md:12`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:16`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:17`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:8`: ``/in-your-own-words` → ``$in-your-own-words`
+- `skills/poteto-help/references/recipes.md:9`: ``/sharpen` → ``$sharpen`
+- `skills/poteto-help/references/recipes.md:10`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:12`: ``/recall` → ``$recall`
+- `skills/poteto-help/references/recipes.md:13`: ``/teach` → ``$teach`
+- `skills/poteto-help/references/recipes.md:14`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:18`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:19`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:20`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:21`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:25`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:26`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:22`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:23`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:27`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:28`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:29`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:30`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:34`: ``/interrogate` → ``$interrogate`
-- `skills/poteto-help/references/recipes.md:35`: ``/swarm` → ``$swarm`
-- `skills/poteto-help/references/recipes.md:36`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:37`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:37`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:31`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:32`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:36`: ``/interrogate` → ``$interrogate`
+- `skills/poteto-help/references/recipes.md:37`: ``/swarm` → ``$swarm`
 - `skills/poteto-help/references/recipes.md:38`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:42`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:43`: ``/show-me-your-work` → ``$show-me-your-work`
+- `skills/poteto-help/references/recipes.md:39`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:39`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:40`: ``/poteto-mode` → ``$poteto-mode`
 - `skills/poteto-help/references/recipes.md:44`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:45`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-help/references/recipes.md:46`: ``/reflect` → ``$reflect`
-- `skills/poteto-help/references/recipes.md:47`: ``/bro` → ``$bro`
+- `skills/poteto-help/references/recipes.md:45`: ``/show-me-your-work` → ``$show-me-your-work`
+- `skills/poteto-help/references/recipes.md:46`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:47`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-help/references/recipes.md:48`: ``/reflect` → ``$reflect`
+- `skills/poteto-help/references/recipes.md:49`: ``/bro` → ``$bro`
 - `skills/poteto-mode/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/poteto-mode/SKILL.md:2`: `name: Poteto Mode` → `name: poteto-mode`
-- `skills/poteto-mode/SKILL.md:29`: ``/technical-writing` → ``$technical-writing`
-- `skills/poteto-mode/SKILL.md:31`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-mode/SKILL.md:95`: ``/poteto-mode` → ``$poteto-mode`
-- `skills/poteto-mode/SKILL.md:95`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-mode/SKILL.md:27`: ``/technical-writing` → ``$technical-writing`
+- `skills/poteto-mode/SKILL.md:29`: ``/no-comments` → ``$no-comments`
+- `skills/poteto-mode/SKILL.md:93`: ``/poteto-mode` → ``$poteto-mode`
+- `skills/poteto-mode/SKILL.md:95`: ``/setup-pstack` → ``$setup-pstack`
+- `skills/poteto-mode/SKILL.md:95`: ``/setup-pstack` → ``$setup-pstack`
 - `skills/poteto-mode/SKILL.md:97`: ``/setup-pstack` → ``$setup-pstack`
-- `skills/poteto-mode/SKILL.md:97`: ``/setup-pstack` → ``$setup-pstack`
-- `skills/poteto-mode/playbooks/autopilot-full.md:6`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-mode/playbooks/autopilot-full.md:6`: ``/no-comments` → ``$no-comments`
-- `skills/poteto-mode/playbooks/autopilot-stack.md:5`: ``/no-comments` → ``$no-comments`
+- `skills/poteto-mode/playbooks/autopilot-full.md:10`: ``/no-comments` → ``$no-comments`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/technical-writing` → ``$technical-writing`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:9`: ``/unslop` → ``$unslop`
 - `skills/poteto-mode/playbooks/multi-phase-plan.md:59`: ``/no-comments` → ``$no-comments`
@@ -554,6 +561,7 @@ The converter normalizes skill metadata and rewrites known skill invocations and
 - `skills/recall/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/reflect/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/setup-pstack/SKILL.md:1`: `Cursor model setup workflow` → `Codex model and effort setup workflow`
+- `skills/sharpen/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/show-me-your-work/SKILL.md:4`: `disable-model-invocation: true` → `disable-model-invocation: false`
 - `skills/swarm/SKILL.md:25`: `~/.cursor/rules/pstack-models.mdc` → `~/.codex/pstack-models.md`
 - `skills/swarm/SKILL.md:48`: `` → `Added Codex model routing instructions`

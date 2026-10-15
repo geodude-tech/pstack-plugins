@@ -1,6 +1,6 @@
 {
   "summary": {
-    "rewrites": 457,
+    "rewrites": 465,
     "findings": 97
   },
   "rewrites": [
@@ -41,7 +41,7 @@
       "file": "README.md"
     },
     {
-      "line": 91,
+      "line": 38,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "README.md"
@@ -53,193 +53,211 @@
       "file": "README.md"
     },
     {
-      "line": 97,
+      "line": 95,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "README.md"
     },
     {
-      "line": 112,
+      "line": 99,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
-      "file": "README.md"
-    },
-    {
-      "line": 113,
-      "before": "`/poteto-help",
-      "after": "`$poteto-help",
-      "file": "README.md"
-    },
-    {
-      "line": 113,
-      "before": "`/poteto-help",
-      "after": "`$poteto-help",
       "file": "README.md"
     },
     {
       "line": 114,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 115,
+      "before": "`/poteto-help",
+      "after": "`$poteto-help",
+      "file": "README.md"
+    },
+    {
+      "line": 115,
+      "before": "`/poteto-help",
+      "after": "`$poteto-help",
+      "file": "README.md"
+    },
+    {
+      "line": 116,
+      "before": "`/in-your-own-words",
+      "after": "`$in-your-own-words",
+      "file": "README.md"
+    },
+    {
+      "line": 116,
+      "before": "`/in-your-own-words",
+      "after": "`$in-your-own-words",
+      "file": "README.md"
+    },
+    {
+      "line": 117,
+      "before": "`/sharpen",
+      "after": "`$sharpen",
+      "file": "README.md"
+    },
+    {
+      "line": 118,
       "before": "`/how",
       "after": "`$how",
       "file": "README.md"
     },
     {
-      "line": 115,
+      "line": 119,
       "before": "`/why",
       "after": "`$why",
       "file": "README.md"
     },
     {
-      "line": 116,
+      "line": 120,
       "before": "`/recall",
       "after": "`$recall",
       "file": "README.md"
     },
     {
-      "line": 117,
+      "line": 121,
       "before": "`/ketchup",
       "after": "`$ketchup",
       "file": "README.md"
     },
     {
-      "line": 118,
+      "line": 122,
       "before": "`/blast-radius",
       "after": "`$blast-radius",
       "file": "README.md"
     },
     {
-      "line": 119,
+      "line": 123,
       "before": "`/architect",
       "after": "`$architect",
       "file": "README.md"
     },
     {
-      "line": 120,
+      "line": 124,
       "before": "`/arena",
       "after": "`$arena",
       "file": "README.md"
     },
     {
-      "line": 121,
+      "line": 125,
       "before": "`/swarm",
       "after": "`$swarm",
       "file": "README.md"
     },
     {
-      "line": 122,
+      "line": 126,
       "before": "`/interrogate",
       "after": "`$interrogate",
       "file": "README.md"
     },
     {
-      "line": 123,
+      "line": 127,
       "before": "`/automate-me",
       "after": "`$automate-me",
       "file": "README.md"
     },
     {
-      "line": 124,
+      "line": 128,
       "before": "`/make-bot-ui",
       "after": "`$make-bot-ui",
       "file": "README.md"
     },
     {
-      "line": 125,
+      "line": 129,
       "before": "`/setup-pstack",
       "after": "`$setup-pstack",
       "file": "README.md"
     },
     {
-      "line": 126,
+      "line": 130,
       "before": "`/reflect",
       "after": "`$reflect",
       "file": "README.md"
     },
     {
-      "line": 127,
+      "line": 131,
       "before": "`/correct",
       "after": "`$correct",
       "file": "README.md"
     },
     {
-      "line": 128,
+      "line": 132,
       "before": "`/teach",
       "after": "`$teach",
       "file": "README.md"
     },
     {
-      "line": 129,
+      "line": 133,
       "before": "`/tdd",
       "after": "`$tdd",
       "file": "README.md"
     },
     {
-      "line": 130,
+      "line": 134,
       "before": "`/benchmark-checklist",
       "after": "`$benchmark-checklist",
       "file": "README.md"
     },
     {
-      "line": 131,
+      "line": 135,
       "before": "`/no-comments",
       "after": "`$no-comments",
       "file": "README.md"
     },
     {
-      "line": 132,
+      "line": 136,
       "before": "`/typescript-best-practices",
       "after": "`$typescript-best-practices",
       "file": "README.md"
     },
     {
-      "line": 133,
+      "line": 137,
       "before": "`/figure-it-out",
       "after": "`$figure-it-out",
       "file": "README.md"
     },
     {
-      "line": 134,
+      "line": 138,
       "before": "`/show-me-your-work",
       "after": "`$show-me-your-work",
       "file": "README.md"
     },
     {
-      "line": 135,
+      "line": 139,
       "before": "`/create-verification-skill",
       "after": "`$create-verification-skill",
       "file": "README.md"
     },
     {
-      "line": 136,
+      "line": 140,
       "before": "`/maintain-verification-skill",
       "after": "`$maintain-verification-skill",
       "file": "README.md"
     },
     {
-      "line": 137,
+      "line": 141,
       "before": "`/unslop",
       "after": "`$unslop",
       "file": "README.md"
     },
     {
-      "line": 138,
+      "line": 142,
       "before": "`/bro",
       "after": "`$bro",
       "file": "README.md"
     },
     {
-      "line": 139,
+      "line": 143,
       "before": "`/technical-writing",
       "after": "`$technical-writing",
       "file": "README.md"
     },
     {
-      "line": 147,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "README.md"
-    },
-    {
-      "line": 194,
+      "line": 151,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "README.md"
@@ -251,55 +269,61 @@
       "file": "README.md"
     },
     {
-      "line": 200,
-      "before": "`/no-comments",
-      "after": "`$no-comments",
-      "file": "README.md"
-    },
-    {
-      "line": 250,
+      "line": 202,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "README.md"
     },
     {
-      "line": 256,
+      "line": 204,
+      "before": "`/no-comments",
+      "after": "`$no-comments",
+      "file": "README.md"
+    },
+    {
+      "line": 254,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "README.md"
+    },
+    {
+      "line": 260,
       "before": "`/automate-me",
       "after": "`$automate-me",
       "file": "README.md"
     },
     {
-      "line": 258,
+      "line": 262,
       "before": "`/setup-pstack",
       "after": "`$setup-pstack",
       "file": "README.md"
     },
     {
-      "line": 260,
+      "line": 264,
       "before": "`/setup-pstack",
       "after": "`$setup-pstack",
       "file": "README.md"
     },
     {
-      "line": 41,
+      "line": 43,
       "before": "/poteto-mode",
       "after": "$poteto-mode",
       "file": "README.md"
     },
     {
-      "line": 46,
+      "line": 48,
       "before": "/poteto-mode",
       "after": "$poteto-mode",
       "file": "README.md"
     },
     {
-      "line": 100,
+      "line": 102,
       "before": "/how",
       "after": "$how",
       "file": "README.md"
     },
     {
-      "line": 104,
+      "line": 106,
       "before": "/interrogate",
       "after": "$interrogate",
       "file": "README.md"
@@ -1661,6 +1685,12 @@
       "file": "skills/how/SKILL.md"
     },
     {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
+      "file": "skills/in-your-own-words/SKILL.md"
+    },
+    {
       "line": 27,
       "before": "~/.cursor/rules/pstack-models.mdc",
       "after": "~/.codex/pstack-models.md",
@@ -1691,7 +1721,7 @@
       "file": "skills/ketchup/SKILL.md"
     },
     {
-      "line": 9,
+      "line": 11,
       "before": "`/bro",
       "after": "`$bro",
       "file": "skills/ketchup/SKILL.md"
@@ -1763,7 +1793,7 @@
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 156,
+      "line": 158,
       "before": "",
       "after": "Added Codex model routing instructions",
       "file": "skills/poteto-help/SKILL.md"
@@ -1908,252 +1938,258 @@
     },
     {
       "line": 66,
+      "before": "`/in-your-own-words",
+      "after": "`$in-your-own-words",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 67,
+      "before": "`/sharpen",
+      "after": "`$sharpen",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 68,
       "before": "`/how",
       "after": "`$how",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 67,
+      "line": 69,
       "before": "`/why",
       "after": "`$why",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 68,
+      "line": 70,
       "before": "`/teach",
       "after": "`$teach",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 69,
+      "line": 71,
       "before": "`/recall",
       "after": "`$recall",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 70,
+      "line": 72,
       "before": "`/ketchup",
       "after": "`$ketchup",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 71,
+      "line": 73,
       "before": "`/blast-radius",
       "after": "`$blast-radius",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 72,
+      "line": 74,
       "before": "`/architect",
       "after": "`$architect",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 73,
+      "line": 75,
       "before": "`/arena",
       "after": "`$arena",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 74,
+      "line": 76,
       "before": "`/swarm",
       "after": "`$swarm",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 75,
+      "line": 77,
       "before": "`/interrogate",
       "after": "`$interrogate",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 76,
+      "line": 78,
       "before": "`/tdd",
       "after": "`$tdd",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 77,
+      "line": 79,
       "before": "`/typescript-best-practices",
       "after": "`$typescript-best-practices",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 78,
+      "line": 80,
       "before": "`/no-comments",
       "after": "`$no-comments",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 79,
+      "line": 81,
       "before": "`/unslop",
       "after": "`$unslop",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 80,
+      "line": 82,
       "before": "`/technical-writing",
       "after": "`$technical-writing",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 81,
+      "line": 83,
       "before": "`/bro",
       "after": "`$bro",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 82,
+      "line": 84,
       "before": "`/create-verification-skill",
       "after": "`$create-verification-skill",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 83,
+      "line": 85,
       "before": "`/maintain-verification-skill",
       "after": "`$maintain-verification-skill",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 84,
+      "line": 86,
       "before": "`/benchmark-checklist",
       "after": "`$benchmark-checklist",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 85,
+      "line": 87,
       "before": "`/figure-it-out",
       "after": "`$figure-it-out",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 86,
+      "line": 88,
       "before": "`/show-me-your-work",
       "after": "`$show-me-your-work",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 87,
+      "line": 89,
       "before": "`/setup-pstack",
       "after": "`$setup-pstack",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 88,
+      "line": 90,
       "before": "`/automate-me",
       "after": "`$automate-me",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 89,
+      "line": 91,
       "before": "`/reflect",
       "after": "`$reflect",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 90,
+      "line": 92,
       "before": "`/correct",
       "after": "`$correct",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 91,
+      "line": 93,
       "before": "`/make-bot-ui",
       "after": "`$make-bot-ui",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 92,
+      "line": 94,
       "before": "`/poteto-help",
       "after": "`$poteto-help",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 98,
+      "line": 100,
       "before": "`/how",
       "after": "`$how",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 98,
+      "line": 100,
       "before": "`/why",
       "after": "`$why",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 98,
+      "line": 100,
       "before": "`/teach",
       "after": "`$teach",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 99,
+      "line": 101,
       "before": "`/arena",
       "after": "`$arena",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 99,
+      "line": 101,
       "before": "`/swarm",
       "after": "`$swarm",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 100,
+      "line": 102,
       "before": "`/architect",
       "after": "`$architect",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 101,
+      "line": 103,
       "before": "`/interrogate",
       "after": "`$interrogate",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 101,
+      "line": 103,
       "before": "`/blast-radius",
       "after": "`$blast-radius",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 102,
+      "line": 104,
       "before": "`/recall",
       "after": "`$recall",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 102,
+      "line": 104,
       "before": "`/ketchup",
       "after": "`$ketchup",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 103,
+      "line": 105,
       "before": "`/figure-it-out",
       "after": "`$figure-it-out",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 109,
+      "line": 111,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 113,
+      "line": 115,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 113,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "skills/poteto-help/SKILL.md"
-    },
-    {
-      "line": 122,
+      "line": 115,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
@@ -2162,12 +2198,6 @@
       "line": 124,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
-      "file": "skills/poteto-help/SKILL.md"
-    },
-    {
-      "line": 124,
-      "before": "`/architect",
-      "after": "`$architect",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
@@ -2177,49 +2207,61 @@
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 132,
+      "line": 126,
+      "before": "`/architect",
+      "after": "`$architect",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 128,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
       "line": 134,
-      "before": "`/setup-pstack",
-      "after": "`$setup-pstack",
-      "file": "skills/poteto-help/SKILL.md"
-    },
-    {
-      "line": 136,
-      "before": "`/setup-pstack",
-      "after": "`$setup-pstack",
-      "file": "skills/poteto-help/SKILL.md"
-    },
-    {
-      "line": 136,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 145,
+      "line": 136,
+      "before": "`/setup-pstack",
+      "after": "`$setup-pstack",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 138,
+      "before": "`/setup-pstack",
+      "after": "`$setup-pstack",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 138,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "skills/poteto-help/SKILL.md"
+    },
+    {
+      "line": 147,
       "before": "`/automate-me",
       "after": "`$automate-me",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 145,
+      "line": 147,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 146,
+      "line": 148,
       "before": "`/reflect",
       "after": "`$reflect",
       "file": "skills/poteto-help/SKILL.md"
     },
     {
-      "line": 147,
+      "line": 149,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/SKILL.md"
@@ -2256,36 +2298,36 @@
     },
     {
       "line": 8,
+      "before": "`/in-your-own-words",
+      "after": "`$in-your-own-words",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 9,
+      "before": "`/sharpen",
+      "after": "`$sharpen",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 10,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 10,
+      "line": 12,
       "before": "`/recall",
       "after": "`$recall",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 11,
+      "line": 13,
       "before": "`/teach",
       "after": "`$teach",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 12,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "skills/poteto-help/references/recipes.md"
-    },
-    {
-      "line": 16,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "skills/poteto-help/references/recipes.md"
-    },
-    {
-      "line": 17,
+      "line": 14,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
@@ -2315,13 +2357,13 @@
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 25,
+      "line": 22,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 26,
+      "line": 23,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
@@ -2333,45 +2375,39 @@
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
+      "line": 28,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
       "line": 29,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 30,
+      "line": 31,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 34,
+      "line": 32,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 36,
       "before": "`/interrogate",
       "after": "`$interrogate",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 35,
+      "line": 37,
       "before": "`/swarm",
       "after": "`$swarm",
-      "file": "skills/poteto-help/references/recipes.md"
-    },
-    {
-      "line": 36,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "skills/poteto-help/references/recipes.md"
-    },
-    {
-      "line": 37,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
-      "file": "skills/poteto-help/references/recipes.md"
-    },
-    {
-      "line": 37,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
@@ -2381,15 +2417,21 @@
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 42,
+      "line": 39,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 43,
-      "before": "`/show-me-your-work",
-      "after": "`$show-me-your-work",
+      "line": 39,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 40,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
@@ -2400,18 +2442,30 @@
     },
     {
       "line": 45,
+      "before": "`/show-me-your-work",
+      "after": "`$show-me-your-work",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 46,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 46,
+      "line": 47,
+      "before": "`/poteto-mode",
+      "after": "`$poteto-mode",
+      "file": "skills/poteto-help/references/recipes.md"
+    },
+    {
+      "line": 48,
       "before": "`/reflect",
       "after": "`$reflect",
       "file": "skills/poteto-help/references/recipes.md"
     },
     {
-      "line": 47,
+      "line": 49,
       "before": "`/bro",
       "after": "`$bro",
       "file": "skills/poteto-help/references/recipes.md"
@@ -2429,31 +2483,31 @@
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 29,
+      "line": 27,
       "before": "`/technical-writing",
       "after": "`$technical-writing",
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 31,
+      "line": 29,
       "before": "`/no-comments",
       "after": "`$no-comments",
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 95,
+      "line": 93,
       "before": "`/poteto-mode",
       "after": "`$poteto-mode",
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
       "line": 95,
-      "before": "`/poteto-mode",
-      "after": "`$poteto-mode",
+      "before": "`/setup-pstack",
+      "after": "`$setup-pstack",
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 97,
+      "line": 95,
       "before": "`/setup-pstack",
       "after": "`$setup-pstack",
       "file": "skills/poteto-mode/SKILL.md"
@@ -2465,22 +2519,10 @@
       "file": "skills/poteto-mode/SKILL.md"
     },
     {
-      "line": 6,
+      "line": 10,
       "before": "`/no-comments",
       "after": "`$no-comments",
       "file": "skills/poteto-mode/playbooks/autopilot-full.md"
-    },
-    {
-      "line": 6,
-      "before": "`/no-comments",
-      "after": "`$no-comments",
-      "file": "skills/poteto-mode/playbooks/autopilot-full.md"
-    },
-    {
-      "line": 5,
-      "before": "`/no-comments",
-      "after": "`$no-comments",
-      "file": "skills/poteto-mode/playbooks/autopilot-stack.md"
     },
     {
       "line": 9,
@@ -2690,6 +2732,12 @@
       "line": 4,
       "before": "disable-model-invocation: true",
       "after": "disable-model-invocation: false",
+      "file": "skills/sharpen/SKILL.md"
+    },
+    {
+      "line": 4,
+      "before": "disable-model-invocation: true",
+      "after": "disable-model-invocation: false",
       "file": "skills/show-me-your-work/SKILL.md"
     },
     {
@@ -2779,21 +2827,21 @@
     {
       "code": "cursor-command",
       "file": "README.md",
-      "line": 93,
+      "line": 95,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
     {
       "code": "model-identifier",
       "file": "README.md",
-      "line": 124,
+      "line": 128,
       "match": "Grok",
       "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
       "file": "README.md",
-      "line": 266,
+      "line": 270,
       "match": ".cursor/automations/benny/",
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },
@@ -3010,21 +3058,21 @@
     {
       "code": "model-identifier",
       "file": "skills/poteto-help/SKILL.md",
-      "line": 91,
+      "line": 93,
       "match": "Grok",
       "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-command",
       "file": "skills/poteto-help/SKILL.md",
-      "line": 108,
+      "line": 110,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
     {
       "code": "cursor-command",
       "file": "skills/poteto-help/SKILL.md",
-      "line": 138,
+      "line": 140,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
@@ -3038,16 +3086,23 @@
     {
       "code": "cursor-command",
       "file": "skills/poteto-help/references/recipes.md",
-      "line": 42,
+      "line": 44,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
     {
       "code": "cursor-command",
       "file": "skills/poteto-mode/SKILL.md",
-      "line": 38,
+      "line": 36,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
+    },
+    {
+      "code": "model-identifier",
+      "file": "skills/poteto-mode/SKILL.md",
+      "line": 95,
+      "match": "grok-4.7-xhigh-fast",
+      "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "model-identifier",
@@ -3073,14 +3128,7 @@
     {
       "code": "cursor-command",
       "file": "skills/poteto-mode/playbooks/autopilot-full.md",
-      "line": 10,
-      "match": "/loop",
-      "message": "This Cursor command has no automatic Codex equivalent."
-    },
-    {
-      "code": "cursor-command",
-      "file": "skills/poteto-mode/playbooks/autopilot-stack.md",
-      "line": 6,
+      "line": 22,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
@@ -3164,7 +3212,7 @@
     {
       "code": "cursor-command",
       "file": "skills/poteto-mode/playbooks/shipping.md",
-      "line": 14,
+      "line": 9,
       "match": "/loop",
       "message": "This Cursor command has no automatic Codex equivalent."
     },
@@ -3199,21 +3247,21 @@
     {
       "code": "model-identifier",
       "file": "skills/poteto-mode/scripts/orch/orch.test.ts",
-      "line": 285,
+      "line": 371,
       "match": "opus",
       "message": "Choose an available Codex model instead of preserving this host-specific model identifier."
     },
     {
       "code": "cursor-path",
       "file": "skills/poteto-mode/scripts/worktree-audit.sh",
-      "line": 55,
+      "line": 64,
       "match": "~/.cursor/projects/",
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },
     {
       "code": "cursor-path",
       "file": "skills/poteto-mode/scripts/worktree-audit.sh",
-      "line": 57,
+      "line": 66,
       "match": ".cursor/projects/",
       "message": "Replace this Cursor-specific path with an explicit Codex location."
     },

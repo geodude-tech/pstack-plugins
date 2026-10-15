@@ -1,15 +1,15 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-10-12T23:51:53.196Z",
+  "generatedAt": "2026-10-15T16:00:09.135Z",
   "target": "claude",
   "plugin": {
     "name": "pstack-for-claude",
-    "version": "0.15.21"
+    "version": "0.15.25"
   },
   "source": {
-    "path": "/workspace/upstream/pstack",
-    "version": "0.15.21",
-    "commit": "56aca546a690ae340eccbe57455d5cb6380024c9"
+    "path": "/workspace/upstream-0.15.25/pstack",
+    "version": "0.15.25",
+    "commit": "6ce45c59b9301a638c1fe1a7b8dc2a82b650898f"
   },
   "copiedFiles": [
     "LICENSE",
@@ -50,6 +50,7 @@
     "skills/how/SKILL.md",
     "skills/how/references/explainer-prompt.md",
     "skills/how/references/explorer-prompt.md",
+    "skills/in-your-own-words/SKILL.md",
     "skills/interrogate/SKILL.md",
     "skills/interrogate/references/code-quality-review.md",
     "skills/interrogate/references/lead-judgment.md",
@@ -139,6 +140,7 @@
     "skills/reflect/references/synthesizer.md",
     "skills/reflect/references/tooling-reviewer.md",
     "skills/setup-pstack/SKILL.md",
+    "skills/sharpen/SKILL.md",
     "skills/show-me-your-work/SKILL.md",
     "skills/show-me-your-work/references/decision-log-template.tsv",
     "skills/show-me-your-work/scripts/log.sh",
@@ -163,19 +165,19 @@
     "skills/why/references/sources/slack.md",
     "skills/why/references/synthesizer-prompt.md"
   ],
-  "copiedBytes": 3402545,
+  "copiedBytes": 3411508,
   "omittedPaths": [
     "agents",
     "automations"
   ],
   "compatibility": {
-    "rewrites": 455,
-    "findings": 65
+    "rewrites": 463,
+    "findings": 66
   },
   "validation": {
     "valid": true,
     "pluginName": "pstack-for-claude",
-    "version": "0.15.21",
-    "skillCount": 52
+    "version": "0.15.25",
+    "skillCount": 54
   }
 }
