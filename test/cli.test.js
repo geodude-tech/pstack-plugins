@@ -25,14 +25,12 @@ test("parses the documented command-line contract", () => {
     parseArgs(["/src", "--out", "/dest", "--name", "Team PStack", "--force", "--json"]),
     { sourcePath: "/src", destination: "/dest", name: "Team PStack", force: true, dryRun: false, json: true, target: "codex" },
   );
-  assert.deepEqual(
-    parseArgs(["/src", "--out", "/dest", "--target", "claude"]).target,
-    "claude",
-  );
+  assert.equal(parseArgs(["/src", "--out", "/dest", "--target", "codex"]).target, "codex");
   assert.throws(() => parseArgs([]), /source path is required/);
   assert.throws(() => parseArgs(["/src"]), /--out is required/);
   assert.throws(() => parseArgs(["/src", "--out", "/dest", "--wat"]), /Unknown option/);
   assert.throws(() => parseArgs(["/src", "--out", "/dest", "--target", "cursor"]), /Unknown target: cursor/);
+  assert.throws(() => parseArgs(["/src", "--out", "/dest", "--target", "claude"]), /Unknown target: claude/);
 });
 
 test("dry-run reports findings without creating the destination", async () => {
@@ -62,22 +60,6 @@ test("human output includes generated path and review guidance", async () => {
   assert.match(capture.stdout.join(""), /Generated pstack-for-codex/);
   assert.match(capture.stdout.join(""), /compatibility\/report\.md/);
   assert.equal(capture.stderr.join(""), "");
-});
-
-test("--target claude generates a Claude Code plugin tree", async () => {
-  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-cli-source-"));
-  const source = await createCursorPstack(sourceParent);
-  const destination = `${sourceParent}-output`;
-  const capture = captureIo();
-
-  const exitCode = await runCli([source, "--out", destination, "--target", "claude"], capture.io);
-
-  assert.equal(exitCode, 2);
-  assert.match(capture.stdout.join(""), /Generated pstack-for-claude/);
-  assert.equal(
-    (await lstat(path.join(destination, "plugins", "pstack-for-claude", ".claude-plugin", "plugin.json"))).isFile(),
-    true,
-  );
 });
 
 test("force replaces converter-owned output", async () => {

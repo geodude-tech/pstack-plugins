@@ -7,14 +7,6 @@ const TARGETS = {
     defaultBaseName: "pstack-for-codex",
     vendorNote: "not an official Cursor or OpenAI project",
   },
-  claude: {
-    id: "claude",
-    label: "Claude Code",
-    manifestDir: ".claude-plugin",
-    marketplacePath: [".claude-plugin", "marketplace.json"],
-    defaultBaseName: "pstack-for-claude",
-    vendorNote: "not an official Cursor or Anthropic project",
-  },
 };
 
 export const TARGET_IDS = Object.keys(TARGETS);

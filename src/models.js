@@ -1,79 +1,39 @@
-// Cursor packs model and reasoning effort into one slug (`grok-4.6-fast-xhigh`). Claude Code
-// takes `model` on the Agent call but `effort` only from an agent definition's frontmatter, so
-// each Cursor slug becomes a plugin subagent that carries both, and skills name it with
-// `subagent_type` instead of `model`.
-export const CLAUDE_AGENTS = [
+// Cursor packs model and reasoning effort into one slug (`grok-4.7-xhigh-fast`). Codex takes the
+// model and reasoning effort as separate spawn arguments, so each Cursor slug becomes a role alias
+// that the converted workflows resolve to a model and effort before delegating.
+export const CODEX_ROLES = [
   {
     name: "pstack-judgment",
-    model: "claude-opus-5-5",
-    effort: "extra",
+    model: "gpt-6-astra",
+    effort: "low",
     slugs: ["claude-fable-5-1-thinking-max", "claude-opus-5-thinking-xhigh", "claude-opus-5-5-xhigh", "claude-opus-5-5-max"],
-    description: "pstack judgment role: prose, review, synthesis, panel seats, and the hardest code changes. Opus 5.5 at extra effort.",
   },
   {
     name: "pstack-fast",
-    model: "claude-sonnet-5-5",
+    model: "gpt-5.6-luna",
     effort: "high",
     slugs: ["grok-4.6-fast-xhigh", "grok-4.7-xhigh-fast", "grok-4.7-medium-fast"],
-    description: "pstack fast code role: scoped implementation delegates, explorers, and swarm workers. Sonnet 5.5 at high effort.",
   },
   {
     name: "pstack-balanced",
-    model: "claude-opus-5-5",
+    model: "gpt-5.6-sol",
     effort: "medium",
     slugs: ["gpt-5.6-sol-max", "claude-opus-5-5-medium"],
-    description: "pstack balanced role: reflect tooling and one seat in each panel. Opus 5.5 at medium effort.",
   },
 ];
 
 const CURSOR_RULE_PATH = "~/.cursor/rules/pstack-models.mdc";
-const CLAUDE_RULE_PATH = "~/.claude/rules/pstack-models.md";
+const CODEX_RULE_PATH = "~/.codex/pstack-models.md";
 
-const SLUG_TO_AGENT = new Map(CLAUDE_AGENTS.flatMap((agent) => agent.slugs.map((slug) => [slug, agent.name])));
+const SLUG_TO_ROLE = new Map(CODEX_ROLES.flatMap((role) => role.slugs.map((slug) => [slug, role.name])));
 const SLUG_PATTERN = new RegExp(
-  [...SLUG_TO_AGENT.keys()].sort((a, b) => b.length - a.length).map((slug) => slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"),
+  [...SLUG_TO_ROLE.keys()].sort((a, b) => b.length - a.length).map((slug) => slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"),
   "g",
 );
 
 function lineNumberAt(text, offset) {
   return text.slice(0, offset).split("\n").length;
 }
-
-export function rewriteModelReferences(text) {
-  const rewrites = [];
-  let rewritten = text.replace(SLUG_PATTERN, (match, offset) => {
-    const replacement = SLUG_TO_AGENT.get(match);
-    rewrites.push({ line: lineNumberAt(text, offset), before: match, after: replacement });
-    return replacement;
-  });
-  rewritten = rewritten.split(CURSOR_RULE_PATH).join(CLAUDE_RULE_PATH);
-  for (let offset = text.indexOf(CURSOR_RULE_PATH); offset !== -1; offset = text.indexOf(CURSOR_RULE_PATH, offset + 1)) {
-    rewrites.push({ line: lineNumberAt(text, offset), before: CURSOR_RULE_PATH, after: CLAUDE_RULE_PATH });
-  }
-  return { text: rewritten, rewrites };
-}
-
-export function agentDefinition(agent) {
-  return [
-    "---",
-    `name: ${agent.name}`,
-    `description: ${agent.description}`,
-    `model: ${agent.model}`,
-    `effort: ${agent.effort}`,
-    "---",
-    "",
-    `You are the pstack \`${agent.name}\` subagent. Skills that named the Cursor models ${agent.slugs.map((slug) => `\`${slug}\``).join(", ")} now spawn you instead.`,
-    "",
-    "Follow the scope in your prompt exactly. Return file pointers and a short summary, not inlined file contents.",
-    "",
-  ].join("\n");
-}
-
-export const CODEX_ROLES = [
-  { name: "pstack-judgment", model: "gpt-6-astra", effort: "low", slugs: CLAUDE_AGENTS[0].slugs },
-  { name: "pstack-fast", model: "gpt-5.6-luna", effort: "high", slugs: CLAUDE_AGENTS[1].slugs },
-  { name: "pstack-balanced", model: "gpt-5.6-sol", effort: "medium", slugs: CLAUDE_AGENTS[2].slugs },
-];
 
 export function codexModelRouting() {
   return [
@@ -95,16 +55,15 @@ export function codexModelRouting() {
 }
 
 export function rewriteCodexModelReferences(text, includeRouting = false) {
-  const roles = new Map(CODEX_ROLES.flatMap((role) => role.slugs.map((slug) => [slug, role.name])));
   const rewrites = [];
   let rewritten = text.replace(SLUG_PATTERN, (match, offset) => {
-    const replacement = roles.get(match);
+    const replacement = SLUG_TO_ROLE.get(match);
     rewrites.push({ line: lineNumberAt(text, offset), before: match, after: replacement });
     return replacement;
   });
-  rewritten = rewritten.split(CURSOR_RULE_PATH).join("~/.codex/pstack-models.md");
+  rewritten = rewritten.split(CURSOR_RULE_PATH).join(CODEX_RULE_PATH);
   for (let offset = text.indexOf(CURSOR_RULE_PATH); offset !== -1; offset = text.indexOf(CURSOR_RULE_PATH, offset + 1)) {
-    rewrites.push({ line: lineNumberAt(text, offset), before: CURSOR_RULE_PATH, after: "~/.codex/pstack-models.md" });
+    rewrites.push({ line: lineNumberAt(text, offset), before: CURSOR_RULE_PATH, after: CODEX_RULE_PATH });
   }
   if (includeRouting && rewrites.length > 0 && !rewritten.includes("## Codex model routing")) {
     const routing = codexModelRouting();
