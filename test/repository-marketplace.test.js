@@ -5,7 +5,6 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 for (const [marketplacePath, pluginManifest] of [
   [".agents/plugins/marketplace.json", ".codex-plugin/plugin.json"],
-  [".claude-plugin/marketplace.json", ".claude-plugin/plugin.json"],
 ]) {
   test(`repository root marketplace resolves its plugins: ${marketplacePath}`, async () => {
     const marketplace = JSON.parse(await readFile(new URL(marketplacePath, root), "utf8"));
@@ -22,3 +21,8 @@ for (const [marketplacePath, pluginManifest] of [
     }
   });
 }
+
+test("repository ships no Claude Code marketplace", async () => {
+  await assert.rejects(readFile(new URL(".claude-plugin/marketplace.json", root)), /ENOENT/);
+  await assert.rejects(readFile(new URL("generated/.claude-plugin/marketplace.json", root)), /ENOENT/);
+});

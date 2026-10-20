@@ -5,48 +5,8 @@ import path from "node:path";
 import test from "node:test";
 
 import { convertPstack } from "../src/conversion.js";
-import { CODEX_ROLES, codexSetupInstructions, rewriteModelReferences, rewriteCodexModelReferences } from "../src/models.js";
+import { CODEX_ROLES, codexSetupInstructions, rewriteCodexModelReferences } from "../src/models.js";
 import { createCursorPstack } from "./helpers.js";
-
-test("rewrites Cursor model slugs and the rule path to Claude Code subagents", () => {
-  const source = "default `grok-4.6-fast-xhigh`, panel `gpt-5.6-sol-max`, rule ~/.cursor/rules/pstack-models.mdc\n";
-
-  const result = rewriteModelReferences(source);
-
-  assert.equal(
-    result.text,
-    "default `pstack-fast`, panel `pstack-balanced`, rule ~/.claude/rules/pstack-models.md\n",
-  );
-  assert.equal(result.rewrites.length, 3);
-  assert.deepEqual(rewriteModelReferences(result.text).rewrites, []);
-});
-
-test("Claude Code target emits agent definitions carrying model and effort", async () => {
-  const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-models-source-"));
-  const source = await createCursorPstack(sourceParent);
-  await writeFile(
-    path.join(source, "skills", "poteto-mode", "SKILL.md"),
-    "---\nname: poteto-mode\ndescription: rigorous work\n---\n\nDelegate code to `grok-4.6-fast-xhigh`.\n",
-  );
-
-  const result = await convertPstack({ sourcePath: source, destination: `${sourceParent}-output`, target: "claude" });
-
-  const fast = await readFile(path.join(result.pluginRoot, "agents", "pstack-fast.md"), "utf8");
-  assert.match(fast, /^model: claude-sonnet-5-5$/m);
-  assert.match(fast, /^effort: high$/m);
-  const judgment = await readFile(path.join(result.pluginRoot, "agents", "pstack-judgment.md"), "utf8");
-  assert.match(judgment, /^model: claude-opus-5-5$/m);
-  assert.match(judgment, /^effort: extra$/m);
-  const balanced = await readFile(path.join(result.pluginRoot, "agents", "pstack-balanced.md"), "utf8");
-  assert.match(balanced, /^model: claude-opus-5-5$/m);
-  assert.match(balanced, /^effort: medium$/m);
-  assert.match(
-    await readFile(path.join(result.pluginRoot, "skills", "poteto-mode", "SKILL.md"), "utf8"),
-    /Delegate code to `pstack-fast`\./,
-  );
-  assert.match(await readFile(path.join(result.pluginRoot, "NOTICE.generated.md"), "utf8"), /## Model routing/);
-  assert.ok(!result.compatibility.findings.some((finding) => finding.match === "grok-4.6-fast-xhigh"));
-});
 
 test("Codex target resolves model roles and includes spawn instructions", async () => {
   const sourceParent = await mkdtemp(path.join(tmpdir(), "pstack-models-source-"));
@@ -88,14 +48,11 @@ test("Codex setup keeps role defaults without Cursor rule metadata or trailing s
   assert.throws(() => codexSetupInstructions("changed upstream format"), /Unrecognized/);
 });
 
-test("rewrites current upstream pstack 0.15.25 model slugs to role agents", () => {
+test("rewrites current upstream pstack model slugs to Codex role aliases", () => {
   const source = "`claude-opus-5-5-xhigh` `claude-opus-5-5-max` `claude-opus-5-5-medium` `grok-4.7-xhigh-fast` `grok-4.7-medium-fast`\n";
 
-  const claude = rewriteModelReferences(source);
-  assert.equal(claude.text, "`pstack-judgment` `pstack-judgment` `pstack-balanced` `pstack-fast` `pstack-fast`\n");
-  assert.equal(claude.rewrites.length, 5);
-  assert.deepEqual(rewriteModelReferences(claude.text).rewrites, []);
-
   const codex = rewriteCodexModelReferences(source);
-  assert.equal(codex.text, claude.text);
+  assert.equal(codex.text, "`pstack-judgment` `pstack-judgment` `pstack-balanced` `pstack-fast` `pstack-fast`\n");
+  assert.equal(codex.rewrites.length, 5);
+  assert.deepEqual(rewriteCodexModelReferences(codex.text).rewrites, []);
 });

@@ -51,25 +51,7 @@ function createCodexPluginManifest(cursorManifest, pluginName) {
   };
 }
 
-function createClaudePluginManifest(cursorManifest, pluginName) {
-  const author = cursorManifest.author?.name || "pstack contributors";
-  const homepage = safeHttpsUrl(cursorManifest.homepage);
-  const repository = safeHttpsUrl(cursorManifest.repository);
-  return {
-    name: pluginName,
-    version: cursorManifest.version,
-    description: `Claude Code-compatible conversion of ${cursorManifest.displayName || cursorManifest.name}. Review compatibility/report.md before use.`,
-    author: { ...cursorManifest.author, name: author },
-    homepage,
-    repository,
-    license: cursorManifest.license || "MIT",
-    keywords: [...new Set([...(cursorManifest.keywords || []), "claude-code"])],
-    skills: "./skills/",
-  };
-}
-
-export function createPluginManifest(cursorManifest, pluginName, target = "codex") {
-  if (target === "claude") return createClaudePluginManifest(cursorManifest, pluginName);
+export function createPluginManifest(cursorManifest, pluginName) {
   return createCodexPluginManifest(cursorManifest, pluginName);
 }
 
@@ -88,16 +70,6 @@ function createCodexMarketplace(pluginName) {
   };
 }
 
-function createClaudeMarketplace(pluginName) {
-  return {
-    $schema: "https://json.schemastore.org/claude-code-marketplace.json",
-    name: `${pluginName}-local`,
-    owner: { name: "pstack contributors" },
-    plugins: [{ name: pluginName, source: `./plugins/${pluginName}` }],
-  };
-}
-
-export function createMarketplace(pluginName, target = "codex") {
-  if (target === "claude") return createClaudeMarketplace(pluginName);
+export function createMarketplace(pluginName) {
   return createCodexMarketplace(pluginName);
 }

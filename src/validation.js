@@ -82,25 +82,7 @@ async function validateCodexPlugin(marketplaceRoot, pluginName) {
   return { valid: true, pluginName, version: manifest.version, skillCount: skills.length };
 }
 
-async function validateClaudePlugin(marketplaceRoot, pluginName) {
-  const pluginRoot = path.join(marketplaceRoot, "plugins", pluginName);
-  const manifest = await readJson(path.join(pluginRoot, ".claude-plugin", "plugin.json"));
-  requireCommonManifestFields(manifest, pluginName);
-
-  const skills = await validateSkills(pluginRoot);
-
-  const marketplace = await readJson(path.join(marketplaceRoot, ".claude-plugin", "marketplace.json"));
-  const entry = marketplace.plugins?.find((plugin) => plugin.name === pluginName);
-  if (!entry) throw new Error(`Marketplace is missing plugin entry: ${pluginName}`);
-  if (entry.source !== `./plugins/${pluginName}`) {
-    throw new Error("Invalid marketplace source path for generated plugin");
-  }
-
-  return { valid: true, pluginName, version: manifest.version, skillCount: skills.length };
-}
-
 export async function validateGeneratedPlugin(marketplaceRoot, pluginName, targetId = "codex") {
-  const target = resolveTarget(targetId);
-  if (target.id === "claude") return validateClaudePlugin(marketplaceRoot, pluginName);
+  resolveTarget(targetId);
   return validateCodexPlugin(marketplaceRoot, pluginName);
 }

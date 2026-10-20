@@ -54,9 +54,22 @@
 
 **Dependencies:** Tasks 1-4
 
+## Task 6: Remove the Claude Code target
+
+Upstream pstack now ships an official Claude Code install (`claude plugin install pstack@cursor-plugins`), so this repository is Codex-only. Task 5 is superseded.
+
+**Acceptance criteria:**
+- [x] `--target claude` is rejected as an unknown target; `codex` is the only target.
+- [x] Claude-specific manifests, marketplaces, subagent definitions, finding patterns, and validation are removed.
+- [x] `generated/plugins/pstack-for-claude/`, `generated/.claude-plugin/`, and the root `.claude-plugin/` marketplace are deleted.
+- [x] README points Claude Code users at the official upstream install.
+
+**Verification:** `npm test && npm run check`
+
+**Dependencies:** Task 5
+
 ## Final checkpoint
 
 - [x] All tests pass.
 - [x] Smoke-generated plugin passes Codex plugin validation.
-- [x] Smoke-generated Claude Code plugin passes Claude Code plugin validation.
 - [x] Code review completed.

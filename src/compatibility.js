@@ -1,34 +1,21 @@
 import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { rewriteModelReferences, rewriteCodexModelReferences, codexSetupInstructions } from "./models.js";
+import { rewriteCodexModelReferences, codexSetupInstructions } from "./models.js";
 
 const TEXT_EXTENSIONS = new Set([".md", ".txt", ".json", ".toml", ".yaml", ".yml", ".js", ".mjs", ".ts", ".sh"]);
 
 // Codex has no native slash-command or tool equivalent for these Cursor primitives, and no
 // native model family of its own, so every host-specific mention is a manual-review finding.
-const CODEX_FINDING_PATTERNS = [
+const FINDING_PATTERNS = [
   ["cursor-path", /(?:~\/)?\.cursor(?:-plugin)?(?:\/[\w./-]*)?/i, "Replace this Cursor-specific path with an explicit Codex location."],
   ["cursor-command", /\/(?:add-plugin|loop)\b/i, "This Cursor command has no automatic Codex equivalent."],
   ["cursor-tool", /\b(?:AskUserQuestion|Agent tool|Cursor Agent)\b/i, "Map this Cursor tool or agent behavior to an available Codex capability."],
   ["model-identifier", /\b(?:claude-[\w.-]+|grok(?:-[\w.-]+)?|opus(?:\s+\d+(?:\.\d+)?)?|fable(?:\s+\d+(?:\.\d+)?)?)\b/i, "Choose an available Codex model instead of preserving this host-specific model identifier."],
 ];
 
-// Claude Code already ships AskUserQuestion, an Agent tool, and a /loop skill, and claude-*
-// identifiers are its own native model names, so only genuinely unmapped Cursor constructs
-// (and non-Claude model names) are worth flagging here.
-const CLAUDE_FINDING_PATTERNS = [
-  ["cursor-path", /(?:~\/)?\.cursor(?:-plugin)?(?:\/[\w./-]*)?/i, "Replace this Cursor-specific path with an explicit Claude Code location (e.g. .claude/ or the plugin's skills/ tree)."],
-  ["cursor-command", /\/add-plugin\b/i, "This Cursor command has no automatic Claude Code equivalent; use `/plugin marketplace add` and `/plugin install` instead."],
-  ["cursor-tool", /\bCursor Agent\b/i, "Map this Cursor-specific agent behavior to an available Claude Code capability."],
-  ["model-identifier", /\bgrok(?:-[\w.-]+)?\b|(?<!claude-)\b(?:opus|fable)\b(?:[\s-]\d+(?:\.\d+)?)?/i, "Choose an available Claude model instead of preserving this host-specific model identifier."],
-];
-
-const FINDING_PATTERNS_BY_TARGET = { codex: CODEX_FINDING_PATTERNS, claude: CLAUDE_FINDING_PATTERNS };
-
-// Codex references a skill by name with a `$` sigil (see manifest.js defaultPrompt); Claude Code
-// has no such sigil, so a rewritten invocation there drops the leading slash and nothing else.
-const SIGIL_BY_TARGET = { codex: "$", claude: "" };
+// Codex references a skill by name with a `$` sigil (see manifest.js defaultPrompt).
+const SKILL_SIGIL = "$";
 
 function regexForSkillNames(skillNames, prefix) {
   const names = [...skillNames]
@@ -78,7 +65,7 @@ export function normalizeSkillFrontmatter(text) {
 }
 
 // A frontmatter `name` that doesn't match its directory (Cursor tolerates a spaced
-// display name here) breaks skill/slash-command resolution on both Codex and Claude Code.
+// display name here) breaks skill resolution on Codex.
 export function normalizeSkillName(text, expectedName) {
   if (!text.startsWith("---\n")) return { text, rewrites: [] };
   const frontmatterEnd = text.indexOf("\n---", 4);
@@ -110,10 +97,10 @@ async function listTextFiles(root, current = root) {
   return files;
 }
 
-function scanText(text, relativePath, findingPatterns) {
+function scanText(text, relativePath) {
   const findings = [];
   for (const [index, line] of text.split("\n").entries()) {
-    for (const [code, pattern, message] of findingPatterns) {
+    for (const [code, pattern, message] of FINDING_PATTERNS) {
       const match = line.match(pattern);
       if (match) findings.push({ code, file: relativePath, line: index + 1, match: match[0], message });
     }
@@ -146,10 +133,7 @@ function markdownReport(report) {
   return `${lines.join("\n")}\n`;
 }
 
-export async function applyCompatibility(pluginRoot, omittedPaths, target = "codex") {
-  const targetLabel = target === "claude" ? "Claude Code" : "Codex";
-  const findingPatterns = FINDING_PATTERNS_BY_TARGET[target] || FINDING_PATTERNS_BY_TARGET.codex;
-  const sigil = SIGIL_BY_TARGET[target] ?? SIGIL_BY_TARGET.codex;
+export async function applyCompatibility(pluginRoot, omittedPaths) {
   const skillsRoot = path.join(pluginRoot, "skills");
   const skillNames = new Set((await readdir(skillsRoot, { withFileTypes: true }))
     .filter((entry) => entry.isDirectory())
@@ -160,26 +144,22 @@ export async function applyCompatibility(pluginRoot, omittedPaths, target = "cod
     file: omittedPath,
     line: null,
     match: omittedPath,
-    message: `This Cursor runtime component was not copied into ${targetLabel} executable discovery.`,
+    message: `This Cursor runtime component was not copied into Codex executable discovery.`,
   }));
 
   for (const file of await listTextFiles(pluginRoot)) {
     const relativePath = path.relative(pluginRoot, file);
     let text = await readFile(file, "utf8");
-    if (target === "codex" && relativePath === path.join("skills", "setup-pstack", "SKILL.md")
+    if (relativePath === path.join("skills", "setup-pstack", "SKILL.md")
         && text.includes("~/.cursor/rules/pstack-models.mdc")) {
       text = codexSetupInstructions(text);
       rewrites.push({ file: relativePath, line: 1, before: "Cursor model setup workflow", after: "Codex model and effort setup workflow" });
       await writeFile(file, text);
     }
-    if (target === "claude" || target === "codex") {
-      const models = target === "claude"
-        ? rewriteModelReferences(text)
-        : rewriteCodexModelReferences(text, path.extname(file) === ".md");
-      text = models.text;
-      rewrites.push(...models.rewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
-      if (models.rewrites.length > 0) await writeFile(file, text);
-    }
+    const models = rewriteCodexModelReferences(text, path.extname(file) === ".md");
+    text = models.text;
+    rewrites.push(...models.rewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
+    if (models.rewrites.length > 0) await writeFile(file, text);
     if (path.extname(file) === ".md") {
       let frontmatterRewrites = [];
       if (path.basename(file) === "SKILL.md") {
@@ -188,13 +168,13 @@ export async function applyCompatibility(pluginRoot, omittedPaths, target = "cod
         text = skillName.text;
         frontmatterRewrites = [...disableInvocation.rewrites, ...skillName.rewrites];
       }
-      const invocations = rewriteSkillInvocations(text, skillNames, sigil);
+      const invocations = rewriteSkillInvocations(text, skillNames, SKILL_SIGIL);
       text = invocations.text;
       const fileRewrites = [...frontmatterRewrites, ...invocations.rewrites];
       rewrites.push(...fileRewrites.map((rewrite) => ({ ...rewrite, file: relativePath })));
       if (fileRewrites.length > 0) await writeFile(file, text);
     }
-    findings.push(...scanText(text, relativePath, findingPatterns));
+    findings.push(...scanText(text, relativePath));
   }
 
   const report = {

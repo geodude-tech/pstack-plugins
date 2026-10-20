@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-for (const manifestPath of [".agents/plugins/marketplace.json", ".claude-plugin/marketplace.json"]) {
+for (const manifestPath of [".agents/plugins/marketplace.json"]) {
   const marketplace = JSON.parse(await readFile(path.join(root, "generated", manifestPath), "utf8"));
   for (const plugin of marketplace.plugins) {
     if (typeof plugin.source === "string") {

@@ -1,15 +1,15 @@
 {
   "generator": "pstack-to-codex",
-  "generatedAt": "2026-10-15T16:02:11.951Z",
+  "generatedAt": "2026-10-20T22:32:00.882Z",
   "target": "codex",
   "plugin": {
     "name": "pstack-for-codex",
-    "version": "0.15.25"
+    "version": "0.15.29"
   },
   "source": {
-    "path": "/workspace/upstream-0.15.25/pstack",
-    "version": "0.15.25",
-    "commit": "6ce45c59b9301a638c1fe1a7b8dc2a82b650898f"
+    "path": "/workspace/upstream-0.15.29/pstack",
+    "version": "0.15.29",
+    "commit": "88d47514b82e7c44f00f2b2a72ff6dd12158038c"
   },
   "copiedFiles": [
     "LICENSE",
@@ -32,6 +32,7 @@
     "docs/guide/images/router.jpg",
     "docs/guide/images/understanding.jpg",
     "docs/guide/images/verification.jpg",
+    "docs/harness/claude-code.md",
     "skills/architect/SKILL.md",
     "skills/architect/references/design-red-flags.md",
     "skills/architect/references/rationale-template.md",
@@ -42,6 +43,7 @@
     "skills/blast-radius/SKILL.md",
     "skills/bro/SKILL.md",
     "skills/correct/SKILL.md",
+    "skills/create-formal-verification-skill/SKILL.md",
     "skills/create-verification-skill/SKILL.md",
     "skills/create-verification-skill/references/feature-map-example/README.md",
     "skills/create-verification-skill/references/feature-map-example/create-note.md",
@@ -57,6 +59,7 @@
     "skills/interrogate/references/reviewer-prompt.md",
     "skills/interrogate/references/rubric.md",
     "skills/ketchup/SKILL.md",
+    "skills/maintain-formal-verification-skill/SKILL.md",
     "skills/maintain-verification-skill/SKILL.md",
     "skills/make-bot-ui/SKILL.md",
     "skills/no-comments/SKILL.md",
@@ -165,19 +168,19 @@
     "skills/why/references/sources/slack.md",
     "skills/why/references/synthesizer-prompt.md"
   ],
-  "copiedBytes": 3411508,
+  "copiedBytes": 3439110,
   "omittedPaths": [
     "agents",
     "automations"
   ],
   "compatibility": {
-    "rewrites": 527,
-    "findings": 60
+    "rewrites": 563,
+    "findings": 75
   },
   "validation": {
     "valid": true,
     "pluginName": "pstack-for-codex",
-    "version": "0.15.25",
-    "skillCount": 54
+    "version": "0.15.29",
+    "skillCount": 56
   }
 }

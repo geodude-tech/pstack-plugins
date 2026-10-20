@@ -42,7 +42,9 @@ Build a dependency-free Node.js CLI in four vertical slices: establish the contr
 - [x] Generated artifact passes the bundled Codex plugin validator.
 - [x] Implementation is reviewed for correctness and scope.
 
-### Phase 4: Claude Code target
+### Phase 4: Claude Code target (removed)
+
+Superseded by Phase 5: upstream pstack now ships an official Claude Code install, so the Claude Code target was removed.
 
 - [x] Task 7: Add a `targets.js` registry and a `--target <codex|claude>` CLI option, defaulting to `codex` for backward compatibility.
 - [x] Task 8: Generate `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` for the `claude` target, and validate them.
@@ -52,6 +54,10 @@ Build a dependency-free Node.js CLI in four vertical slices: establish the contr
 
 - [x] Full test suite passes for both targets.
 - [x] Generated Claude Code artifact passes `validateGeneratedPlugin`.
+
+### Phase 5: Codex-only
+
+- [x] Task 10: Remove the `claude` target, its generated package, and its marketplace manifests. Point Claude Code users at `claude plugin install pstack@cursor-plugins`.
 
 ## Risks and Mitigations
 
